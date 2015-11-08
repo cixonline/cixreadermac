@@ -1,0 +1,51 @@
+/* Class = "NSTextFieldCell"; title = "(Username)"; ObjectID = "4RZ-uI-wIa"; */
+"4RZ-uI-wIa.title" = "(Nom d'utilisateur)";
+
+/* Class = "NSTextFieldCell"; title = "(FirstOn)"; ObjectID = "4nL-he-woC"; */
+"4nL-he-woC.title" = "(FirstOn)";
+
+/* Class = "NSTextFieldCell"; title = "Last posted"; ObjectID = "8uZ-BI-Cv2"; */
+"8uZ-BI-Cv2.title" = "Dernière posté";
+
+/* Class = "NSTextFieldCell"; title = "Last on"; ObjectID = "9sc-kd-pFj"; */
+"9sc-kd-pFj.title" = "Dernière sur";
+
+/* Class = "NSTextFieldCell"; title = "Location"; ObjectID = "IRb-lZ-F4c"; */
+"IRb-lZ-F4c.title" = "Emplacement";
+
+/* Class = "NSTextFieldCell"; title = "(LastPosted)"; ObjectID = "JCw-YW-nsg"; */
+"JCw-YW-nsg.title" = "(LastPosted)";
+
+/* Class = "NSTextFieldCell"; title = "(Fullname)"; ObjectID = "JIm-IZ-95g"; */
+"JIm-IZ-95g.title" = "(Nom Et Prénom)";
+
+/* Class = "NSTextFieldCell"; title = "Location"; ObjectID = "MwH-zd-6DA"; */
+"MwH-zd-6DA.title" = "Emplacement";
+
+/* Class = "NSTextFieldCell"; title = "(Email)"; ObjectID = "OYi-69-fDe"; */
+"OYi-69-fDe.title" = "(Email)";
+
+/* Class = "NSTextFieldCell"; title = "(LastOn)"; ObjectID = "OtI-mv-jsw"; */
+"OtI-mv-jsw.title" = "(Laston)";
+
+/* Class = "NSWindow"; title = "Profile"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "Profil";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "Rbz-8f-BLj"; */
+"Rbz-8f-BLj.title" = "Boîte";
+
+/* Class = "NSTextFieldCell"; title = "First on"; ObjectID = "U15-X4-cqe"; */
+"U15-X4-cqe.title" = "D'abord sur";
+
+/* Class = "NSTextFieldCell"; title = "E-mail"; ObjectID = "XBL-Ge-zu6"; */
+"XBL-Ge-zu6.title" = "Email";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "fag-Q9-D3G"; */
+"fag-Q9-D3G.title" = "Boîte";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "wSK-Oz-LoW"; */
+"wSK-Oz-LoW.title" = "Boîte";
+
+/* Class = "NSTextFieldCell"; title = "(Location)"; ObjectID = "zCS-48-m8h"; */
+"zCS-48-m8h.title" = "(Lieu)";
+

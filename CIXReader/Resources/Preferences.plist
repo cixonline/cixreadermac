@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5</key>
+	<dict>
+		<key>Title</key>
+		<string>Update</string>
+		<key>ClassName</key>
+		<string>UpdatePreferences</string>
+		<key>Image</key>
+		<string>updatePreferences.tiff</string>
+	</dict>
+	<key>Title</key>
+	<string>Preferences</string>
+	<key>1</key>
+	<dict>
+		<key>Title</key>
+		<string>General</string>
+		<key>ClassName</key>
+		<string>GeneralPreferences</string>
+		<key>Image</key>
+		<string>generalPrefImage.tiff</string>
+	</dict>
+	<key>2</key>
+	<dict>
+		<key>Title</key>
+		<string>Viewing</string>
+		<key>ClassName</key>
+		<string>ViewingPreferences</string>
+		<key>Image</key>
+		<string>viewingPrefImage.tiff</string>
+	</dict>
+	<key>3</key>
+	<dict>
+		<key>Title</key>
+		<string>Signatures</string>
+		<key>ClassName</key>
+		<string>SignaturePreferences</string>
+		<key>Image</key>
+		<string>signaturePreferences.tiff</string>
+	</dict>
+	<key>4</key>
+	<dict>
+		<key>Title</key>
+		<string>Rules</string>
+		<key>ClassName</key>
+		<string>RulesPreferences</string>
+		<key>Image</key>
+		<string>rulesPreferences.tiff</string>
+	</dict>
+</dict>
+</plist>

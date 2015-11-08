@@ -1,0 +1,45 @@
+/* Class = "NSTextFieldCell"; title = "Type:"; ObjectID = "3iZ-Fz-fGk"; */
+"3iZ-Fz-fGk.title" = "Type:";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Fd8-Zd-uDv"; */
+"Fd8-Zd-uDv.title" = "Annuler";
+
+/* Class = "NSMenuItem"; title = "Open"; ObjectID = "MGe-Y8-dUg"; */
+"MGe-Y8-dUg.title" = "Ouvert";
+
+/* Class = "NSWindow"; title = "Edit Forum"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "Modifier Forum";
+
+/* Class = "NSMenuItem"; title = "Private"; ObjectID = "RoN-1O-yfa"; */
+"RoN-1O-yfa.title" = "Privé";
+
+/* Class = "NSTextFieldCell"; title = "(Forum name)"; ObjectID = "Usm-DB-N0z"; */
+"Usm-DB-N0z.title" = "(Nom Forum)";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "Xbu-TJ-2kB"; */
+"Xbu-TJ-2kB.title" = "Boîte";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "aTg-En-3YF"; */
+"aTg-En-3YF.title" = "Enregistrer";
+
+/* Class = "NSTextFieldCell"; title = "Sub-category:"; ObjectID = "daJ-kJ-YnM"; */
+"daJ-kJ-YnM.title" = "Sous-catégorie:";
+
+/* Class = "NSTextFieldCell"; title = "Title:"; ObjectID = "eTR-2t-Xeu"; */
+"eTR-2t-Xeu.title" = "Titre:";
+
+/* Class = "NSTextFieldCell"; title = "Category:"; ObjectID = "ete-b8-KIZ"; */
+"ete-b8-KIZ.title" = "Catégorie:";
+
+/* Class = "NSTextFieldCell"; title = "Description:"; ObjectID = "jQu-j9-fQv"; */
+"jQu-j9-fQv.title" = "Description:";
+
+/* Class = "NSTextFieldCell"; title = "Name:"; ObjectID = "mfH-LH-rrT"; */
+"mfH-LH-rrT.title" = "Nom:";
+
+/* Class = "NSMenuItem"; title = "Closed"; ObjectID = "ohv-Fc-lUr"; */
+"ohv-Fc-lUr.title" = "Fermé";
+
+/* Class = "NSTextFieldCell"; title = "You cannot change the forum name once it has been created."; ObjectID = "vOy-jh-Sft"; */
+"vOy-jh-Sft.title" = "Vous ne pouvez pas changer le nom du forum une fois qu'il a été créé.";
+

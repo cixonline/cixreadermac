@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>CIXReader</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en-us</string>
+	<key>CFBundleIdentifier</key>
+	<string>CIX.CIXReader.help</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1</string>
+	<key>CFBundleSignature</key>
+	<string>hbwr</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>HPDBookAccessPath</key>
+	<string>index.html</string>
+	<key>HPDBookIconPath</key>
+	<string>shrd/CixReader.png</string>
+	<key>HPDBookIndexPath</key>
+	<string>CIXReader.helpindex</string>
+	<key>HPDBookKBProduct</key>
+	<string>cixreader1</string>
+	<key>HPDBookKBURL</key>
+	<string>http://www.cix.co.uk/support</string>
+	<key>HPDBookTitle</key>
+	<string>CIXReader Help</string>
+	<key>HPDBookType</key>
+	<string>3</string>
+	<key>HPDBookTopicListCSSPath</key>
+	<string>helpstyle.css</string>
+</dict>
+</plist>

@@ -1,0 +1,15 @@
+/* Class = "NSTextFieldCell"; title = "Beta releases are untested builds that are provided for people who like living at the bleeding edge. Don't install unless you know what you're doing and are willing to test and provide feedback."; ObjectID = "I0c-zu-SXB"; */
+"I0c-zu-SXB.title" = "Les versions bêta ont pas été testés construit qui sont fournis pour ceux qui aiment vivre à la fine pointe. Ne installez pas sauf si vous savez ce que vous faites et que vous êtes prêt à tester et fournir une rétroaction.";
+
+/* Class = "NSButtonCell"; title = "Automatically check for updates"; ObjectID = "Jvb-2Y-M4F"; */
+"Jvb-2Y-M4F.title" = "Vérifier automatiquement les mises à jour";
+
+/* Class = "NSButtonCell"; title = "Include beta releases in checks for updates"; ObjectID = "NQJ-Sm-8Lo"; */
+"NQJ-Sm-8Lo.title" = "Inclure les rejets bêta contrôles pour les mises à jour";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "Fenêtre";
+
+/* Class = "NSTextFieldCell"; title = "Updates:"; ObjectID = "jGJ-Dh-sAG"; */
+"jGJ-Dh-sAG.title" = "Mises à jour:";
+

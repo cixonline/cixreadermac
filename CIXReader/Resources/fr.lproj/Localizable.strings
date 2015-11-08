@@ -1,0 +1,315 @@
+/* No comment provided by engineer. */
+"%d hours ago" = "Il ya %d heures";
+
+/* No comment provided by engineer. */
+"%d minutes ago" = "Il ya %d minutes";
+
+/* No comment provided by engineer. */
+"(No subject)" = "(Aucun sujet)";
+
+/* No comment provided by engineer. */
+"All Categories" = "Toutes les catégories";
+
+/* No comment provided by engineer. */
+"As Ignored" = "Comme Ignoré";
+
+/* No comment provided by engineer. */
+"As Normal" = "Normal";
+
+/* No comment provided by engineer. */
+"As Priority" = "Comme priorité";
+
+/* No comment provided by engineer. */
+"As Read" = "Comme Lire";
+
+/* No comment provided by engineer. */
+"As Unignored" = "Comme Unignored";
+
+/* No comment provided by engineer. */
+"As Unread" = "Comme non lu";
+
+/* No comment provided by engineer. */
+"Authentication Error" = "Erreur d'authentification";
+
+/* No comment provided by engineer. */
+"Basic" = "De base";
+
+/* No comment provided by engineer. */
+"Cancel" = "Annuler";
+
+/* No comment provided by engineer. */
+"Cellular" = "Cellulaire";
+
+/* No comment provided by engineer. */
+"Clear" = "Clair";
+
+/* No comment provided by engineer. */
+"Clear Flag" = "Effacer l'indicateur";
+
+/* No comment provided by engineer. */
+"Clear Read Lock" = "Effacer Verrouillage de lecture";
+
+/* No comment provided by engineer. */
+"Close" = "Fermer";
+
+/* No comment provided by engineer. */
+"Compose a reply to the selected message" = "Composez une réponse au message sélectionné";
+
+/* No comment provided by engineer. */
+"Compose and send a new pmessage" = "Composer et envoyer un nouveau message privé";
+
+/* No comment provided by engineer. */
+"Delete" = "Effacer";
+
+/* No comment provided by engineer. */
+"Delete or withdraw the selected message" = "Supprimer ou retirer le message sélectionné";
+
+/* No comment provided by engineer. */
+"Directory" = "Annuaire";
+
+/* No comment provided by engineer. */
+"Don't Save" = "Ne pas enregistrer";
+
+/* No comment provided by engineer. */
+"Don't Send" = "Ne Envoyer";
+
+/* No comment provided by engineer. */
+"Drafts" = "Brouillons";
+
+/* No comment provided by engineer. */
+"Edit" = "Éditer";
+
+/* No comment provided by engineer. */
+"Flag" = "Drapeau";
+
+/* No comment provided by engineer. */
+"Forums" = "Forums";
+
+/* No comment provided by engineer. */
+"Full" = "Plein";
+
+/* No comment provided by engineer. */
+"Go back to the previous message" = "Retour au message précédent";
+
+/* No comment provided by engineer. */
+"Go to the next unread message" = "Aller au prochain message non lu";
+
+/* No comment provided by engineer. */
+"Go to the next unread priority message" = "Aller au prochain message non lu de priorité";
+
+/* No comment provided by engineer. */
+"Hide Status Bar" = "Masquer la barre de status";
+
+/* No comment provided by engineer. */
+"Inbox" = "Boîte de réception";
+
+/* No comment provided by engineer. */
+"Join Forum" = "Participe au forum";
+
+/* No comment provided by engineer. */
+"Join a new forum" = "Joignez-vous à un nouveau forum";
+
+/* No comment provided by engineer. */
+"Joining forum..." = "Rejoindre forum...";
+
+/* No comment provided by engineer. */
+"Mark All Read" = "Marquer tout comme lu";
+
+/* No comment provided by engineer. */
+"Message not saved" = "Message non enregistré";
+
+/* No comment provided by engineer. */
+"Message not sent" = "Message non envoyé";
+
+/* No comment provided by engineer. */
+"Messages" = "Messages";
+
+/* No comment provided by engineer. */
+"New PMessage" = "Nouveau PMessage";
+
+/* No comment provided by engineer. */
+"New Message" = "Nouveau message";
+
+/* No comment provided by engineer. */
+"New PMessage" = "Nouveau Message Privé";
+
+/* No comment provided by engineer. */
+"Next Priority" = "Priorité Demain";
+
+/* No comment provided by engineer. */
+"Next Unread" = "Suivant non lus";
+
+/* No comment provided by engineer. */
+"No" = "Aucun";
+
+/* No comment provided by engineer. */
+"No Connection" = "Pas de connexion";
+
+/* No comment provided by engineer. */
+"None" = "Aucun";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Offline" = "Hors ligne";
+
+/* No comment provided by engineer. */
+"Outbox" = "Boîte d'envoi";
+
+/* No comment provided by engineer. */
+"Please wait..." = "Se il vous plaît, attendez...";
+
+/* No comment provided by engineer. */
+"Previous" = "Précédent";
+
+/* No comment provided by engineer. */
+"Print" = "Imprimer";
+
+/* No comment provided by engineer. */
+"Print the current message" = "Imprimer le message en cours";
+
+/* No comment provided by engineer. */
+"Quote" = "Citation";
+
+/* No comment provided by engineer. */
+"Quote Message" = "Répondre en citant Message";
+
+/* No comment provided by engineer. */
+"Quote the original message" = "Citer le message original";
+
+/* No comment provided by engineer. */
+"Read" = "Lire";
+
+/* No comment provided by engineer. */
+"Read Lock" = "Lire verrouillage";
+
+/* No comment provided by engineer. */
+"Recent Searches" = "Recherches récentes";
+
+/* No comment provided by engineer. */
+"Rejoin" = "Rejoindre";
+
+/* No comment provided by engineer. */
+"Reply To Message" = "Répondre au message";
+
+/* No comment provided by engineer. */
+"Reply and quote the selected message" = "Répondre et citer le message sélectionné";
+
+/* No comment provided by engineer. */
+"Reply to %@" = "Répondre à l' %@";
+
+/* No comment provided by engineer. */
+"Reply to %lld" = "Répondre à l' %lld";
+
+/* No comment provided by engineer. */
+"Request Admittance" = "Demande Admittance";
+
+/* No comment provided by engineer. */
+"Reset All Rules" = "Réinitialiser Toutes les règles";
+
+/* No comment provided by engineer. */
+"Resign" = "Démissionner";
+
+/* Save */
+"Save" = "Enregistrer";
+
+/* No comment provided by engineer. */
+"Save this message" = "Enregistrer ce message";
+
+/* No comment provided by engineer. */
+"Search" = "Recherche";
+
+/* No comment provided by engineer. */
+"Search Menu" = "Recherche Menu";
+
+/* No comment provided by engineer. */
+"Search Results" = "Résultats de la recherche";
+
+/* No comment provided by engineer. */
+"Search in %@" = "Rechercher dans %@";
+
+/* No comment provided by engineer. */
+"Send" = "Envoyer";
+
+/* No comment provided by engineer. */
+"Send this message" = "Envoyer ce message";
+
+/* No comment provided by engineer. */
+"Set Read Lock" = "Réglez Verrouillage de lecture";
+
+/* No comment provided by engineer. */
+"Show Status Bar" = "Afficher la barre de status";
+
+/* No comment provided by engineer. */
+"Starred" = "Favoris";
+
+/* No comment provided by engineer. */
+"Start a new thread in the current topic" = "Démarrer une nouvelle discussion dans le sujet d'actualité";
+
+/* No comment provided by engineer. */
+"Synchronisation completed %@" = "Synchronisation terminée %@";
+
+/* No comment provided by engineer. */
+"Synchronisation started..." = "Synchronisation commencé...";
+
+/* No comment provided by engineer. */
+"This forum does not exist in the directory. Check the spelling of the name." = "Ce forum ne existe pas dans le répertoire. Vérifiez l'orthographe du nom.";
+
+/* No comment provided by engineer. */
+"This forum is closed. To join the forum, you need to contact the moderators to request admittance" = "Ce forum est fermé. Pour participer au forum, vous devez contacter les modérateurs de demander l'admission";
+
+/* No comment provided by engineer. */
+"This message has not been saved. Are you sure you want to discard it?" = "Ce message n'a pas été enregistré. Etes-vous sûr que vous voulez le jeter?";
+
+/* No comment provided by engineer. */
+"This message has not been sent. Are you sure you want to discard it?" = "Ce message n'a pas été envoyé. Etes-vous sûr que vous voulez le jeter?";
+
+/* No comment provided by engineer. */
+"This will reset all rules back to the CIXReader defaults and discard all custom modifications. Are you sure?" = "Ceci permet de réinitialiser toutes les règles de retour aux valeurs par défaut CIXReader et jeter toutes les modifications personnalisées. Êtes-vous sûr?";
+
+/* No comment provided by engineer. */
+"Toggle flag on the selected message" = "Drapeau bascule sur le message sélectionné";
+
+/* No comment provided by engineer. */
+"Toggle online/offline state" = "Basculer l'état en ligne/hors ligne";
+
+/* No comment provided by engineer. */
+"Toggle read status on the selected message" = "Basculer lire l'état sur le message sélectionné";
+
+/* No comment provided by engineer. */
+"Toggle the read lock on the selected message" = "Déplacez le verrou en lecture sur le message sélectionné";
+
+/* No comment provided by engineer. */
+"Unknown" = "Inconnu";
+
+/* No comment provided by engineer. */
+"Updating directory..." = "Mise à jour de répertoire...";
+
+/* No comment provided by engineer. */
+"View Profile" = "Voir le profil";
+
+/* No comment provided by engineer. */
+"View the profile of the message author" = "Voir le profil de l'auteur du message";
+
+/* No comment provided by engineer. */
+"WiFi" = "Wifi";
+
+/* No comment provided by engineer. */
+"Withdraw" = "Retirer";
+
+/* No comment provided by engineer. */
+"Yes" = "Oui";
+
+/* No comment provided by engineer. */
+"Your account has not yet been activated." = "Votre compte n'a pas encore été activé.";
+
+/* No comment provided by engineer. */
+"Your username or password were entered incorrectly" = "Votre nom d'utilisateur ou mot de passe entré incorrectement loup-garou";
+
+/* No comment provided by engineer. */
+"one hour ago" = "Il ya une heures";
+
+/* No comment provided by engineer. */
+"one minute ago" = "Il ya une minutes";
+

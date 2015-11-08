@@ -1,0 +1,27 @@
+/* Class = "NSButtonCell"; title = "Sign Up To CIX"; ObjectID = "97K-WA-6vA"; */
+"97K-WA-6vA.title" = "Inscrivez-vous à CIX";
+
+/* Class = "NSTextFieldCell"; title = "User name:"; ObjectID = "BQM-9y-t1s"; */
+"BQM-9y-t1s.title" = "Nom d'utilisateur:";
+
+/* Class = "NSWindow"; title = "Login"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "S'identifier";
+
+/* Class = "NSButtonCell"; title = "Login"; ObjectID = "SAt-QM-xKe"; */
+"SAt-QM-xKe.title" = "S'identifier";
+
+/* Class = "NSTextFieldCell"; title = "Password:"; ObjectID = "TI0-aX-hBc"; */
+"TI0-aX-hBc.title" = "Mot de passe:";
+
+/* Class = "NSTextFieldCell"; title = "Enter your CIX username and password to begin using CIXReader. If you are new to CIX, click the Sign Up To CIX button to create a free, basic account."; ObjectID = "YMD-Wo-3mX"; */
+"YMD-Wo-3mX.title" = "Entrez votre nom d'utilisateur et mot de passe de CIX pour commencer à utiliser CIXReader. Si vous êtes nouveau à CIX, cliquez sur le bouton Inscrivez-vous pour CIX pour créer, un compte de base gratuite.";
+
+/* Class = "NSTextFieldCell"; title = "Forgot?"; ObjectID = "hPV-fO-XjQ"; */
+"hPV-fO-XjQ.title" = "Oublié?";
+
+/* Class = "NSTextFieldCell"; title = "Log into CIX"; ObjectID = "ipW-X5-Yop"; */
+"ipW-X5-Yop.title" = "Connectez-vous à CIX";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "uUI-gU-YnZ"; */
+"uUI-gU-YnZ.title" = "Annuler";
+

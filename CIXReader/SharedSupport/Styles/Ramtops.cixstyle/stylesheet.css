@@ -1,0 +1,91 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 1em 2em;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1.4;
+	color: #5e5e5e;
+}
+
+a {
+	color: #cc3333;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 100%;
+	font-weight: normal;
+	line-height: 1.1;
+	padding-bottom: 0.5em;
+	display:  none;
+}
+
+p {
+	margin: 1em 0;
+}
+
+ul, ol, dl {
+	margin-left: 2em;
+}
+
+blockquote {
+	border-left: 1px solid #ccc;
+	padding-left: 1em;
+	color: #941000;
+	margin-bottom: 8px;
+	margin-top: 8px;
+	}
+}
+
+blockquote blockquote {
+	color: green;
+}
+
+blockquote blockquote blockquote {
+	color: red;
+}
+
+
+div.info {
+	padding: 0 1px;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	font-size: 12px;
+	color: #3366CC;
+}
+
+div.info a {
+	color: #3366CC;
+	border-bottom: #3366CC 1px dotted;
+}
+
+div.main {
+	margin: 1em 0 0 0;
+	overflow:auto;
+}
+
+span.articleIDStyle:after, span.articleAuthorStyle:before, span.articleReplyToStyle:before
+{
+	content: " - ";
+}
+
+/* fix a 100% max size to potentially problematic elements */
+img, table, td, blockquote, code, pre, textarea, input, iframe, object, embed, video {
+	max-width: 100%;
+}
+
+/* keep images ratio and avoid box overflow due to border or padding */
+img {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}

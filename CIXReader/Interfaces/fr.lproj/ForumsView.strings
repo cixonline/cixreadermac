@@ -1,0 +1,30 @@
+/* Class = "NSBox"; title = "Box"; ObjectID = "3f6-S2-ksI"; */
+"3f6-S2-ksI.title" = "Boîte";
+
+/* Class = "NSTextFieldCell"; title = "Name"; ObjectID = "K0z-WU-LhG"; */
+"K0z-WU-LhG.title" = "Nom";
+
+/* Class = "NSTextFieldCell"; title = "Moderators:"; ObjectID = "Pep-Ke-Mft"; */
+"Pep-Ke-Mft.title" = "Modérateurs:";
+
+/* Class = "NSTextFieldCell"; title = "Description"; ObjectID = "UdC-5F-Dfo"; */
+"UdC-5F-Dfo.title" = "Description";
+
+/* Class = "NSButtonCell"; title = "Delete"; ObjectID = "aBg-mO-74o"; */
+"aBg-mO-74o.title" = "Effacer";
+
+/* Class = "NSTextFieldCell"; title = "Title"; ObjectID = "ezf-m4-pZB"; */
+"ezf-m4-pZB.title" = "Titre";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "jIN-3Y-fn3"; */
+"jIN-3Y-fn3.title" = "Étiquette";
+
+/* Class = "NSTextFieldCell"; title = "You resigned from this forum. Click the Rejoin button to join it again."; ObjectID = "lwr-uc-I1D"; */
+"lwr-uc-I1D.title" = "Vous avez démissionné de ce forum. Cliquez sur le bouton Rejoindre pour rejoindre à nouveau.";
+
+/* Class = "NSButtonCell"; title = "Resign"; ObjectID = "oZb-cp-KoT"; */
+"oZb-cp-KoT.title" = "Démissionner";
+
+/* Class = "NSButtonCell"; title = "Manage..."; ObjectID = "xaa-fy-BaY"; */
+"xaa-fy-BaY.title" = "Gérer...";
+

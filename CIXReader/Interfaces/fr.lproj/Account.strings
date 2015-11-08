@@ -1,0 +1,54 @@
+/* Class = "NSButtonCell"; title = "Edit"; ObjectID = "0jK-ja-d7N"; */
+"0jK-ja-d7N.title" = "Éditer";
+
+/* Class = "NSWindow"; title = "Account"; ObjectID = "F0z-JX-Cv5"; */
+"F0z-JX-Cv5.title" = "Compte";
+
+/* Class = "NSButtonCell"; title = "Close"; ObjectID = "H1l-1C-wiu"; */
+"H1l-1C-wiu.title" = "Fermer";
+
+/* Class = "NSTextFieldCell"; title = "Full name:"; ObjectID = "J3g-NF-Y2y"; */
+"J3g-NF-Y2y.title" = "Nom et prénom:";
+
+/* Class = "NSTextFieldCell"; title = "Sex:"; ObjectID = "P3J-9F-UGm"; */
+"P3J-9F-UGm.title" = "Sexe:";
+
+/* Class = "NSMenuItem"; title = "Don't Say"; ObjectID = "P4V-J3-1Ph"; */
+"P4V-J3-1Ph.title" = "Do not Say";
+
+/* Class = "NSTextFieldCell"; title = "Last On:"; ObjectID = "P6U-Ae-CT9"; */
+"P6U-Ae-CT9.title" = "Dernière Sur:";
+
+/* Class = "NSMenuItem"; title = "Male"; ObjectID = "UcS-Uh-emH"; */
+"UcS-Uh-emH.title" = "Mâle";
+
+/* Class = "NSTextFieldCell"; title = "Account name:"; ObjectID = "YUh-mM-eHu"; */
+"YUh-mM-eHu.title" = "Nom du compte:";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "cgi-Zt-3QL"; */
+"cgi-Zt-3QL.title" = "OtherViews";
+
+/* Class = "NSButtonCell"; title = "Upgrade..."; ObjectID = "hON-8i-Nke"; */
+"hON-8i-Nke.title" = "Mise à niveau...";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "jDm-NZ-uYe"; */
+"jDm-NZ-uYe.title" = "Boîte";
+
+/* Class = "NSTextFieldCell"; title = "E-mail:"; ObjectID = "qE9-8b-6a6"; */
+"qE9-8b-6a6.title" = "Email:";
+
+/* Class = "NSMenuItem"; title = "Female"; ObjectID = "rM9-Sk-iNn"; */
+"rM9-Sk-iNn.title" = "Femelle";
+
+/* Class = "NSTextFieldCell"; title = "Status:"; ObjectID = "roM-uc-duI"; */
+"roM-uc-duI.title" = "Statut:";
+
+/* Class = "NSTextFieldCell"; title = "Location:"; ObjectID = "ub8-K2-yrR"; */
+"ub8-K2-yrR.title" = "Localisation:";
+
+/* Class = "NSTextFieldCell"; title = "Some details about you:"; ObjectID = "v05-Ac-atF"; */
+"v05-Ac-atF.title" = "Quelques détails sur vous:";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "xNn-TV-rmv"; */
+"xNn-TV-rmv.title" = "Boîte";
+

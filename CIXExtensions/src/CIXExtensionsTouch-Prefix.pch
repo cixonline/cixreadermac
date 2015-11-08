@@ -1,0 +1,17 @@
+//
+//  CIXExtensionsTouch-Prefix.pch
+//  CIXExtensions
+//
+//  Created by Steve Palmer on 22/09/2014.
+//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//
+
+#ifndef CIXExtensionsTouch_CIXClient_pch
+#define CIXExtensionsTouch_CIXClient_pch
+
+#import <UIKit/UIKit.h>
+
+#define ImageClass UIImage
+
+#endif
+

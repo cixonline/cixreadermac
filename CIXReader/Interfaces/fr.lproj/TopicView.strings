@@ -1,0 +1,45 @@
+/* Class = "NSBox"; title = "Box"; ObjectID = "3Eu-sz-AVO"; */
+"3Eu-sz-AVO.title" = "Boîte";
+
+/* Class = "NSMenuItem"; title = "Author"; ObjectID = "8cS-pw-s6J"; */
+"8cS-pw-s6J.title" = "Auteur";
+
+/* Class = "NSMenuItem"; title = "Subject"; ObjectID = "IWJ-of-UmL"; */
+"IWJ-of-UmL.title" = "Sujet";
+
+/* Class = "NSMenuItem"; title = "Conversation"; ObjectID = "OA0-mI-Pqh"; */
+"OA0-mI-Pqh.title" = "Conversation";
+
+/* Class = "NSTextFieldCell"; title = "(Subject line)"; ObjectID = "Qcf-Vj-0tp"; */
+"Qcf-Vj-0tp.title" = "(Ligne Objet)";
+
+/* Class = "NSTextFieldCell"; title = "(Date line)"; ObjectID = "Sse-l3-0pY"; */
+"Sse-l3-0pY.title" = "(Date de la ligne)";
+
+/* Class = "NSMenuItem"; title = "Descending"; ObjectID = "XSa-L1-YTZ"; */
+"XSa-L1-YTZ.title" = "Descendant";
+
+/* Class = "NSMenuItem"; title = "Date"; ObjectID = "XsK-2G-QiL"; */
+"XsK-2G-QiL.title" = "Date";
+
+/* Class = "NSButtonCell"; title = "Start new thread..."; ObjectID = "aXt-Jh-40X"; */
+"aXt-Jh-40X.title" = "Commencer une nouvelle discussion...";
+
+/* Class = "NSTextFieldCell"; title = "Loading..."; ObjectID = "aeO-56-nhv"; */
+"aeO-56-nhv.title" = "Chargement...";
+
+/* Class = "NSTextFieldCell"; title = "No Message Selected"; ObjectID = "dnU-Cy-AHS"; */
+"dnU-Cy-AHS.title" = "Pas de message sélectionné";
+
+/* Class = "NSTextFieldCell"; title = "(ID)"; ObjectID = "eFD-94-NCQ"; */
+"eFD-94-NCQ.title" = "(ID)";
+
+/* Class = "NSMenuItem"; title = "Ascending"; ObjectID = "kNQ-Sr-iUI"; */
+"kNQ-Sr-iUI.title" = "Ascendant";
+
+/* Class = "NSTextFieldCell"; title = "(Sender line)"; ObjectID = "lvC-ME-xmI"; */
+"lvC-ME-xmI.title" = "(Ligne de l'expéditeur)";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "sQr-19-abI"; */
+"sQr-19-abI.title" = "Cellule de texte";
+

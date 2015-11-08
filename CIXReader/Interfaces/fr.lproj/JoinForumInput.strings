@@ -1,0 +1,12 @@
+/* Class = "NSTextFieldCell"; title = "Enter the name of the forum to join:"; ObjectID = "A2c-5F-guH"; */
+"A2c-5F-guH.title" = "Entrez le nom du forum de rejoindre:";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "MJN-rp-4rY"; */
+"MJN-rp-4rY.title" = "Annuler";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "Fenêtre";
+
+/* Class = "NSButtonCell"; title = "Join"; ObjectID = "ohj-Jq-8xX"; */
+"ohj-Jq-8xX.title" = "Joindre";
+

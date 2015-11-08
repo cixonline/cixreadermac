@@ -1,0 +1,13 @@
+//
+//  CIXExtensions-Prefix.pch
+//  CIXExtensions
+//
+//  Created by Steve Palmer on 05/09/2014.
+//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//
+
+#ifdef __OBJC__
+#import <Cocoa/Cocoa.h>
+
+#define ImageClass NSImage
+#endif

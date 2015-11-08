@@ -1,0 +1,36 @@
+/* Class = "NSTextFieldCell"; title = "(Sender line)"; ObjectID = "0L1-O1-6Na"; */
+"0L1-O1-6Na.title" = "(Ligne de l'expéditeur)";
+
+/* Class = "NSTextFieldCell"; title = "No Conversation Selected"; ObjectID = "0QH-Xt-viG"; */
+"0QH-Xt-viG.title" = "Aucune conversation sélectionnée";
+
+/* Class = "NSMenuItem"; title = "Sender"; ObjectID = "0bP-xW-tAZ"; */
+"0bP-xW-tAZ.title" = "Expéditeur";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "5fW-ny-wLH"; */
+"5fW-ny-wLH.title" = "Cellule de texte";
+
+/* Class = "NSTextFieldCell"; title = "(Date line)"; ObjectID = "6VJ-HA-j9i"; */
+"6VJ-HA-j9i.title" = "(Date de la ligne)";
+
+/* Class = "NSTextFieldCell"; title = "(Subject line)"; ObjectID = "EPL-yV-WpI"; */
+"EPL-yV-WpI.title" = "(Ligne Objet)";
+
+/* Class = "NSMenuItem"; title = "Descending"; ObjectID = "OdH-VF-HYd"; */
+"OdH-VF-HYd.title" = "Descendant";
+
+/* Class = "NSMenuItem"; title = "Ascending"; ObjectID = "Oof-dR-wJd"; */
+"Oof-dR-wJd.title" = "Ascendant";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "aee-3w-NDd"; */
+"aee-3w-NDd.title" = "Boîte";
+
+/* Class = "NSButtonCell"; title = "Create new message..."; ObjectID = "bDH-kk-3B7"; */
+"bDH-kk-3B7.title" = "Créer un nouveau message...";
+
+/* Class = "NSMenuItem"; title = "Subject"; ObjectID = "hlu-t6-pFO"; */
+"hlu-t6-pFO.title" = "Sujet";
+
+/* Class = "NSMenuItem"; title = "Date"; ObjectID = "xEZ-nR-kFJ"; */
+"xEZ-nR-kFJ.title" = "Date";
+

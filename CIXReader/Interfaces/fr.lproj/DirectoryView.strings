@@ -1,0 +1,57 @@
+/* Class = "NSMenuItem"; title = "Popularity"; ObjectID = "3eY-ZX-S1K"; */
+"3eY-ZX-S1K.title" = "Popularité";
+
+/* Class = "NSTableColumn"; headerCell.title = "Name"; ObjectID = "54D-05-i7W"; */
+"54D-05-i7W.headerCell.title" = "Nom";
+
+/* Class = "NSTableColumn"; headerCell.title = "Popularity"; ObjectID = "Ccc-XV-Hrk"; */
+"Ccc-XV-Hrk.headerCell.title" = "Popularité";
+
+/* Class = "NSTextFieldCell"; title = "(Forum name)"; ObjectID = "HWU-3K-CGg"; */
+"HWU-3K-CGg.title" = "(Nom Forum)";
+
+/* Class = "NSMenuItem"; title = "Descending"; ObjectID = "JWd-eM-D1I"; */
+"JWd-eM-D1I.title" = "Descendant";
+
+/* Class = "NSMenuItem"; title = "Ascending"; ObjectID = "LDr-YW-qTp"; */
+"LDr-YW-qTp.title" = "Ascendant";
+
+/* Class = "NSTableColumn"; headerCell.title = "SubCategory"; ObjectID = "LER-14-vdE"; */
+"LER-14-vdE.headerCell.title" = "Sous-catégorie";
+
+/* Class = "NSButtonCell"; title = "Join..."; ObjectID = "N7h-dP-bFj"; */
+"N7h-dP-bFj.title" = "Joignez-vous à...";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "O1B-96-7nG"; */
+"O1B-96-7nG.title" = "Cellule de texte";
+
+/* Class = "NSMenuItem"; title = "SubCategory"; ObjectID = "OFC-zx-eF9"; */
+"OFC-zx-eF9.title" = "Sous-catégorie";
+
+/* Class = "NSMenuItem"; title = "Name"; ObjectID = "Uac-Ad-qUk"; */
+"Uac-Ad-qUk.title" = "Nom";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "XbL-QG-aJV"; */
+"XbL-QG-aJV.title" = "Cellule de texte";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "Zod-Ev-E3V"; */
+"Zod-Ev-E3V.title" = "Table View cellulaire";
+
+/* Class = "NSMenuItem"; title = "Description"; ObjectID = "bHu-xo-9c9"; */
+"bHu-xo-9c9.title" = "Description";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "hgD-Sf-LpQ"; */
+"hgD-Sf-LpQ.title" = "Cellule de texte";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "i14-PX-YIv"; */
+"i14-PX-YIv.title" = "Cellule de texte";
+
+/* Class = "NSTextFieldCell"; title = "(Forum title)"; ObjectID = "kcg-2e-1sX"; */
+"kcg-2e-1sX.title" = "(Titre Forum)";
+
+/* Class = "NSTableColumn"; headerCell.title = "Description"; ObjectID = "mkt-LF-dv4"; */
+"mkt-LF-dv4.headerCell.title" = "Description";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "ysK-c8-jyK"; */
+"ysK-c8-jyK.title" = "Cellule de texte";
+

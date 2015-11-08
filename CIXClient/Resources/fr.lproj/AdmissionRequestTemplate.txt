@@ -1,0 +1,9 @@
+Request from CIX user $username$.
+
+Please admit me to the $forum$ forum.
+
+Thanks,
+
+----------------------
+
+This is an auto-generated e-mail from CIX on behalf of $username$@cix.co.uk. Please do not reply directly to this email, as it will bounce.

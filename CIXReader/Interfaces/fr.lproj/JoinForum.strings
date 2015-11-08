@@ -1,0 +1,18 @@
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "N5S-0y-aVF"; */
+"N5S-0y-aVF.title" = "Annuler";
+
+/* Class = "NSWindow"; title = "Join Forum"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "Participe au forum";
+
+/* Class = "NSTextFieldCell"; title = "By clicking Join This Forum, you will be added to the forum participant list and you will be able to read and post to any topic in the forum."; ObjectID = "Za4-AE-ewL"; */
+"Za4-AE-ewL.title" = "En cliquant Rejoindre ce Forum, vous serez ajouté à la liste Forum participants et vous serez capable de lire et poster sur ne importe quel sujet dans le forum.";
+
+/* Class = "NSButtonCell"; title = "Join This Forum"; ObjectID = "aJ0-wD-6Ln"; */
+"aJ0-wD-6Ln.title" = "Rejoindre ce Forum";
+
+/* Class = "NSTextFieldCell"; title = "(Name)"; ObjectID = "fU6-h4-M3C"; */
+"fU6-h4-M3C.title" = "(Nom)";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "mhP-Ja-ecF"; */
+"mhP-Ja-ecF.title" = "Boîte";
+

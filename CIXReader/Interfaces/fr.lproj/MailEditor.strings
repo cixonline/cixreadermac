@@ -1,0 +1,27 @@
+/* Class = "NSMenuItem"; title = "None"; ObjectID = "4pQ-4L-qa2"; */
+"4pQ-4L-qa2.title" = "Aucun";
+
+/* Class = "NSTextFieldCell"; title = "Signature:"; ObjectID = "7Wg-gf-EIT"; */
+"7Wg-gf-EIT.title" = "Signature:";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "B0C-Mz-SfT"; */
+"B0C-Mz-SfT.title" = "Boîte";
+
+/* Class = "NSWindow"; title = "New Message"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "Nouveau message";
+
+/* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "REC-Tn-6ds"; */
+"REC-Tn-6ds.title" = "Pour:";
+
+/* Class = "NSTextFieldCell"; title = "Subject:"; ObjectID = "djO-Rd-pzz"; */
+"djO-Rd-pzz.title" = "Objet:";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "hnx-ZH-4W4"; */
+"hnx-ZH-4W4.title" = "Boîte";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "u5e-9f-QpL"; */
+"u5e-9f-QpL.title" = "OtherViews";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "vl7-8I-2M5"; */
+"vl7-8I-2M5.title" = "Boîte";
+

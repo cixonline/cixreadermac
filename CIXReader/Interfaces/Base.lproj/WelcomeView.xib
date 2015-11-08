@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8152.3" systemVersion="15A215h" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8152.3"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="WelcomeView">
+            <connections>
+                <outlet property="homePage" destination="8DB-YB-Uhy" id="87d-RB-wxa"/>
+                <outlet property="view" destination="evO-wI-8CE" id="mDt-9x-cGy"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="evO-wI-8CE" userLabel="Welcome View" customClass="CRView">
+            <rect key="frame" x="0.0" y="0.0" width="629" height="383"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="8DB-YB-Uhy" customClass="ArticleView">
+                    <rect key="frame" x="0.0" y="0.0" width="629" height="383"/>
+                    <animations/>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="8DB-YB-Uhy" secondAttribute="trailing" id="Xig-pn-k31"/>
+                <constraint firstItem="8DB-YB-Uhy" firstAttribute="leading" secondItem="evO-wI-8CE" secondAttribute="leading" id="YSa-he-UOm"/>
+                <constraint firstItem="8DB-YB-Uhy" firstAttribute="top" secondItem="evO-wI-8CE" secondAttribute="top" id="ed9-ZK-fVa"/>
+                <constraint firstAttribute="bottom" secondItem="8DB-YB-Uhy" secondAttribute="bottom" id="yGV-pk-SPy"/>
+            </constraints>
+            <animations/>
+            <connections>
+                <outlet property="delegate" destination="-2" id="l1X-BV-ED1"/>
+            </connections>
+            <point key="canvasLocation" x="106.5" y="144.5"/>
+        </customView>
+    </objects>
+</document>

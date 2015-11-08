@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8152.3" systemVersion="15A215h" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8152.3"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="UpdatePreferences">
+            <connections>
+                <outlet property="checkForUpdates" destination="qVV-h6-F7n" id="z0T-LR-iW8"/>
+                <outlet property="useBetaReleases" destination="ASS-xj-vGa" id="b3C-p5-0RN"/>
+                <outlet property="view" destination="9Rx-is-lni" id="6hH-Wr-JZI"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="9Rx-is-lni">
+            <rect key="frame" x="0.0" y="0.0" width="472" height="289"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="ASS-xj-vGa">
+                    <rect key="frame" x="144" y="231" width="310" height="18"/>
+                    <animations/>
+                    <buttonCell key="cell" type="check" title="Include beta releases in checks for updates" bezelStyle="regularSquare" imagePosition="left" inset="2" id="S1b-Ji-I3q">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="changeUseBetaReleases:" target="-2" id="noD-o4-pYo"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="qVV-h6-F7n">
+                    <rect key="frame" x="144" y="251" width="310" height="18"/>
+                    <animations/>
+                    <buttonCell key="cell" type="check" title="Automatically check for updates" bezelStyle="regularSquare" imagePosition="left" inset="2" id="UjV-jh-DPo">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="changeCheckForUpdates:" target="-2" id="MgM-kq-rYm"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EIt-4Y-gxO">
+                    <rect key="frame" x="18" y="252" width="122" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="118" id="jI0-Yc-gNs"/>
+                    </constraints>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Updates:" id="vpU-zb-wKE">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NpB-Jg-igB">
+                    <rect key="frame" x="163" y="146" width="291" height="79"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="79" id="3GE-E8-7hH"/>
+                        <constraint firstAttribute="width" constant="287" id="Uwk-rJ-kx5"/>
+                    </constraints>
+                    <animations/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="wZ8-oC-SXs">
+                        <font key="font" metaFont="smallSystem"/>
+                        <string key="title">Beta releases are untested builds that are provided for people who like living at the bleeding edge. Don't install unless you know what you're doing and are willing to test and provide feedback.</string>
+                        <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="EIt-4Y-gxO" firstAttribute="baseline" secondItem="qVV-h6-F7n" secondAttribute="baseline" id="4lP-JZ-FdM"/>
+                <constraint firstItem="ASS-xj-vGa" firstAttribute="top" secondItem="qVV-h6-F7n" secondAttribute="bottom" constant="6" symbolic="YES" id="7uk-WS-l5z"/>
+                <constraint firstItem="qVV-h6-F7n" firstAttribute="leading" secondItem="EIt-4Y-gxO" secondAttribute="trailing" constant="8" symbolic="YES" id="GXi-tP-sRj"/>
+                <constraint firstItem="EIt-4Y-gxO" firstAttribute="top" secondItem="9Rx-is-lni" secondAttribute="top" constant="20" symbolic="YES" id="JZd-8o-NEK"/>
+                <constraint firstItem="ASS-xj-vGa" firstAttribute="trailing" secondItem="NpB-Jg-igB" secondAttribute="trailing" id="JjB-6O-Z4R"/>
+                <constraint firstItem="ASS-xj-vGa" firstAttribute="trailing" secondItem="qVV-h6-F7n" secondAttribute="trailing" id="L1N-gX-lIT"/>
+                <constraint firstItem="ASS-xj-vGa" firstAttribute="leading" secondItem="NpB-Jg-igB" secondAttribute="leading" constant="-19" id="VRO-jt-NxA"/>
+                <constraint firstItem="qVV-h6-F7n" firstAttribute="leading" secondItem="ASS-xj-vGa" secondAttribute="leading" id="WwZ-rc-5U6"/>
+                <constraint firstItem="NpB-Jg-igB" firstAttribute="top" secondItem="ASS-xj-vGa" secondAttribute="bottom" constant="8" symbolic="YES" id="lcj-gc-ur8"/>
+                <constraint firstItem="EIt-4Y-gxO" firstAttribute="leading" secondItem="9Rx-is-lni" secondAttribute="leading" constant="20" symbolic="YES" id="yiC-nQ-mLX"/>
+            </constraints>
+            <animations/>
+            <point key="canvasLocation" x="164" y="421.5"/>
+        </customView>
+    </objects>
+</document>

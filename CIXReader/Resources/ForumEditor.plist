@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>Manage Forum</string>
+	<key>1</key>
+	<dict>
+		<key>Title</key>
+		<string>General</string>
+		<key>ClassName</key>
+		<string>GeneralForumEditor</string>
+		<key>Image</key>
+		<string>generalForumEditorImage.tiff</string>
+	</dict>
+    <key>2</key>
+    <dict>
+        <key>Title</key>
+        <string>Moderators</string>
+        <key>ClassName</key>
+        <string>ModeratorForumEditor</string>
+        <key>Image</key>
+        <string>moderatorForumEditorImage.tiff</string>
+    </dict>
+    <key>3</key>
+    <dict>
+        <key>Title</key>
+        <string>Participants</string>
+        <key>ClassName</key>
+        <string>ParticipantForumEditor</string>
+        <key>Image</key>
+        <string>participantForumEditorImage.tiff</string>
+    </dict>
+</dict>
+</plist>

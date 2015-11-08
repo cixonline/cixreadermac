@@ -1,0 +1,42 @@
+/* Class = "NSButtonCell"; title = "No count"; ObjectID = "1dN-qy-IXs"; */
+"1dN-qy-IXs.title" = "Aucun chef d'accusation";
+
+/* Class = "NSTextFieldCell"; title = "Startup:"; ObjectID = "KcO-f7-JLq"; */
+"KcO-f7-JLq.title" = "Commencez:";
+
+/* Class = "NSButtonCell"; title = "Number of unread messages"; ObjectID = "L16-xg-OxQ"; */
+"L16-xg-OxQ.title" = "Nombre de messages non lus";
+
+/* Class = "NSButtonCell"; title = "Create session debug log"; ObjectID = "PaE-iL-hmD"; */
+"PaE-iL-hmD.title" = "Créer une session journal de débogage";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "Fenêtre";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "Sbd-kS-San"; */
+"Sbd-kS-San.title" = "Boîte";
+
+/* Class = "NSButtonCell"; title = "Start in offline mode"; ObjectID = "XIg-GG-tzx"; */
+"XIg-GG-tzx.title" = "Lancer en mode déconnecté";
+
+/* Class = "NSTextFieldCell"; title = "Application Badge:"; ObjectID = "fD2-6k-SO3"; */
+"fD2-6k-SO3.title" = "Badge Application:";
+
+/* Class = "NSTextFieldCell"; title = "Logging:"; ObjectID = "qde-fp-TAP"; */
+"qde-fp-TAP.title" = "Logging:";
+
+/* Class = "NSButtonCell"; title = "Open Log File"; ObjectID = "r1G-Iv-6gh"; */
+"r1G-Iv-6gh.title" = "Ouvrir le fichier journal";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "tLg-5B-25w"; */
+"tLg-5B-25w.title" = "Radio";
+
+/* Class = "NSButtonCell"; title = "Archive old debug logs"; ObjectID = "tfS-hv-Md9"; */
+"tfS-hv-Md9.title" = "Archives journaux vieux de débogage";
+
+/* Class = "NSButtonCell"; title = "Number of unread priority messages"; ObjectID = "xVU-ar-PET"; */
+"xVU-ar-PET.title" = "Nombre de messages non lus prioritaires";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "ydl-gN-0O2"; */
+"ydl-gN-0O2.title" = "Boîte";
+

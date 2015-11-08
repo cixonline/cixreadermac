@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "96899624-8869-4c68-9610-650adade59b7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "96899624-8869-4c68-9610-650adade59b7" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "96899624-8869-4c68-9610-650adade59b7" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6E9BF6CE-49A2-4917-BB93-B56664036342",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "96899624-8869-4c68-9610-650adade59b7" : "CIXReaderMac"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CIXReader",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "trunk\/CIXReader.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/svn.cix.co.uk\/CIXReaderMac",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "96899624-8869-4c68-9610-650adade59b7"
+    }
+  ]
+}

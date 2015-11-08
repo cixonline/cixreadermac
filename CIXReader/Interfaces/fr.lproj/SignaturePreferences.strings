@@ -1,0 +1,36 @@
+/* Class = "NSButtonCell"; title = "Edit..."; ObjectID = "1Ct-mw-hTr"; */
+"1Ct-mw-hTr.title" = "Modifier...";
+
+/* Class = "NSButtonCell"; title = "New..."; ObjectID = "CNG-ge-hdF"; */
+"CNG-ge-hdF.title" = "New...";
+
+/* Class = "NSButtonCell"; title = "Delete"; ObjectID = "EvH-uF-Mx3"; */
+"EvH-uF-Mx3.title" = "Effacer";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "FJh-tr-LEm"; */
+"FJh-tr-LEm.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "None"; ObjectID = "JVU-bq-WvH"; */
+"JVU-bq-WvH.title" = "Aucun";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "Fenêtre";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "RAN-bU-wh4"; */
+"RAN-bU-wh4.title" = "Annuler";
+
+/* Class = "NSTextFieldCell"; title = "Title:"; ObjectID = "cq1-7Z-Vcn"; */
+"cq1-7Z-Vcn.title" = "Titre:";
+
+/* Class = "NSTableColumn"; headerCell.title = "Title"; ObjectID = "f00-q8-y30"; */
+"f00-q8-y30.headerCell.title" = "Titre";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "gp9-PD-Yh6"; */
+"gp9-PD-Yh6.title" = "Enregistrer";
+
+/* Class = "NSTextFieldCell"; title = "Default Signature:"; ObjectID = "tle-XX-4cI"; */
+"tle-XX-4cI.title" = "Signature par défaut:";
+
+/* Class = "NSPanel"; title = "Panel"; ObjectID = "wcw-Nk-HK4"; */
+"wcw-Nk-HK4.title" = "Panneau";
+

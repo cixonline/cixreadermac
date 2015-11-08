@@ -1,0 +1,36 @@
+/* Class = "NSTextFieldCell"; title = "(Sample)"; ObjectID = "5KA-G3-30v"; */
+"5KA-G3-30v.title" = "(Échantillon)";
+
+/* Class = "NSTextFieldCell"; title = "Editor font:"; ObjectID = "8gQ-oK-XLW"; */
+"8gQ-oK-XLW.title" = "Editeur police:";
+
+/* Class = "NSButtonCell"; title = "Select..."; ObjectID = "45u-vX-zPN"; */
+"45u-vX-zPN.title" = "Sélectionnez...";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "Fenêtre";
+
+/* Class = "NSTextFieldCell"; title = "Folder list font:"; ObjectID = "cAU-5v-5qN"; */
+"cAU-5v-5qN.title" = "Liste des dossiers de la police:";
+
+/* Class = "NSTextFieldCell"; title = "(Sample)"; ObjectID = "cTe-8x-3i5"; */
+"cTe-8x-3i5.title" = "(Échantillon)";
+
+/* Class = "NSButtonCell"; title = "Select..."; ObjectID = "cTq-1M-bxq"; */
+"cTq-1M-bxq.title" = "Sélectionnez...";
+
+/* Class = "NSTextFieldCell"; title = "Message list font:"; ObjectID = "dOn-M0-YBk"; */
+"dOn-M0-YBk.title" = "Liste des messages police:";
+
+/* Class = "NSButtonCell"; title = "Select..."; ObjectID = "e5n-KH-p4a"; */
+"e5n-KH-p4a.title" = "Sélectionnez...";
+
+/* Class = "NSTextFieldCell"; title = "Style:"; ObjectID = "lhd-BV-QRJ"; */
+"lhd-BV-QRJ.title" = "Style:";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "m5Z-Vb-ugm"; */
+"m5Z-Vb-ugm.title" = "Boîte";
+
+/* Class = "NSTextFieldCell"; title = "(Sample)"; ObjectID = "rWc-Ud-W49"; */
+"rWc-Ud-W49.title" = "(Échantillon)";
+

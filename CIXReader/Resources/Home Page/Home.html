@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title>CIXReader Home Page</title>
+        <style>
+            h1 {
+                font-family:Arial,sans-serif;
+                font-size: 24px;
+                padding: 0;
+                margin: 0;
+            }
+        h2 {
+            font-family:Arial,sans-serif;
+            font-size: 18px;
+            padding: 5px 0 0 0;
+            margin: 0;
+        }
+        p {
+            font-family:Verdana,Arial,sans-serif;
+            font-size: 12px;
+            font-style: normal;
+        }
+        td.title {
+            vertical-align: top;
+            width: 100px;
+        }
+        td.body {
+            vertical-align: top;
+            align: left;
+        }
+        div.i1 {
+            float: left;
+            padding: 0;
+            margin-top: 5px;
+            height: 60px;
+            width: 60px;
+        }
+        div.i4 {
+            float: left;
+            padding-right: 15px;
+            margin-top: 5px;
+            height: 60px;
+        }
+        div.i2 {
+            float:left;
+            display: inline-flex;
+            padding: 0;
+            height: 60px;
+            width: 80%;
+        }
+        div.i3 {
+            margin: auto 1px;
+        }
+        div.reset {
+            clear:left
+        }
+        p.p1 {
+            padding: 0;
+            margin: 2px;
+            color: #7a7a7a
+        }
+        img.a3 {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        a:link {
+            text-decoration: none;
+            color: #7a7a7a
+        }
+        
+        a:visited {
+            text-decoration: none;
+            color: #7a7a7a
+        }
+        
+        a:hover {
+            text-decoration: none;
+            color: #7a7a7a
+        }
+        
+        a:active {
+            text-decoration: none;
+            color: #7a7a7a
+        }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td class="title"><img alt="CIX Logo" src="$Root$/CixReader.png" /></td>
+                <td class="body">
+                    <h1>Welcome to CIXReader</h1>
+                    <p>CIXReader is the new way to access CIX Forums on your desktop and read messages either off-line or on-line. Allows instant and draft postings, immediate access to whole topics, forums and automatically keeps in sync with the CIX Forums web interface.</p>
+                    <div id="interestingThreads" style="display:none">
+                        <div>
+                            <div class="i1">
+                                <a href="cixuser:$Author$"><img class="a3" width=50 height=50 src="mugshot:$Author$" /></a>
+                            </div>
+                            <div class="i2">
+                                <div class="i3">
+                                    <p class="p1"><a href="cix:$Link$:$RootID$">$Subject$</a></p>
+                                    <p class="p1"><a href="cixuser:$Author$">Written by $Author$</a> ∙ <a href="cix:$Link$:$RootID$">$Link$</a> ∙ posted $Date$</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reset"></div>
+                    </div>
+                    <div id="onlineUsers" style="display:none">
+                        <div class="i4">
+                            <div>
+                                <a href="cixuser:$User$"><img class="a3" height=50 src="mugshot:$User$" /></a>
+                            </div>
+                            <p class="p1">$User$</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

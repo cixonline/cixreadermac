@@ -1,0 +1,90 @@
+/* Class = "NSMenuItem"; title = "contains"; ObjectID = "1GU-lX-khc"; */
+"1GU-lX-khc.title" = "contient";
+
+/* Class = "NSTableColumn"; headerCell.title = "Active"; ObjectID = "3hS-U8-bF4"; */
+"3hS-U8-bF4.headerCell.title" = "Actif";
+
+/* Class = "NSPanel"; title = "Panel"; ObjectID = "4hH-ZH-nJ9"; */
+"4hH-ZH-nJ9.title" = "Panneau";
+
+/* Class = "NSTextFieldCell"; title = "Match the following condition:"; ObjectID = "5dQ-NU-i4I"; */
+"5dQ-NU-i4I.title" = "Correspondre à la condition suivante:";
+
+/* Class = "NSButtonCell"; title = "New Rule"; ObjectID = "8fP-Ph-W79"; */
+"8fP-Ph-W79.title" = "Nouvelle règle";
+
+/* Class = "NSButtonCell"; title = "Mark message read"; ObjectID = "8vT-bq-Kp9"; */
+"8vT-bq-Kp9.title" = "Mark message lu";
+
+/* Class = "NSTextFieldCell"; title = "Title:"; ObjectID = "72A-Zx-QFB"; */
+"72A-Zx-QFB.title" = "Titre:";
+
+/* Class = "NSButtonCell"; title = "Delete"; ObjectID = "EQr-fs-d9c"; */
+"EQr-fs-d9c.title" = "Effacer";
+
+/* Class = "NSMenuItem"; title = "name"; ObjectID = "J53-3T-pvf"; */
+"J53-3T-pvf.title" = "nom";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "LFI-HR-3KZ"; */
+"LFI-HR-3KZ.title" = "Annuler";
+
+/* Class = "NSTextFieldCell"; title = "For successful matches, apply the following action:"; ObjectID = "Pe5-2f-F1G"; */
+"Pe5-2f-F1G.title" = "Pour les correspondances réussies, appliquer les mesures suivantes:";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "Fenêtre";
+
+/* Class = "NSButtonCell"; title = "Reset"; ObjectID = "Sgp-Vy-0Ct"; */
+"Sgp-Vy-0Ct.title" = "Remettre";
+
+/* Class = "NSButtonCell"; title = "Mark message priority"; ObjectID = "TFr-Ib-tVR"; */
+"TFr-Ib-tVR.title" = "Mark priorité du message";
+
+/* Class = "NSMenuItem"; title = "All"; ObjectID = "Uk4-sK-u7N"; */
+"Uk4-sK-u7N.title" = "Tous";
+
+/* Class = "NSMenuItem"; title = "Any"; ObjectID = "WJg-Np-t1j"; */
+"WJg-Np-t1j.title" = "Tout";
+
+/* Class = "NSMenuItem"; title = "is"; ObjectID = "Wtv-mp-qI3"; */
+"Wtv-mp-qI3.title" = "est";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "YAl-E3-mN6"; */
+"YAl-E3-mN6.title" = "Enregistrer";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "Z4Q-XH-7qG"; */
+"Z4Q-XH-7qG.title" = "Boîte";
+
+/* Class = "NSMenuItem"; title = "ends with"; ObjectID = "ZTf-4W-Fu8"; */
+"ZTf-4W-Fu8.title" = "se termine par";
+
+/* Class = "NSMenuItem"; title = "address"; ObjectID = "c5J-k6-gdG"; */
+"c5J-k6-gdG.title" = "adresse";
+
+/* Class = "NSMenuItem"; title = "is not"; ObjectID = "dcm-rq-cX1"; */
+"dcm-rq-cX1.title" = "ne est pas";
+
+/* Class = "NSMenuItem"; title = "sign"; ObjectID = "g3i-ym-uCE"; */
+"g3i-ym-uCE.title" = "signe";
+
+/* Class = "NSButtonCell"; title = "Set flag on message"; ObjectID = "geY-8x-IDV"; */
+"geY-8x-IDV.title" = "Ensemble drapeau sur un message";
+
+/* Class = "NSMenuItem"; title = "begins with"; ObjectID = "gm8-p2-nAV"; */
+"gm8-p2-nAV.title" = "commence par";
+
+/* Class = "NSButtonCell"; title = "Edit Rule"; ObjectID = "iKU-6W-v97"; */
+"iKU-6W-v97.title" = "Modifier la règle";
+
+/* Class = "NSMenuItem"; title = "of the following are true"; ObjectID = "jam-4D-57Q"; */
+"jam-4D-57Q.title" = "des conditions suivantes sont remplies";
+
+/* Class = "NSTableColumn"; headerCell.title = "Description"; ObjectID = "kw2-yr-PGJ"; */
+"kw2-yr-PGJ.headerCell.title" = "Description";
+
+/* Class = "NSButtonCell"; title = "Mark message ignored"; ObjectID = "mz3-d2-ECT"; */
+"mz3-d2-ECT.title" = "Marquer le message ignoré";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "yqP-xQ-6hR"; */
+"yqP-xQ-6hR.title" = "Cellule de texte";
+

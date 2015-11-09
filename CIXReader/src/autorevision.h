@@ -1,3 +1,3 @@
-#define VCS_NUM	529
-#define FULL_VCS_NUM	1.51.529 Beta
-#define VCS_BETA	1
+#define VCS_NUM	604
+#define FULL_VCS_NUM	1.52.604
+#define VCS_BETA	0

@@ -6,7 +6,7 @@ cauto="${OBJROOT}/autorevision.cache"
 fauto="${SRCROOT}/CIXReader/src/autorevision.h"
 
 # Ensure svn update
-svn update
+git pull
 
 # Check our paths
 if [ ! -d "${BUILT_PRODUCTS_DIR}" ]; then
@@ -23,15 +23,18 @@ fi
 # Source the initial autorevision output for filtering.
 . "${cauto}"
 
+# Bump up GIT version number to base off the old SVN number
+VCS_NUM=$(($VCS_NUM + 600))
+
 # Trunk builds are always beta
 case "${VCS_BRANCH}" in
-    *trunk*)
+    *beta*)
         isbeta=1
-        FULL_VCS_NUM="1.51.${VCS_NUM} Beta"
+        FULL_VCS_NUM="1.52.${VCS_NUM} Beta"
     ;;
     *)
         isbeta=0
-        FULL_VCS_NUM="1.51.${VCS_NUM}"
+        FULL_VCS_NUM="1.52.${VCS_NUM}"
     ;;
 esac
 

@@ -2,6 +2,9 @@
 
 . "${OBJROOT}/autorevision.cache"
 
+# Bump up GIT version number to base off the old SVN number
+VCS_NUM=$(($VCS_NUM + 600))
+
 # values set in project-all.xcconfig
 VIENNA_UPLOADS_DIR="${BUILT_PRODUCTS_DIR}/Uploads"
 DOWNLOAD_BASE_URL="http://cixreader.cixhosting.co.uk/cixreader/osx"
@@ -12,7 +15,7 @@ else
     DOWNLOAD_SUB_DIR="beta";
 fi
 
-VERSION="1.51.${VCS_NUM}"
+VERSION="1.52.${VCS_NUM}"
 
 DMG_FILENAME="cr_osx${VERSION}.dmg"
 dSYM_FILENAME="cr_osx${VERSION}-dSYM"

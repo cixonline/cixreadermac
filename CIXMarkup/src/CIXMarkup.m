@@ -96,7 +96,7 @@ static int _blockQuoteDepth;
 
         char chAfterTag = [line characterAtIndex:endIndex + 1];
 
-        NSMutableCharacterSet * delimiterSet = [NSMutableCharacterSet characterSetWithCharactersInString:@"*/_."];
+        NSMutableCharacterSet * delimiterSet = [NSMutableCharacterSet characterSetWithCharactersInString:@"*/_.,"];
         [delimiterSet formUnionWithCharacterSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
         return [delimiterSet characterIsMember:chAfterTag];

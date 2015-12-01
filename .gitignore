@@ -1,0 +1,11 @@
+# User files
+*.xcuserstate
+
+# Temporary files
+.DS_Store
+
+# Build files
+Build/
+build/
+*.helpindex
+

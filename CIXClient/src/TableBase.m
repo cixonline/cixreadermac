@@ -62,6 +62,20 @@
     return [self allRowsWithQuery:@""];
 }
 
+/** Return the number of rows matching the specified query
+ 
+ @param queryString The SQL condition string to be used to filter the query
+ @return An integer count of rows matching the query
+ */
++(NSInteger)countRowsWithQuery:(NSString *)queryString
+{
+    NSInteger count = 0;
+    @synchronized(CIX.DBLock) {
+        count = [CIX.DB intForQuery:[NSString stringWithFormat:@"select count(*) from %@%@", [self.class tableName], queryString]];
+    }
+    return count;
+}
+
 /** Return an NSArray of all objects from the database filtered by a SQL query
 
  @param queryString The SQL condition string to be used to filter the query

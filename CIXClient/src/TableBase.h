@@ -14,6 +14,7 @@ typedef long long int ID_type;
 +(NSString *)tableName;
 +(NSArray *)allRows;
 +(NSArray *)allRowsWithQuery:(NSString *)queryString;
++(NSInteger)countRowsWithQuery:(NSString *)queryString;
 +(void)create;
 +(void)upgrade;
 -(void)save;

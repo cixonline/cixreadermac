@@ -232,6 +232,14 @@
     }
 }
 
+/* Manually refresh the forum details.
+ */
+-(IBAction)handleRefreshButton:(id)sender
+{
+    [_currentFolder refresh];
+    [self refreshForumView];
+}
+
 /* Respond to the rejoin button to let the user rejoin a forum
  * from which they've resigned.
  */

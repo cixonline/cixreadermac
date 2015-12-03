@@ -22,6 +22,7 @@
     IBOutlet NSButton * resignButton;
     IBOutlet NSButton * deleteButton;
     IBOutlet NSButton * participantsButton;
+    IBOutlet NSButton * refreshButton;
     IBOutlet NSButton * editButton;
     IBOutlet NSCollectionView * moderatorList;
     IBOutlet NSArrayController * arrayController;
@@ -36,5 +37,6 @@
 -(IBAction)handleResignButton:(id)sender;
 -(IBAction)handleDeleteButton:(id)sender;
 -(IBAction)handleEditButton:(id)sender;
+-(IBAction)handleRefreshButton:(id)sender;
 -(IBAction)handleParticipantsButton:(id)sender;
 @end

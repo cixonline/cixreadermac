@@ -195,6 +195,17 @@ static NSImage * rootFolderImage;
  */
 -(BOOL)refresh
 {
+    if (IsTopLevelFolder(self.folder))
+    {
+        [CIX.directoryCollection refreshForum:self.name];
+        DirForum * forum = [CIX.directoryCollection forumByName:self.name];
+        [forum refresh];
+
+        for (Folder * child in self.folder.children)
+            if ([child countOfMessages] > 0)
+                [child refresh];
+        return YES;
+    }
     [self.folder refresh];
     return YES;
 }

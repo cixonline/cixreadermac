@@ -240,6 +240,20 @@
     return [self.name compare:otherObject.name options:NSNumericSearch];
 }
 
+/** Return the number of messages in this folder
+ 
+ @return An integer count of messages in the folder.
+ */
+-(NSInteger)countOfMessages
+{
+    if (_messages != nil)
+        return [_messages count];
+
+    // Folder not loaded but we just want the count. So don't page them in unnecessarily
+    NSString * filter = [NSString stringWithFormat:@" where TopicID=%lld", self.ID];
+    return [Message countRowsWithQuery:filter];
+}
+
 /** Return all the messages in this folder.
  
  @return An NSArray of Message objects.

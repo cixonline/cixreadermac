@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ForumsView">
@@ -18,6 +18,7 @@
                 <outlet property="mainView" destination="xps-8O-IpQ" id="zTa-og-Fcs"/>
                 <outlet property="moderatorList" destination="1IY-EH-vsH" id="vlx-xR-eqP"/>
                 <outlet property="participantsButton" destination="VQ1-2m-pav" id="isK-fF-8Oc"/>
+                <outlet property="refreshButton" destination="7KR-4r-Xwd" id="sWk-Gz-twQ"/>
                 <outlet property="resignButton" destination="B3g-HO-uXq" id="J7d-ei-kl9"/>
                 <outlet property="resignedText" destination="0N3-1m-Dbd" id="VxC-1F-0RS"/>
                 <outlet property="resignedTextConstraint" destination="uI0-mD-qIs" id="1RF-9H-frz"/>
@@ -237,6 +238,17 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7KR-4r-Xwd">
+                    <rect key="frame" x="250" y="13" width="87" height="32"/>
+                    <animations/>
+                    <buttonCell key="cell" type="push" title="Refresh" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tyQ-BS-cYo">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="handleRefreshButton:" target="-2" id="uqu-cy-AoK"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="xgT-lh-5Uf" secondAttribute="bottom" constant="20" id="0HL-9o-QOu"/>
@@ -244,6 +256,7 @@
                 <constraint firstItem="yGx-pM-Gg6" firstAttribute="leading" secondItem="xps-8O-IpQ" secondAttribute="leading" constant="20" symbolic="YES" id="2sH-ld-u8H"/>
                 <constraint firstItem="Q9b-Hh-RV1" firstAttribute="leading" secondItem="xxi-GR-uYF" secondAttribute="leading" id="37o-Gt-xfl"/>
                 <constraint firstItem="y0K-mZ-cDa" firstAttribute="top" secondItem="iNX-cH-WQn" secondAttribute="bottom" constant="17" id="8FU-RH-rTg"/>
+                <constraint firstAttribute="bottom" secondItem="7KR-4r-Xwd" secondAttribute="bottom" constant="20" id="AGG-bb-O8c"/>
                 <constraint firstItem="Q9b-Hh-RV1" firstAttribute="leading" secondItem="3f6-S2-ksI" secondAttribute="leading" id="AOB-zb-yqU"/>
                 <constraint firstItem="xxi-GR-uYF" firstAttribute="top" secondItem="sIm-pc-rIK" secondAttribute="bottom" constant="8" id="BjN-t6-2XP"/>
                 <constraint firstItem="0N3-1m-Dbd" firstAttribute="top" secondItem="3f6-S2-ksI" secondAttribute="bottom" constant="8" id="Cp6-5p-C0K"/>
@@ -262,6 +275,7 @@
                 <constraint firstItem="3f6-S2-ksI" firstAttribute="trailing" secondItem="iNX-cH-WQn" secondAttribute="trailing" id="aGt-Z8-MHv"/>
                 <constraint firstItem="B3g-HO-uXq" firstAttribute="leading" secondItem="VQ1-2m-pav" secondAttribute="trailing" constant="12" id="c4w-wV-Drx"/>
                 <constraint firstAttribute="trailing" secondItem="xgT-lh-5Uf" secondAttribute="trailing" constant="12" id="cHe-kL-SGe"/>
+                <constraint firstItem="VQ1-2m-pav" firstAttribute="leading" secondItem="7KR-4r-Xwd" secondAttribute="trailing" constant="12" id="esQ-vY-uxv"/>
                 <constraint firstAttribute="trailing" secondItem="3f6-S2-ksI" secondAttribute="trailing" constant="20" id="ezK-Ui-U9e"/>
                 <constraint firstItem="tNP-Hz-UXj" firstAttribute="leading" secondItem="YN1-l5-PY7" secondAttribute="leading" id="fyj-bK-Hwo"/>
                 <constraint firstAttribute="bottom" secondItem="VQ1-2m-pav" secondAttribute="bottom" constant="20" id="ga9-l2-M7g"/>

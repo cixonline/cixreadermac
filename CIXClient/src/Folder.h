@@ -48,6 +48,7 @@ typedef enum {
 -(void)move:(Folder *)folder toAfter:(Folder *)nextFolder;
 -(void)reindex;
 -(NSArray *)children;
+-(NSInteger)countOfMessages;
 -(MessageCollection *)messages;
 -(Folder *)childByName:(NSString *)name;
 -(Message *)getCachedMessage:(Message *)message;

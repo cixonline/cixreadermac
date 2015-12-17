@@ -302,14 +302,13 @@
                                                    if (data != nil)
                                                    {
                                                        NSString * responseString = [APIRequest responseTextFromData:data];
-                                                       if ([responseString isEqualToString:@"Success"])
-                                                       {
-                                                           // Clear the flags
-                                                           self.readPending = NO;
-                                                           [self save];
 
+                                                       // Clear the flags whatever the response.
+                                                       self.readPending = NO;
+                                                       [self save];
+                                                       
+                                                       if ([responseString isEqualToString:@"Success"])
                                                            [LogFile.logFile writeLine:@"Conversation %d marked as read on server", self.remoteID];
-                                                       }
                                                    }
                                                }
                                            }];

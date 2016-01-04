@@ -948,6 +948,14 @@
         [_currentView action:ActionIDWithdraw];
 }
 
+/* Block the author of the selected message
+ */
+-(IBAction)handleBlock:(id)sender
+{
+    if ([_currentView canAction:ActionIDBlock])
+        [_currentView action:ActionIDBlock];
+}
+
 /* Go to the next unread message.
  */
 -(IBAction)handleNextUnread:(id)sender
@@ -1521,6 +1529,11 @@
             [self handleMarkStar:self];
             return YES;
             
+        case 'b':
+        case 'B':
+            [self handleBlock:self];
+            return YES;
+            
         case 'c':
         case 'C':
             [self handleComment:self];
@@ -1793,6 +1806,10 @@
         if (enabled)
             [menuItem setTitle:[_currentView titleForAction:ActionIDWithdraw]];
         return enabled;
+    }
+    if (theAction == @selector(handleBlock:))
+    {
+        return (mainIsKey && _currentView != nil) ? [_currentView canAction:ActionIDBlock] : NO;
     }
     if (theAction == @selector(handleFolderDelete:))
     {

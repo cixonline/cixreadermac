@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA6107B71C231AAF0094F8F8 /* PredicateExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = AA6107B51C231AAF0094F8F8 /* PredicateExtensions.h */; };
+		AA6107B81C231AAF0094F8F8 /* PredicateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6107B61C231AAF0094F8F8 /* PredicateExtensions.m */; };
 		AA6AA29419BA06F80058B0D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6AA29319BA06F80058B0D2 /* Cocoa.framework */; };
 		AA6AA2EF19BA082C0058B0D2 /* FileManagerExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = AA6AA2E219BA082C0058B0D2 /* FileManagerExtensions.h */; };
 		AA6AA2F019BA082C0058B0D2 /* FileManagerExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6AA2E319BA082C0058B0D2 /* FileManagerExtensions.m */; };
@@ -41,6 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AA6107B51C231AAF0094F8F8 /* PredicateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PredicateExtensions.h; path = src/PredicateExtensions.h; sourceTree = "<group>"; };
+		AA6107B61C231AAF0094F8F8 /* PredicateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PredicateExtensions.m; path = src/PredicateExtensions.m; sourceTree = "<group>"; };
 		AA6AA29019BA06F80058B0D2 /* libCIXExtensions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCIXExtensions.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6AA29319BA06F80058B0D2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AA6AA29619BA06F80058B0D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -148,6 +152,8 @@
 				AAD42B5319C0933E003F1D55 /* ImageExtensions.m */,
 				AAE8211D19E4407B00B7B3A1 /* PopUpButtonExtensions.h */,
 				AAE8211E19E4407B00B7B3A1 /* PopUpButtonExtensions.m */,
+				AA6107B51C231AAF0094F8F8 /* PredicateExtensions.h */,
+				AA6107B61C231AAF0094F8F8 /* PredicateExtensions.m */,
 				AACC6BCA1A03D01A00778E49 /* SplitViewExtensions.h */,
 				AACC6BCB1A03D01A00778E49 /* SplitViewExtensions.m */,
 				AA6AA2E619BA082C0058B0D2 /* StringExtensions.h */,
@@ -170,6 +176,7 @@
 				AA6AA2F819BA09FC0058B0D2 /* CIXExtensions-Prefix.pch in Headers */,
 				AAD42B5419C0933E003F1D55 /* ImageExtensions.h in Headers */,
 				AA6AA2EF19BA082C0058B0D2 /* FileManagerExtensions.h in Headers */,
+				AA6107B71C231AAF0094F8F8 /* PredicateExtensions.h in Headers */,
 				AAA0A98A1A17A6FE0047F2B7 /* DateExtensions.h in Headers */,
 				AAAC4F5C1A1407BD00498F85 /* URLSessionExtensions.h in Headers */,
 				AAD42B4719C05ED7003F1D55 /* ButtonExtensions.h in Headers */,
@@ -256,6 +263,7 @@
 				AAA0A98B1A17A6FE0047F2B7 /* DateExtensions.m in Sources */,
 				AAD42B4819C05ED7003F1D55 /* ButtonExtensions.m in Sources */,
 				AAE8212019E4407B00B7B3A1 /* PopUpButtonExtensions.m in Sources */,
+				AA6107B81C231AAF0094F8F8 /* PredicateExtensions.m in Sources */,
 				AA6AA2F019BA082C0058B0D2 /* FileManagerExtensions.m in Sources */,
 				AA6AA2F419BA082C0058B0D2 /* StringExtensions.m in Sources */,
 				AAD42B5519C0933E003F1D55 /* ImageExtensions.m in Sources */,

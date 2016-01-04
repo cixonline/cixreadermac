@@ -40,7 +40,8 @@ typedef enum
     ActionIDScrollMessage,
     ActionIDCopyLink,
     ActionIDParticipants,
-    ActionIDExpandCollapseThread
+    ActionIDExpandCollapseThread,
+    ActionIDBlock
 } ActionID;
 
 #define Sort_Date           1

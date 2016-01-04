@@ -21,6 +21,29 @@
     return self;
 }
 
+/* Block the specified user by creating a rule to mark messages by
+ * that specified author as read.
+ */
+-(void)block:(NSString *)username
+{
+    NSString * title = [NSString stringWithFormat:@"Block messages from %@", username];
+    
+    if ([self ruleByTitle:title])
+        return;
+
+    Rule * newRule = [Rule new];
+    [CIX.ruleCollection addRule:newRule];
+
+    newRule.title = title;
+    newRule.predicate = [NSPredicate predicateWithFormat:@"author == %@", username];
+    newRule.active = YES;
+    newRule.actionCode = CC_Rule_Unread|CC_Rule_Clear;
+    
+    [CIX.ruleCollection save];
+    
+    [CIX.folderCollection applyRule:newRule];
+}
+
 /* Create the default list of rules.
  */
 -(void)createDefaultRules
@@ -134,49 +157,67 @@
 -(void)applyRules:(Message *)message
 {
     for (Rule * rule in _allRules)
-        if (rule.active && [rule.predicate evaluateWithObject:message])
-        {
-            BOOL isClear = (rule.actionCode & CC_Rule_Clear) == CC_Rule_Clear;
-            if ((rule.actionCode & CC_Rule_Unread) == CC_Rule_Unread)
-            {
-                if (!message.readLocked)
-                {
-                    BOOL oldState = message.unread;
-                    message.unread = !isClear;
-                    if (oldState != message.unread)
-                    {
-                        message.readPending = YES;
-                        
-                        Folder * folder = [CIX.folderCollection folderByID:message.topicID];
-                        folder.markReadRangePending = YES;
-                    }
-                }
-            }
-            
-            if ((rule.actionCode & CC_Rule_Priority) == CC_Rule_Priority)
-                message.priority = !isClear;
-            
-            if ((rule.actionCode & CC_Rule_Ignored) == CC_Rule_Ignored)
-            {
-                message.ignored = !isClear;
-                if (message.ignored && message.unread)
-                {
-                    message.unread = NO;
-                    message.readPending = YES;
+        [self applyRule:rule toMessage:message];
+}
 
+-(BOOL)applyRule:(Rule *)rule toMessage:(Message *)message;
+{
+    BOOL changed = NO;
+    if (rule.active && [rule.predicate evaluateWithObject:message])
+    {
+        BOOL isClear = (rule.actionCode & CC_Rule_Clear) == CC_Rule_Clear;
+        if ((rule.actionCode & CC_Rule_Unread) == CC_Rule_Unread)
+        {
+            if (!message.readLocked)
+            {
+                BOOL oldState = message.unread;
+                message.unread = !isClear;
+                if (oldState != message.unread)
+                {
+                    message.readPending = YES;
+                    
                     Folder * folder = [CIX.folderCollection folderByID:message.topicID];
                     folder.markReadRangePending = YES;
+                    
+                    changed = YES;
                 }
             }
-            
-            if ((rule.actionCode & CC_Rule_Flag) == CC_Rule_Flag)
+        }
+        
+        if ((rule.actionCode & CC_Rule_Priority) == CC_Rule_Priority)
+        {
+            BOOL oldPriority = message.priority;
+            message.priority = !isClear;
+            changed = message.priority != oldPriority;
+        }
+        
+        if ((rule.actionCode & CC_Rule_Ignored) == CC_Rule_Ignored)
+        {
+            message.ignored = !isClear;
+            if (message.ignored && message.unread)
             {
-                BOOL oldState = message.starred;
-                message.starred = !isClear;
-                if (oldState != message.starred)
-                    message.starPending = YES;
+                message.unread = NO;
+                message.readPending = YES;
+
+                Folder * folder = [CIX.folderCollection folderByID:message.topicID];
+                folder.markReadRangePending = YES;
+                
+                changed = YES;
             }
         }
+        
+        if ((rule.actionCode & CC_Rule_Flag) == CC_Rule_Flag)
+        {
+            BOOL oldState = message.starred;
+            message.starred = !isClear;
+            if (oldState != message.starred)
+            {
+                message.starPending = YES;
+                changed = YES;
+            }
+        }
+    }
+    return changed;
 }
 
 /* Support fast enumeration on the folders list.

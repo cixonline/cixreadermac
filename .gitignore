@@ -1,4 +1,6 @@
 # User files
+xcuserdata/
+*.xcuserdatad
 *.xcuserstate
 
 # Temporary files

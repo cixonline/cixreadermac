@@ -75,6 +75,7 @@
 -(IBAction)handleGoToNextRoot:(id)sender;
 -(IBAction)handleGoToPreviousRoot:(id)sender;
 -(IBAction)handleWithdraw:(id)sender;
+-(IBAction)handleBlock:(id)sender;
 -(IBAction)handleShowProfile:(id)sender;
 -(IBAction)handleBiggerText:(id)sender;
 -(IBAction)handleSmallerText:(id)sender;

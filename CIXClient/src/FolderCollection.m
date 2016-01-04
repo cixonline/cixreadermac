@@ -14,6 +14,7 @@
 #import "InterestingThreads.h"
 #import "MessageResultSet.h"
 #import "DateExtensions.h"
+#import "PredicateExtensions.h"
 #import "StarSet.h"
 #import "CIXThread.h"
 
@@ -268,6 +269,22 @@
     NSArray * pending = [self syncWithCache:[Message allRowsWithQuery:[NSString stringWithFormat:@" where withdrawPending=1"]]];
     for (Message * message in pending)
         [message sync];
+}
+
+/* Apply the specified rule
+ */
+-(void)applyRule:(Rule *)rule
+{
+    NSArray * messages = [self syncWithCache:[Message allRowsWithQuery:[NSString stringWithFormat:@" where %@" ,rule.predicate.SQL]]];
+    NSMutableArray * changedFolders = [NSMutableArray array];
+    for (Message * message in messages)
+    {
+        if ([CIX.ruleCollection applyRule:rule toMessage:message])
+        {
+            [message save];
+            [changedFolders addObject:message.topic];
+        }
+    }
 }
 
 /** Retrieve the list of interesting threads

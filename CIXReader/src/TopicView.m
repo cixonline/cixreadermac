@@ -265,6 +265,7 @@ static NSImage * threadOpenImage = nil;
         case ActionIDMarkPriority:
         case ActionIDMarkIgnore:
         case ActionIDReplyByMail:
+        case ActionIDBlock:
         case ActionIDMarkThreadRead: {
             Message * message = [self selectedMessage];
             return message != nil && !message.isPseudo;
@@ -518,6 +519,22 @@ static NSImage * threadOpenImage = nil;
         case ActionIDMarkThreadRead: {
             Message * message = [self selectedMessage];
             [message markReadThread];
+            break;
+        }
+            
+        case ActionIDBlock: {
+            Message * message = [self selectedMessage];
+            NSInteger returnCode = NSRunAlertPanel(NSLocalizedString(@"Block User", nil),
+                                                   @"All existing messages and any new messages from %@ will automatically be marked as read. Are you sure?",
+                                                   NSLocalizedString(@"Yes", nil),
+                                                   NSLocalizedString(@"No", nil),
+                                                   nil,
+                                                   message.author);
+            if (returnCode == NSAlertDefaultReturn)
+            {
+                [[CIX ruleCollection] block:message.author];
+                [self refreshMessage:message];
+            }
             break;
         }
             
@@ -877,7 +894,14 @@ static NSImage * threadOpenImage = nil;
 {
     Response * response = notification.object;
     Message * message = response.object;
+    [self refreshMessage:message];
+}
 
+/* Find the specified message in the list and refresh the row, along with
+ * the message pane if necessary.
+ */
+-(void)refreshMessage:(Message *)message
+{
     NSUInteger rowIndex = [_messages indexOfObject:message];
     if (rowIndex != NSNotFound)
     {

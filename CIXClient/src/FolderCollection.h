@@ -7,6 +7,7 @@
 //
 
 #import "Folder.h"
+#import "Rule.h"
 
 @interface FolderCollection : NSObject <NSFastEnumeration> {
     NSMutableDictionary * _folders;
@@ -30,4 +31,5 @@
 -(NSInteger)totalUnread;
 -(NSInteger)totalUnreadPriority;
 -(void)refreshInterestingThreads;
+-(void)applyRule:(Rule *)rule;
 @end

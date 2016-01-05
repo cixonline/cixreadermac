@@ -401,7 +401,7 @@ static const int FirstRunInterval = 2.0;
     // Set a date formatter than can store and parse in SQLite format
     [_db setDateFormat:[self dateFormatter]];
     
-    // If database is pre-v3, do an upgrade
+    // If database is pre-v6, do an upgrade
     _global = [[Global alloc] init];
     [Global upgrade];
     if (_global.databaseVersion < 2)
@@ -412,6 +412,8 @@ static const int FirstRunInterval = 2.0;
         [Conversation upgrade];
     if (_global.databaseVersion < 5)
         [Profile upgrade];
+    if (_global.databaseVersion < 6)
+        [Folder upgrade];
     [_global setDatabaseVersion:LatestDatabaseVersion];
     
     return YES;

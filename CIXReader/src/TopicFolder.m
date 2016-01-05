@@ -99,7 +99,7 @@ static NSImage * rootFolderImage;
                                            nil,
                                            self.name);
     if (returnCode == NSAlertDefaultReturn)
-        [self.folder delete];
+        [self.folder delete:YES];
 }
 
 /* Resign this form or topic.

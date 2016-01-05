@@ -39,6 +39,7 @@ typedef enum {
 @property int unreadPriority;
 @property BOOL resignPending;
 @property BOOL markReadRangePending;
+@property BOOL deletePending;
 
 // Accessors
 -(Folder *)parentFolder;
@@ -53,7 +54,7 @@ typedef enum {
 -(Folder *)childByName:(NSString *)name;
 -(Message *)getCachedMessage:(Message *)message;
 -(void)markAllRead;
--(void)delete;
+-(void)delete:(BOOL)resign;
 -(void)resign;
 -(BOOL)isRecent;
 -(BOOL)isResigned;

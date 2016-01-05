@@ -22,7 +22,7 @@
 #define AccountTypeFull         0
 #define AccountTypeBasic        1
 
-#define LatestDatabaseVersion   5
+#define LatestDatabaseVersion   6
 
 @class FMDatabase;
 

@@ -638,8 +638,18 @@
                                                        else
                                                            [log writeLine:@"Successfully resigned from %@", self.name];
                                                        
+                                                       if (self.deletePending)
+                                                       {
+                                                           dispatch_async(dispatch_get_main_queue(),^{
+                                                               self.deletePending = NO;
+                                                               [self delete:NO];
+                                                               return;
+                                                           });
+                                                       }
+                                                       
                                                        self.resignPending = NO;
                                                        self.flags |= FolderFlagsResigned;
+                                                       
                                                        [self save];
                                                    }
                                                }
@@ -759,8 +769,16 @@
 /* Mark this folder as deleted and update
  * in the database.
  */
--(void)delete
+-(void)delete:(BOOL)resign
 {
+    if (resign && self.canResign)
+    {
+        self.deletePending = YES;
+        [self save];
+        [self resign];
+        return;
+    }
+    
     @synchronized(CIX.DBLock) {
         [CIX.DB beginTransaction];
         

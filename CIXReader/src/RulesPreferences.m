@@ -100,6 +100,7 @@
     
     NSNotificationCenter * nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(handleTextDidChange:) name:NSControlTextDidChangeNotification object:ruleTitle];
+    [nc addObserver:self selector:@selector(handleRuleAdded:) name:MARuleAdded object:nil];
 }
 
 /* Datasource for the table view. Return the total number of signatures in the
@@ -241,10 +242,11 @@
         _currentRule.actionCode = actionCode;
         [CIX.ruleCollection save];
 
-        _arrayOfRules = [CIX.ruleCollection allRules];
-        
-        NSInteger index = [_arrayOfRules indexOfObject:_currentRule];
-        [self reloadRules:index];
+        if (_currentRule != nil)
+        {
+            NSInteger index = [_arrayOfRules indexOfObject:_currentRule];
+            [rulesList reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:index] columnIndexes:[NSIndexSet indexSetWithIndex:1]];
+        }
     }
     [ruleEditorWindow orderOut:self];
     [[rulesList window] makeKeyAndOrderFront:self];
@@ -305,6 +307,17 @@
     [[ruleEditorHeight animator] setConstant:rowHeight*newRowCount];
     
     [self refreshRuleEditorButtons];
+}
+
+/* Respond to the notification that a new rule has been added and
+ * refresh the list.
+ */
+-(void)handleRuleAdded:(NSNotification *)nc
+{
+    _arrayOfRules = [CIX.ruleCollection allRules];
+    
+    NSInteger index = [_arrayOfRules indexOfObject:nc.object];
+    [self reloadRules:index];
 }
 
 /* This function is called when the contents of the title field is changed.

@@ -46,6 +46,8 @@
 #define MAMessageAdded                      @"CC_Notify_MessageAdded"
 #define MAMessageDeleted                    @"CC_Notify_MessageDeleted"
 
+#define MARuleAdded                         @"CC_Notify_RuleAdded"
+
 /** Notifies that a CIX service synchronisation has started
  
  This notification is broadcast when a CIX service synchronisation has started.

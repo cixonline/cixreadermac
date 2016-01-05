@@ -118,6 +118,11 @@
     if (_allRules == nil)
         _allRules = [NSMutableArray array];
     [_allRules addObject:value];
+
+    dispatch_async(dispatch_get_main_queue(),^{
+        NSNotificationCenter * nc = [NSNotificationCenter defaultCenter];
+        [nc postNotificationName:MARuleAdded object:value];
+    });
 }
 
 /** Delete the rule from the collection

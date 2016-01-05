@@ -279,11 +279,29 @@
     NSMutableArray * changedFolders = [NSMutableArray array];
     for (Message * message in messages)
     {
+        bool isUnread = message.unread;
         if ([CIX.ruleCollection applyRule:rule toMessage:message])
         {
             [message save];
-            [changedFolders addObject:message.topic];
+            if (message.unread != isUnread)
+            {
+                message.topic.unread += message.unread ? 1 : -1;
+                if (message.priority)
+                    message.topic.unreadPriority += message.unread ? 1 : -1;
+            }
+            if (![changedFolders containsObject:message.topic])
+                [changedFolders addObject:message.topic];
         }
+    }
+    // Notify interested parties that each folder has changed
+    for (Folder * folder in changedFolders)
+    {
+        dispatch_async(dispatch_get_main_queue(),^{
+            NSNotificationCenter * nc = [NSNotificationCenter defaultCenter];
+            Response * resp = [[Response alloc] initWithObject:nil];
+            resp.object = folder;
+            [nc postNotificationName:MAFolderRefreshed object:resp];
+        });
     }
 }
 

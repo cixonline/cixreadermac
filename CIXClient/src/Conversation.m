@@ -137,7 +137,7 @@
                 J_PMessageAdd * newMessage = [[J_PMessageAdd alloc] init];
                 newMessage.Body = [message.body quoteAttributes];
                 newMessage.Recipient = message.recipient;
-                newMessage.Subject = @"";
+                newMessage.Subject = self.subject;
 
                 NSURLRequest * request = [APIRequest post:@"personalmessage/add" withData:newMessage];
                 NSURLResponse * response;

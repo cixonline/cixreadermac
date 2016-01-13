@@ -170,6 +170,11 @@ static NSDictionary * _mapEmoticonToName = nil;
         NSString * linkPattern = @"(<a href=\"(http|https):.*?.(?:jpe?g|gif|png)\">)(.*?)(</a>)";
         NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:linkPattern options:NSRegularExpressionCaseInsensitive error:&error];
         [regex replaceMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@"$1<img width=30% border=\"0\" src=\"$3\" />$4"];
+        
+        // Look for src="https://www.dropbox.com" and append the raw marker to it.
+        linkPattern = @"(src=\")(https:\\/\\/www\\.dropbox\\.com.*)(\")";
+        regex = [NSRegularExpression regularExpressionWithPattern:linkPattern options:NSRegularExpressionCaseInsensitive error:&error];
+        [regex replaceMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@"$1$2?raw=1$3"];
     }
     
     // Replace emoticons with their graphical equivalent.

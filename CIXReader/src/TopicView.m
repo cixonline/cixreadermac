@@ -9,7 +9,6 @@
 #import "CIX.h"
 #import "TopicView.h"
 #import "MessageCellView.h"
-#import "ImageProtocol.h"
 #import "StringExtensions.h"
 #import "DateExtensions.h"
 #import "SplitViewExtensions.h"
@@ -91,7 +90,6 @@ static NSImage * threadOpenImage = nil;
         [nc addObserver:self selector:@selector(handleMessageDeleted:) name:MAMessageDeleted object:nil];
         [nc addObserver:self selector:@selector(handleFolderChanged:) name:MAFolderChanged object:nil];
 
-        [ImageProtocol registerProtocol];
         _didInitialise = YES;
     }
 }

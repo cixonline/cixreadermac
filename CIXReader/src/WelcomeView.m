@@ -9,7 +9,6 @@
 #import "WelcomeView.h"
 #import "AppDelegate.h"
 #import "CIXThread.h"
-#import "ImageProtocol.h"
 #import "DateExtensions.h"
 #import "StringExtensions.h"
 
@@ -43,8 +42,6 @@
         [nc addObserver:self selector:@selector(handleOnlineUsersChanged:) name:MAOnlineUsersRefreshed object:nil];
         [nc addObserver:self selector:@selector(handleInterestingThreadsChanged:) name:MAInterestingThreadsRefreshed object:nil];
         [nc addObserver:self selector:@selector(handleMugshotChanged:) name:MAUserMugshotChanged object:nil];
-        
-        [ImageProtocol registerProtocol];
         
         [homePage setFrameLoadDelegate:self];
         [homePage setHTML:htmlText];

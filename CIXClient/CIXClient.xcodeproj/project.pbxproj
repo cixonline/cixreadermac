@@ -95,6 +95,14 @@
 		AAA69EDF1A1A21F6000413FA /* AdmissionRequestTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = AAA69ED81A1A21E2000413FA /* AdmissionRequestTemplate.html */; };
 		AAA69EE01A1A2421000413FA /* AdmissionRequestTemplate.txt in Resources */ = {isa = PBXBuildFile; fileRef = AAA69EDC1A1A21EA000413FA /* AdmissionRequestTemplate.txt */; };
 		AAA69EE11A1A2435000413FA /* AdmissionRequestTemplate.txt in Resources */ = {isa = PBXBuildFile; fileRef = AAA69EDC1A1A21EA000413FA /* AdmissionRequestTemplate.txt */; };
+		AAA6E8691C47CBD600D00693 /* Attachment.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA6E8671C47CBD600D00693 /* Attachment.h */; };
+		AAA6E86A1C47CBD600D00693 /* Attachment.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA6E8681C47CBD600D00693 /* Attachment.m */; };
+		AAA6E86B1C47CC7C00D00693 /* Attachment.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA6E8681C47CBD600D00693 /* Attachment.m */; };
+		AAA6E86C1C47CC8000D00693 /* Attachment.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA6E8671C47CBD600D00693 /* Attachment.h */; };
+		AAA6E86F1C47CF4B00D00693 /* Attachment2.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA6E86D1C47CF4B00D00693 /* Attachment2.h */; };
+		AAA6E8701C47CF4B00D00693 /* Attachment2.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA6E86D1C47CF4B00D00693 /* Attachment2.h */; };
+		AAA6E8711C47CF4B00D00693 /* Attachment2.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA6E86E1C47CF4B00D00693 /* Attachment2.m */; };
+		AAA6E8721C47CF4B00D00693 /* Attachment2.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA6E86E1C47CF4B00D00693 /* Attachment2.m */; };
 		AAAC4F501A13C77700498F85 /* Global.h in Headers */ = {isa = PBXBuildFile; fileRef = AAAC4F4E1A13C77700498F85 /* Global.h */; };
 		AAAC4F511A13C77700498F85 /* Global.h in Headers */ = {isa = PBXBuildFile; fileRef = AAAC4F4E1A13C77700498F85 /* Global.h */; };
 		AAAC4F521A13C77700498F85 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAC4F4F1A13C77700498F85 /* Global.m */; };
@@ -356,6 +364,10 @@
 		AAA69EDB1A1A21EA000413FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text; name = en; path = en.lproj/AdmissionRequestTemplate.txt; sourceTree = "<group>"; };
 		AAA69EDD1A1A21EF000413FA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text; name = fr; path = fr.lproj/AdmissionRequestTemplate.txt; sourceTree = "<group>"; };
 		AAA69EDE1A1A21F3000413FA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/AdmissionRequestTemplate.html; sourceTree = "<group>"; };
+		AAA6E8671C47CBD600D00693 /* Attachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attachment.h; sourceTree = "<group>"; };
+		AAA6E8681C47CBD600D00693 /* Attachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attachment.m; sourceTree = "<group>"; };
+		AAA6E86D1C47CF4B00D00693 /* Attachment2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attachment2.h; sourceTree = "<group>"; };
+		AAA6E86E1C47CF4B00D00693 /* Attachment2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attachment2.m; sourceTree = "<group>"; };
 		AAAC4F4E1A13C77700498F85 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		AAAC4F4F1A13C77700498F85 /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
 		AAAC4F541A13F22D00498F85 /* StarAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarAdd.h; sourceTree = "<group>"; };
@@ -628,6 +640,8 @@
 		AAB5B8AF19B4903900A43901 /* Tables */ = {
 			isa = PBXGroup;
 			children = (
+				AAA6E8671C47CBD600D00693 /* Attachment.h */,
+				AAA6E8681C47CBD600D00693 /* Attachment.m */,
 				AA5D33811B551D1D00A5E2A7 /* CIXThread.h */,
 				AA5D33821B551D1D00A5E2A7 /* CIXThread.m */,
 				AAB5B88F19B4902B00A43901 /* DirCategory.h */,
@@ -696,6 +710,8 @@
 			children = (
 				AABC6B1619C9AF8D00B4A563 /* Account.h */,
 				AABC6B1719C9AF8D00B4A563 /* Account.m */,
+				AAA6E86D1C47CF4B00D00693 /* Attachment2.h */,
+				AAA6E86E1C47CF4B00D00693 /* Attachment2.m */,
 				AAC0E0C119D488A1002003E7 /* CategoryResultSet.h */,
 				AAC0E0C219D488A1002003E7 /* CategoryResultSet.m */,
 				AABAC4F119D1BE0C004FED4F /* ConversationInboxSet.h */,
@@ -805,6 +821,7 @@
 				AABAC4F719D1DC3F004FED4F /* PMessageGet.h in Headers */,
 				AAD1A55F19B64D30006CA79D /* MailCollection.h in Headers */,
 				AABCF6D719F6A24100392E48 /* Message.h in Headers */,
+				AAA6E8691C47CBD600D00693 /* Attachment.h in Headers */,
 				AAB5B8AD19B4902B00A43901 /* ProfileCollection.h in Headers */,
 				AAFC4CCC198AC4D500438833 /* FMDB.h in Headers */,
 				AA9196F719C8E8B1002FA1FC /* JSONKeyMapper.h in Headers */,
@@ -812,6 +829,7 @@
 				AABAC4F319D1BE0C004FED4F /* ConversationInboxSet.h in Headers */,
 				AAC0E0C319D488A1002003E7 /* CategoryResultSet.h in Headers */,
 				AA9196EE19C8E8B1002FA1FC /* NSArray+JSONModel.h in Headers */,
+				AAA6E86F1C47CF4B00D00693 /* Attachment2.h in Headers */,
 				AAB5B8A919B4902B00A43901 /* Mugshot.h in Headers */,
 				AABF071619DD6AEF0010CCBA /* ForumDetailsGet.h in Headers */,
 				AAD1DBCE19F133270074ED7F /* MessageResultSet.h in Headers */,
@@ -880,6 +898,7 @@
 				AAE3E73019CD815600DEEB12 /* ProfileSmall.h in Headers */,
 				AAE3E71219CD814700DEEB12 /* Conversation.h in Headers */,
 				AABCF6D819F6A24100392E48 /* Message.h in Headers */,
+				AAA6E86C1C47CC8000D00693 /* Attachment.h in Headers */,
 				AA741F0C19D9345100BD3C25 /* DirListings.h in Headers */,
 				AAE3E71E19CD815100DEEB12 /* DirectoryCollection.h in Headers */,
 				AA741F0E19D9345C00BD3C25 /* PMessageGet.h in Headers */,
@@ -887,6 +906,7 @@
 				AAE3E73419CD815B00DEEB12 /* CIX.h in Headers */,
 				AAE3E6ED19CD80FC00DEEB12 /* JSONModelClassProperty.h in Headers */,
 				AAE3E71419CD814700DEEB12 /* MailMessage.h in Headers */,
+				AAA6E8701C47CF4B00D00693 /* Attachment2.h in Headers */,
 				AAE3E73A19CD846A00DEEB12 /* CIXClientTouch-Prefix.pch in Headers */,
 				AAE3E71A19CD814700DEEB12 /* Profile.h in Headers */,
 				AAD1DBCF19F133270074ED7F /* MessageResultSet.h in Headers */,
@@ -1072,6 +1092,7 @@
 				AAA69ED41A1A2135000413FA /* SendMail.m in Sources */,
 				AAAC4F581A13F22D00498F85 /* StarAdd.m in Sources */,
 				AABAC4F819D1DC3F004FED4F /* PMessageGet.m in Sources */,
+				AAA6E86A1C47CBD600D00693 /* Attachment.m in Sources */,
 				AAB5B8AC19B4902B00A43901 /* Profile.m in Sources */,
 				AAC4D54D19F14640003FC74B /* MessageCollection.m in Sources */,
 				AAB5B8A019B4902B00A43901 /* DirCategory.m in Sources */,
@@ -1079,6 +1100,7 @@
 				AAD1DBD019F133270074ED7F /* MessageResultSet.m in Sources */,
 				AA9196F819C8E8B1002FA1FC /* JSONKeyMapper.m in Sources */,
 				AA9196F619C8E8B1002FA1FC /* JSONModel+networking.m in Sources */,
+				AAA6E8711C47CF4B00D00693 /* Attachment2.m in Sources */,
 				AA9196FA19C8E8B1002FA1FC /* JSONValueTransformer.m in Sources */,
 				AABC6B1F19C9D14500B4A563 /* PMessageAdd.m in Sources */,
 				AAFC4CCE198AC4D500438833 /* FMResultSet.m in Sources */,
@@ -1141,6 +1163,7 @@
 				AAA69ED51A1A2135000413FA /* SendMail.m in Sources */,
 				AAAC4F591A13F22D00498F85 /* StarAdd.m in Sources */,
 				AAE3E70F19CD814700DEEB12 /* Folder.m in Sources */,
+				AAA6E86B1C47CC7C00D00693 /* Attachment.m in Sources */,
 				AAE3E6F419CD811000DEEB12 /* JSONAPI.m in Sources */,
 				AAC4D54E19F14640003FC74B /* MessageCollection.m in Sources */,
 				AAE3E6EA19CD80FC00DEEB12 /* JSONModel.m in Sources */,
@@ -1148,6 +1171,7 @@
 				AAD1DBD119F133270074ED7F /* MessageResultSet.m in Sources */,
 				AA741F0719D930DB00BD3C25 /* CIXSecurityTouch.m in Sources */,
 				AAE3E72F19CD815600DEEB12 /* ProfileSet.m in Sources */,
+				AAA6E8721C47CF4B00D00693 /* Attachment2.m in Sources */,
 				AAE3E70719CD812800DEEB12 /* FMResultSet.m in Sources */,
 				AAE3E73519CD815B00DEEB12 /* CIX.m in Sources */,
 				AAE3E71719CD814700DEEB12 /* MailCollection.m in Sources */,

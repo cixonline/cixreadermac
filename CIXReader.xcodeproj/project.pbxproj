@@ -203,6 +203,8 @@
 		AAD52583198FE5A200DF7F39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD52582198FE5A200DF7F39 /* AppDelegate.m */; };
 		AAD5258C198FE61D00DF7F39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5258B198FE61D00DF7F39 /* main.m */; };
 		AAD52590198FE63B00DF7F39 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD5258F198FE63B00DF7F39 /* Images.xcassets */; };
+		AAD5F5EC1C49197500A84912 /* tbImage.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AAD5F5EB1C49197500A84912 /* tbImage.pdf */; };
+		AAD5F5F21C4924E700A84912 /* AttachProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5F5F11C4924E700A84912 /* AttachProtocol.m */; };
 		AAD7A6171A097C97003E1A34 /* SignaturePreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD7A6161A097C97003E1A34 /* SignaturePreferences.m */; };
 		AAD7A61D1A097D68003E1A34 /* SignaturePreferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD7A61B1A097D68003E1A34 /* SignaturePreferences.xib */; };
 		AAD7A61F1A097F0C003E1A34 /* signaturePreferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = AAD7A61E1A097F0C003E1A34 /* signaturePreferences.tiff */; };
@@ -621,6 +623,9 @@
 		AAD5258D198FE62900DF7F39 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 		AAD5258F198FE63B00DF7F39 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CIXReader/Resources/Images.xcassets; sourceTree = "<group>"; };
 		AAD5259B198FF2AF00DF7F39 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = CIXReader/Interfaces/fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		AAD5F5EB1C49197500A84912 /* tbImage.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = tbImage.pdf; path = CIXReader/Resources/tbImage.pdf; sourceTree = "<group>"; };
+		AAD5F5F01C4924E700A84912 /* AttachProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttachProtocol.h; path = src/AttachProtocol.h; sourceTree = "<group>"; };
+		AAD5F5F11C4924E700A84912 /* AttachProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AttachProtocol.m; path = src/AttachProtocol.m; sourceTree = "<group>"; };
 		AAD7A6151A097C97003E1A34 /* SignaturePreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignaturePreferences.h; path = src/SignaturePreferences.h; sourceTree = "<group>"; };
 		AAD7A6161A097C97003E1A34 /* SignaturePreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignaturePreferences.m; path = src/SignaturePreferences.m; sourceTree = "<group>"; };
 		AAD7A61C1A097D68003E1A34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = CIXReader/Interfaces/Base.lproj/SignaturePreferences.xib; sourceTree = "<group>"; };
@@ -832,6 +837,7 @@
 				AA374FB41A1259110019B1CC /* tbQuote.pdf */,
 				AADB76321A1E42760036F3F4 /* tbFlag.pdf */,
 				AADB761B1A1E34000036F3F4 /* tbJoin.pdf */,
+				AAD5F5EB1C49197500A84912 /* tbImage.pdf */,
 				AADB76261A1E39180036F3F4 /* tbNewMail.pdf */,
 				AADB762C1A1E3CA70036F3F4 /* tbOnline.pdf */,
 				AADB762E1A1E3E8F0036F3F4 /* tbOffline.pdf */,
@@ -897,6 +903,8 @@
 			children = (
 				AAD1A56119B65610006CA79D /* ArticleView.h */,
 				AAD1A56219B65610006CA79D /* ArticleView.m */,
+				AAD5F5F01C4924E700A84912 /* AttachProtocol.h */,
+				AAD5F5F11C4924E700A84912 /* AttachProtocol.m */,
 				AAB6D9C119AB5500006E3CFA /* DirectoryView.h */,
 				AAB6D9C219AB5500006E3CFA /* DirectoryView.m */,
 				AAB29654199E485C00E16E9D /* ForumsView.h */,
@@ -1352,6 +1360,7 @@
 				AAD7A61F1A097F0C003E1A34 /* signaturePreferences.tiff in Resources */,
 				AABA9B4A1A0BC6C1004012A4 /* tbSaveAsDraft.pdf in Resources */,
 				AAC390A119B0D2E9004BEC5B /* sent.tiff in Resources */,
+				AAD5F5EC1C49197500A84912 /* tbImage.pdf in Resources */,
 				AADB76291A1E3A130036F3F4 /* tbReply.pdf in Resources */,
 				AADB76311A1E406B0036F3F4 /* tbRead.pdf in Resources */,
 				AABC420D199232430076B272 /* EULA.xib in Resources */,
@@ -1589,6 +1598,7 @@
 				AAD42B5119C088E9003F1D55 /* ImageProtocol.m in Sources */,
 				AAF03C5119FA903C00F2A4EC /* GoToController.m in Sources */,
 				AABCCD3D19EC13680097E58C /* TopicView.m in Sources */,
+				AAD5F5F21C4924E700A84912 /* AttachProtocol.m in Sources */,
 				AAC3909D19B0CF71004BEC5B /* MailFolder.m in Sources */,
 				AA177CE71A2647D600B4B8E1 /* RulesPreferences.m in Sources */,
 				AAD27D5A19F0241200E4F599 /* JoinForumInput.m in Sources */,

@@ -397,6 +397,7 @@ static const int FirstRunInterval = 2.0;
     [MailMessage create];
     [Mugshot create];
     [Profile create];
+    [Attachment create];
     
     // Set a date formatter than can store and parse in SQLite format
     [_db setDateFormat:[self dateFormatter]];

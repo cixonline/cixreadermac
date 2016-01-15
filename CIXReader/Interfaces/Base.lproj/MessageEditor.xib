@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9059"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MessageEditor">
@@ -27,13 +27,12 @@
                     <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYA-sk-llO">
                         <rect key="frame" x="9" y="12" width="462" height="142"/>
                         <clipView key="contentView" id="wwQ-D5-QfM">
-                            <rect key="frame" x="1" y="1" width="465" height="163"/>
+                            <rect key="frame" x="0.0" y="0.0" width="462" height="142"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Bec-Ev-Pb4">
-                                    <rect key="frame" x="0.0" y="0.0" width="465" height="163"/>
+                                <textView findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" allowsImageEditing="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Bec-Ev-Pb4">
+                                    <rect key="frame" x="0.0" y="0.0" width="462" height="142"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="minSize" width="462" height="142"/>
                                     <size key="maxSize" width="482" height="10000000"/>
@@ -45,24 +44,19 @@
                                     </allowedInputSourceLocales>
                                 </textView>
                             </subviews>
-                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </clipView>
-                        <animations/>
                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="IID-ZM-OYD">
                             <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                             <autoresizingMask key="autoresizingMask"/>
-                            <animations/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="2f3-kJ-Cuk">
                             <rect key="frame" x="446" y="0.0" width="16" height="142"/>
                             <autoresizingMask key="autoresizingMask"/>
-                            <animations/>
                         </scroller>
                     </scrollView>
                     <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="eAt-zQ-mJ8">
                         <rect key="frame" x="9" y="160" width="458" height="4"/>
-                        <animations/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
@@ -72,7 +66,6 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="105" id="g7s-pr-yOn"/>
                         </constraints>
-                        <animations/>
                         <popUpButtonCell key="cell" type="push" title="None" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" arrowPosition="arrowAtCenter" selectedItem="uR8-UL-FDp" id="yc0-Hy-Xd7">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="menu"/>
@@ -88,7 +81,6 @@
                     </popUpButton>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qo0-Be-Vol">
                         <rect key="frame" x="9" y="176" width="66" height="17"/>
-                        <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Signature:" id="bNa-jL-ZAG">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -110,7 +102,6 @@
                     <constraint firstItem="HYA-sk-llO" firstAttribute="top" secondItem="vVT-wY-afU" secondAttribute="bottom" constant="20" id="vrE-iL-HAD"/>
                     <constraint firstItem="eAt-zQ-mJ8" firstAttribute="leading" secondItem="HYA-sk-llO" secondAttribute="leading" id="wKl-vm-TFG"/>
                 </constraints>
-                <animations/>
             </view>
             <connections>
                 <outlet property="initialFirstResponder" destination="Bec-Ev-Pb4" id="OHj-3O-qNn"/>

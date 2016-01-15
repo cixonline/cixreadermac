@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "Preferences.h"
 #import "StringExtensions.h"
+#import "ImageExtensions.h"
 #import "DateExtensions.h"
 #import "CRToolbarItem.h"
 #import "WindowCollection.h"
@@ -105,7 +106,7 @@
     
     // Set the current message
     if (_originalMessage != nil)
-        textView.string = SafeString(_originalMessage.body);
+        [[textView textStorage] setAttributedString:_originalMessage.attributedBody];
     
     // If the text is empty, insert the forum signature if there is one,
     // otherwise the default signature.
@@ -269,7 +270,9 @@
     _originalMessage.author = CIX.username;
     _originalMessage.date = [[NSDate date] UTCtoGMTBST];
     _originalMessage.postPending = NO;
-    _originalMessage.body = textView.string;
+    
+    [self readAttributedText:_originalMessage];
+    
     [_folder.messages add:_originalMessage];
     
     [messageWindow setDocumentEdited:NO];
@@ -287,11 +290,84 @@
     _originalMessage.author = CIX.username;
     _originalMessage.date = [[NSDate date] UTCtoGMTBST];
     _originalMessage.postPending = YES;
-    _originalMessage.body = textView.string;
+    
+    [self readAttributedText:_originalMessage];
+
     [_folder.messages add:_originalMessage];
     
     [messageWindow setDocumentEdited:NO];
     [messageWindow performClose:self];
+}
+
+/* Insert a file at the cursor position.
+ */
+-(IBAction)handleInsertFile:(id)sender
+{
+    NSOpenPanel * openDlg = [NSOpenPanel openPanel];
+    
+    [openDlg setCanChooseFiles:YES];
+    [openDlg setAllowedFileTypes:@[ @"jpg", @"gif", @"png" ]];
+    [openDlg setAllowsMultipleSelection:YES];
+    
+    if ([openDlg runModal] == NSOKButton)
+    {
+        NSArray * files = [openDlg URLs];
+        for (NSURL * file in files)
+        {
+            NSImage * pic = [[NSImage alloc] initWithContentsOfURL:file];
+            NSTextAttachmentCell * attachmentCell = [[NSTextAttachmentCell alloc] initImageCell:pic];
+            NSTextAttachment * attachment = [[NSTextAttachment alloc] init];
+            [attachment setAttachmentCell: attachmentCell];
+            NSAttributedString * attributedString = [NSAttributedString attributedStringWithAttachment: attachment];
+            
+            [[textView textStorage] insertAttributedString:attributedString atIndex:textView.selectedRange.location];
+        }
+    }
+}
+
+/* Read the text from the edit control and parse off any attachments and save those
+ * separately. Attachments are replaced by placeholders of the form {n} where n is the
+ * 1-based index of the attachment.
+ */
+-(void)readAttributedText:(Message *)message
+{
+    NSMutableAttributedString * attrTextString = [[NSMutableAttributedString alloc] initWithAttributedString:[textView attributedString]];
+    NSRange theStringRange = NSMakeRange(0, [attrTextString length]);
+    
+    [message deleteAttachments];
+    
+    if (theStringRange.length > 0)
+    {
+        int attachmentIndex = 1;
+        NSInteger index = 0;
+        do
+        {
+            NSRange theEffectiveRange;
+            NSDictionary * theAttributes = [attrTextString attributesAtIndex:index longestEffectiveRange:&theEffectiveRange inRange:theStringRange];
+            NSTextAttachment * theAttachment = [theAttributes objectForKey:NSAttachmentAttributeName];
+            if (theAttachment == nil)
+                index = theEffectiveRange.location + theEffectiveRange.length;
+            else
+            {
+                NSTextAttachmentCell * textAttachmentCell = (NSTextAttachmentCell *)theAttachment.attachmentCell;
+                NSImage * attachmentImage = textAttachmentCell.image;
+                
+                // Note: we always attach as JPG regardless of the original format. This is because we don't have any mechanism for
+                // generating NData for the original file, or even persisting the original filename. Something to fix in the future.
+                [message attachFile:[attachmentImage JFIFData:0.6] withName:[NSString stringWithFormat:@"image%d.jpg", attachmentIndex]];
+                
+                [attrTextString removeAttribute:NSAttachmentAttributeName range:theEffectiveRange];
+                NSAttributedString * attributedString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"{%d}", attachmentIndex]];
+                [attrTextString insertAttributedString:attributedString atIndex:index];
+                
+                ++attachmentIndex;
+            }
+        }
+        while (index < theStringRange.length);
+    }
+
+    // Need to remove the NSAttachmentCharacter as the above won't do it for you.
+    message.body = [[attrTextString string] stringByReplacingOccurrencesOfString:@"\uFFFC" withString:@""];
 }
 
 /* Called when the user makes any modifications to the text
@@ -399,6 +475,15 @@
         [item setTarget:self];
         [item setAction:@selector(quoteOriginal:)];
     }
+    else if ([itemIdentifier isEqualToString:@"InsertImage"])
+    {
+        [item setLabel:NSLocalizedString(@"Insert Image", nil)];
+        [item setPaletteLabel:[item label]];
+        [item setToolTip:NSLocalizedString(@"Insert an image into this message", nil)];
+        [item compositeButtonImage:@"tbImage"];
+        [item setTarget:self];
+        [item setAction:@selector(handleInsertFile:)];
+    }
     return item;
 }
 
@@ -424,7 +509,8 @@
               NSToolbarFlexibleSpaceItemIdentifier,
               @"SendMessage",
               @"SaveAsDraft",
-              @"QuoteOriginal"
+              @"QuoteOriginal",
+              @"InsertImage"
             ];
 }
 @end

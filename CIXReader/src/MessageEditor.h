@@ -26,4 +26,5 @@
 
 -(IBAction)sendMessage:(id)sender;
 -(IBAction)signatureSelected:(id)sender;
+-(IBAction)handleInsertFile:(id)sender;
 @end

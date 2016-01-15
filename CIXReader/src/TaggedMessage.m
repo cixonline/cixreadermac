@@ -48,7 +48,7 @@
  */
 -(NSString *)tagBody:(StyleController *)styleController
 {
-    return [styleController htmlFromTag:self.body];
+    return [styleController htmlFromTag:self.bodyWithAttachments];
 }
 
 /* Returns the message author as a safe string.

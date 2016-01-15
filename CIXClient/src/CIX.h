@@ -17,6 +17,7 @@
 #import "Mugshot.h"
 #import "LogFile.h"
 #import "Response.h"
+#import "Attachment.h"
 
 #define AccountTypeUnknown      -1
 #define AccountTypeFull         0

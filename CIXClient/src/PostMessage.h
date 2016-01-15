@@ -7,6 +7,7 @@
 //
 
 #import "JSONModel.h"
+#import "Attachment2.h"
 
 @interface J_PostMessage : JSONModel
 
@@ -15,5 +16,6 @@
 @property (strong, nonatomic) NSString * Body;
 @property (assign, nonatomic) int MsgID;
 @property (assign, nonatomic) BOOL MarkRead;
+@property (strong, nonatomic) NSArray<J_Attachment2, Optional> * Attachments;
 
 @end

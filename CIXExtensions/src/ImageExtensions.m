@@ -14,7 +14,7 @@
  * original NSImage encoding format.  compressionValue is between 0 and 1.
  * values 0.6 thru 0.7 are fine for most purposes.
  */
--(NSData *)JFIFData:(float) compressionValue
+-(NSData *)JFIFData:(float)compressionValue
 {
 	NSBitmapImageRep * myBitmapImageRep = [NSBitmapImageRep imageRepWithData: [self TIFFRepresentation]];
     NSDictionary * propertyDict = @{ NSImageCompressionFactor : @(compressionValue) };

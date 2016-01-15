@@ -23,6 +23,8 @@
 #import "MailView.h"
 #import "WelcomeView.h"
 #import "WindowCollection.h"
+#import "ImageProtocol.h"
+#import "AttachProtocol.h"
 #import "Sparkle/Sparkle.h"
 
 #define NSApplicationRelaunchDaemon @"relaunch"
@@ -95,6 +97,9 @@
     // Get notified of network state changes
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
     [reachability startNotifier];
+    
+    [ImageProtocol registerProtocol];
+    [AttachProtocol registerProtocol];
     
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(reachabilityDidChange:) name:kReachabilityChangedNotification object:nil];

@@ -12,7 +12,6 @@
 #import "DateExtensions.h"
 #import "SplitViewExtensions.h"
 #import "AppDelegate.h"
-#import "ImageProtocol.h"
 #import "MailEditor.h"
 #import "Preferences.h"
 #import "CIX.h"
@@ -66,7 +65,6 @@ static NSImage * errorImage = nil;
         [nc addObserver:self selector:@selector(handleArticleViewChange:) name:MA_Notify_ArticleViewChange object:nil];
         [nc addObserver:self selector:@selector(handleConversationChanged:) name:MAConversationChanged object:nil];
         
-        [ImageProtocol registerProtocol];
         _didInitialise = YES;
     }
 }

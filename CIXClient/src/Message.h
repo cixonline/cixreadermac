@@ -12,6 +12,7 @@
 
 @interface Message : TableBase {
     Message * _lastChildMessage;
+    NSMutableArray * _attachments;
     Folder * _folder;
     int _level;
 }
@@ -58,6 +59,11 @@
 -(void)markReadThread;
 -(void)markUnreadThread;
 -(NSString *)quotedBody;
+-(NSAttributedString *)attributedBody;
+-(NSString *)bodyWithAttachments;
 -(bool)hasChildren;
 -(int)unreadChildren;
+-(NSArray *)attachments;
+-(void)attachFile:(NSData *)fileData withName:(NSString *)filename;
+-(void)deleteAttachments;
 @end

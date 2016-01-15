@@ -81,6 +81,13 @@
     {
         [message save];
         [_messages addObject:message];
+
+        // Save any attachments
+        for (Attachment * attach in message.attachments)
+        {
+            attach.messageID = message.ID;
+            [attach save];
+        }
         
         int lastRemoteID = _messages.count > 0 ? ((Message *)[_messages lastObject]).remoteID : 0;
         _isOrdered = message.remoteID > lastRemoteID;
@@ -100,6 +107,8 @@
     if ([_messages containsObject:message])
     {
         [_messages removeObject:message];
+        [_threadedMessages removeObject:message];
+        [message deleteAttachments];
         [message delete];
         
         // Notify about the deletion

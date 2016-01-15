@@ -571,6 +571,46 @@
     [self withdrawMessage];
 }
 
+/** Attach the specified file to this message
+ */
+-(void)attachFile:(NSData *)fileData withName:(NSString *)filename
+{
+    Attachment * attach = [[Attachment alloc] init];
+    attach.filename = filename;
+    attach.encodedData = [fileData base64EncodedStringWithOptions:0];
+    attach.messageID = self.ID;
+    
+    if (_attachments == nil)
+        _attachments = [[NSMutableArray alloc] init];
+    [_attachments addObject:attach];
+    
+    // Don't save draft attachments. Once the draft message is saved to the DB
+    // then the attachments will be assigned real message IDs and then saved.
+    if (attach.messageID > 0)
+        [attach save];
+}
+
+/** Delete all message attachments
+ */
+-(void)deleteAttachments
+{
+    NSString * query = [NSString stringWithFormat:@" where messageID=%lld", self.ID];
+    NSArray * attachments = [Attachment allRowsWithQuery:query];
+    for (Attachment * attach in attachments)
+        [attach delete];
+    
+    _attachments = nil;
+}
+
+/** Return an array of all attachments for this message.
+ */
+-(NSArray *)attachments
+{
+    if (_attachments == nil)
+        _attachments = [NSMutableArray arrayWithArray:[Attachment attachmentsForMessage:self.ID]];
+    return _attachments;
+}
+
 /** Sync this message with the server
  
  This method updates the server copy of the message with any local changes. If the
@@ -602,9 +642,23 @@
     message.MsgID = self.commentID;
     message.MarkRead = !self.unread;
     
+    // Add all attachments
+    NSArray * attachments = self.attachments;
+    if (attachments.count > 0)
+    {
+        NSMutableArray * arrayOfAttach2 = [[NSMutableArray alloc] initWithCapacity:attachments.count];
+        for (Attachment * attach in attachments)
+        {
+            J_Attachment2 * attach2 = [[J_Attachment2 alloc] init];
+            attach2.Filename = attach.filename;
+            attach2.EncodedData = attach.encodedData;
+            [arrayOfAttach2 addObject:attach2];
+        }
+        message.Attachments = [[NSMutableArray<J_Attachment2, Optional> alloc] initWithArray:arrayOfAttach2];
+    }
     self.postPending = NO;
     
-    NSURLRequest * request = [APIRequest post:@"forums/post" withData:message];
+    NSURLRequest * request = [APIRequest post:@"forums/post2" withData:message];
     if (request != nil)
     {
         NSURLSession * session = [NSURLSession sharedSession];
@@ -643,6 +697,7 @@
                                                                [_folder.messages delete:self];
                                                                return;
                                                            }
+                                                           [self deleteAttachments];
                                                            self.remoteID = messageID;
                                                            self.postPending = NO;
                                                            self.date = [[NSDate date] UTCtoGMTBST];
@@ -782,6 +837,68 @@
             }
         }
     }
+}
+
+/** Return the body of the message with any attachments replaced with local
+ * URL links to the actual contents so we can render these via HTML.
+ */
+-(NSString *)bodyWithAttachments
+{
+    if (self.isPseudo && self.attachments.count > 0)
+    {
+        NSMutableString * textString = [NSMutableString stringWithString:SafeString(self.body)];
+        NSArray * attachments = self.attachments;
+        int index = 0;
+        
+        NSError * error = nil;
+        NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"\\{([0-9]+)\\}" options:NSRegularExpressionCaseInsensitive error:&error];
+        NSArray * matches = [regex matchesInString:textString options:0 range:NSMakeRange(0, textString.length)];
+        
+        for (NSTextCheckingResult * result in matches)
+            if (result.numberOfRanges > 0 && index < attachments.count)
+            {
+                NSString * location = [NSString stringWithFormat:@"attach:%lld/%d/%d", self.topicID, self.remoteID, index];
+                [textString deleteCharactersInRange:result.range];
+                [textString insertString:location atIndex:result.range.location];
+                
+                ++index;
+            }
+        return textString;
+    }
+    return self.body;
+}
+
+/** Return the message body as an attributed string
+ */
+-(NSAttributedString *)attributedBody
+{
+    NSMutableString * textString = [NSMutableString stringWithString:SafeString(self.body)];
+    NSMutableAttributedString * attrString = [[NSMutableAttributedString alloc] initWithString:textString];
+    NSArray * attachments = self.attachments;
+    int index = 0;
+    
+    NSError * error = nil;
+    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"\\{([0-9]+)\\}" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSArray * matches = [regex matchesInString:textString options:0 range:NSMakeRange(0, textString.length)];
+    
+    for (NSTextCheckingResult * result in matches)
+        if (result.numberOfRanges > 0 && index < attachments.count)
+        {
+            Attachment * attach = attachments[index];
+            
+            NSImage * image = [[NSImage alloc] initWithData:attach.data];
+
+            NSTextAttachmentCell *attachmentCell = [[NSTextAttachmentCell alloc] initImageCell:image];
+            NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+            [attachment setAttachmentCell: attachmentCell ];
+            NSAttributedString *attributedString = [NSAttributedString  attributedStringWithAttachment: attachment];
+            
+            [attrString deleteCharactersInRange:result.range];
+            [attrString insertAttributedString:attributedString atIndex:result.range.location];
+            
+            ++index;
+        }
+    return attrString;
 }
 
 /** Return the body of the message as a quoted string

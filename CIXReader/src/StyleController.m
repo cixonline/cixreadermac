@@ -164,6 +164,11 @@ static NSDictionary * _mapEmoticonToName = nil;
     regex = [NSRegularExpression regularExpressionWithPattern:linkPattern options:NSRegularExpressionCaseInsensitive error:&error];
     [regex replaceMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@"<a href=\"http://forums.cix.co.uk/secure/cixfile.aspx?forum=$1&topic=$2&file=$3\">cixfile:$1/$2:$3</a>"];
     
+    // Make attach: elements into img tags
+    linkPattern = @"(attach:[0-9]+/[0-9]+/[0-9]+)";
+    regex = [NSRegularExpression regularExpressionWithPattern:linkPattern options:NSRegularExpressionCaseInsensitive error:&error];
+    [regex replaceMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@"<img src=\"$1\" />"];
+    
     // Make http links to image files into img links so we can have inline images
     if (prefs.downloadInlineImages)
     {

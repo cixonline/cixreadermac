@@ -5,6 +5,7 @@ xcuserdata/
 
 # Temporary files
 .DS_Store
+autorevision.h
 
 # Build files
 Build/

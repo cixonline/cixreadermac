@@ -14,6 +14,7 @@
 #import "DateExtensions.h"
 #import "URLSessionExtensions.h"
 #import "FMDatabase.h"
+#import "PostMessage2Response.h"
 
 @implementation Message
 
@@ -641,6 +642,7 @@
     message.Topic = _folder.name;
     message.MsgID = self.commentID;
     message.MarkRead = !self.unread;
+    message.Flags = PostMessage2FlagsReturnBody;
     
     // Add all attachments
     NSArray * attachments = self.attachments;
@@ -677,10 +679,14 @@
                                                    resp.errorCode = CCResponse_PostFailure;
                                                else
                                                {
-                                                   NSString * responseString = [APIRequest responseTextFromData:data];
-                                                   if (responseString != nil)
+                                                   JSONModelError * jsonError = nil;
+                                                   
+                                                   J_PostMessage2Response * response = [[J_PostMessage2Response alloc] initWithData:data error:&jsonError];
+                                                   if (jsonError != nil || response.MessageNumber == 0)
+                                                       resp.errorCode = CCResponse_PostFailure;
+                                                   else
                                                    {
-                                                       int messageID = [responseString intValue];
+                                                       int messageID = response.MessageNumber;
                                                        if (messageID <= 0)
                                                        {
                                                            resp.errorCode = CCResponse_PostFailure;
@@ -701,6 +707,7 @@
                                                            self.remoteID = messageID;
                                                            self.postPending = NO;
                                                            self.date = [[NSDate date] UTCtoGMTBST];
+                                                           self.body = response.Body;
                                                            [self save];
                                                            
                                                            if (self.commentID == 0)

@@ -199,6 +199,8 @@
 		AAD1DBCF19F133270074ED7F /* MessageResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = AAD1DBCC19F133270074ED7F /* MessageResultSet.h */; };
 		AAD1DBD019F133270074ED7F /* MessageResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD1DBCD19F133270074ED7F /* MessageResultSet.m */; };
 		AAD1DBD119F133270074ED7F /* MessageResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD1DBCD19F133270074ED7F /* MessageResultSet.m */; };
+		AAD5F5F51C4A9D6700A84912 /* PostMessage2Response.h in Headers */ = {isa = PBXBuildFile; fileRef = AAD5F5F31C4A9D6700A84912 /* PostMessage2Response.h */; };
+		AAD5F5F61C4A9D6700A84912 /* PostMessage2Response.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD5F5F41C4A9D6700A84912 /* PostMessage2Response.m */; };
 		AAE3E6E819CD80F000DEEB12 /* JSONModelLib.h in Headers */ = {isa = PBXBuildFile; fileRef = AA9196D919C8E8B1002FA1FC /* JSONModelLib.h */; };
 		AAE3E6E919CD80FC00DEEB12 /* JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = AA9196CE19C8E8B1002FA1FC /* JSONModel.h */; };
 		AAE3E6EA19CD80FC00DEEB12 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9196CF19C8E8B1002FA1FC /* JSONModel.m */; };
@@ -443,6 +445,8 @@
 		AAD1A55E19B64D30006CA79D /* MailCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailCollection.m; sourceTree = "<group>"; };
 		AAD1DBCC19F133270074ED7F /* MessageResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageResultSet.h; sourceTree = "<group>"; };
 		AAD1DBCD19F133270074ED7F /* MessageResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageResultSet.m; sourceTree = "<group>"; };
+		AAD5F5F31C4A9D6700A84912 /* PostMessage2Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostMessage2Response.h; sourceTree = "<group>"; };
+		AAD5F5F41C4A9D6700A84912 /* PostMessage2Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostMessage2Response.m; sourceTree = "<group>"; };
 		AAE3E6CC19CD7FE400DEEB12 /* CIXClientTouch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CIXClientTouch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE3E73819CD846600DEEB12 /* CIXClientTouch-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CIXClientTouch-Prefix.pch"; sourceTree = "<group>"; };
 		AAE3E73E19CD945C00DEEB12 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
@@ -740,6 +744,8 @@
 				AABC6B2119C9DF9E00B4A563 /* PMessageReply.m */,
 				AA2883391A0A3543002FB382 /* PostMessage.h */,
 				AA28833A1A0A3543002FB382 /* PostMessage.m */,
+				AAD5F5F31C4A9D6700A84912 /* PostMessage2Response.h */,
+				AAD5F5F41C4A9D6700A84912 /* PostMessage2Response.m */,
 				AAEF0E0F19CB622100D62E15 /* ProfileSet.h */,
 				AAEF0E1019CB622100D62E15 /* ProfileSet.m */,
 				AAEF0E1519CB82E500D62E15 /* ProfileSmall.h */,
@@ -786,6 +792,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA08059A1A10E91E001C2715 /* StarSet.h in Headers */,
+				AAD5F5F51C4A9D6700A84912 /* PostMessage2Response.h in Headers */,
 				AAF8482D19EA9FFE00B4642B /* TableBase.h in Headers */,
 				AAF6EF6A19E850C2008730DC /* Mugshot_Private.h in Headers */,
 				AAA69ED21A1A2135000413FA /* SendMail.h in Headers */,
@@ -1073,6 +1080,7 @@
 				AAC0E0C419D488A1002003E7 /* CategoryResultSet.m in Sources */,
 				AAEF0E1819CB82E500D62E15 /* ProfileSmall.m in Sources */,
 				AAB5B86519B48F8900A43901 /* CIX.m in Sources */,
+				AAD5F5F61C4A9D6700A84912 /* PostMessage2Response.m in Sources */,
 				AA08059C1A10E91E001C2715 /* StarSet.m in Sources */,
 				AAB5B8AE19B4902B00A43901 /* ProfileCollection.m in Sources */,
 				AAF8482F19EA9FFE00B4642B /* TableBase.m in Sources */,

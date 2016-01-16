@@ -85,11 +85,6 @@
     // maintained.
     [[WindowCollection defaultCollection] add:self];
     
-    // Set the message font
-    Preferences * prefs = [Preferences standardPreferences];
-    NSFont * font = [NSFont fontWithName:[prefs messageFont] size:[prefs messageFontSize]];
-    [self setMessageFont:font];
-    
     // Make sure we're notified if the message font changes
     NSNotificationCenter * nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(handleMessageFontChange:) name:MA_Notify_MessageFontChange object:nil];
@@ -107,7 +102,12 @@
     // Set the current message
     if (_originalMessage != nil)
         [[textView textStorage] setAttributedString:_originalMessage.attributedBody];
-    
+
+    // Set the message font
+    Preferences * prefs = [Preferences standardPreferences];
+    NSFont * font = [NSFont fontWithName:[prefs messageFont] size:[prefs messageFontSize]];
+    [self setMessageFont:font];
+
     // If the text is empty, insert the forum signature if there is one,
     // otherwise the default signature.
     NSString * defaultSignature = nil;
@@ -357,7 +357,7 @@
                 [message attachFile:[attachmentImage JFIFData:0.6] withName:[NSString stringWithFormat:@"image%d.jpg", attachmentIndex]];
                 
                 [attrTextString removeAttribute:NSAttachmentAttributeName range:theEffectiveRange];
-                NSAttributedString * attributedString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"{%d}", attachmentIndex]];
+                NSAttributedString * attributedString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"{%d} ", attachmentIndex]];
                 [attrTextString insertAttributedString:attributedString atIndex:index];
                 
                 ++attachmentIndex;

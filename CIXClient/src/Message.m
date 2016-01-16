@@ -847,22 +847,26 @@
     if (self.isPseudo && self.attachments.count > 0)
     {
         NSMutableString * textString = [NSMutableString stringWithString:SafeString(self.body)];
-        NSArray * attachments = self.attachments;
+        NSRange textRange = NSMakeRange(0, textString.length);
+        NSInteger totalAttachments = self.attachments.count;
         int index = 0;
         
         NSError * error = nil;
         NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"\\{([0-9]+)\\}" options:NSRegularExpressionCaseInsensitive error:&error];
-        NSArray * matches = [regex matchesInString:textString options:0 range:NSMakeRange(0, textString.length)];
         
-        for (NSTextCheckingResult * result in matches)
-            if (result.numberOfRanges > 0 && index < attachments.count)
-            {
-                NSString * location = [NSString stringWithFormat:@"attach:%lld/%d/%d", self.topicID, self.remoteID, index];
-                [textString deleteCharactersInRange:result.range];
-                [textString insertString:location atIndex:result.range.location];
-                
-                ++index;
-            }
+        NSTextCheckingResult * result = [regex firstMatchInString:textString options:0 range:textRange];
+        while (result.range.location != NSNotFound && index < totalAttachments)
+        {
+            NSString * location = [NSString stringWithFormat:@"attach:%lld/%d/%d ", self.topicID, self.remoteID, index];
+            [textString deleteCharactersInRange:result.range];
+            [textString insertString:location atIndex:result.range.location];
+
+            textRange.location = result.range.location + location.length;
+            textRange.length = textString.length - textRange.location;
+            ++index;
+            
+            result = [regex firstMatchInString:textString options:0 range:textRange];
+        }
         return textString;
     }
     return self.body;
@@ -874,30 +878,34 @@
 {
     NSMutableString * textString = [NSMutableString stringWithString:SafeString(self.body)];
     NSMutableAttributedString * attrString = [[NSMutableAttributedString alloc] initWithString:textString];
+    NSRange textRange = NSMakeRange(0, attrString.length);
     NSArray * attachments = self.attachments;
     int index = 0;
     
     NSError * error = nil;
     NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"\\{([0-9]+)\\}" options:NSRegularExpressionCaseInsensitive error:&error];
-    NSArray * matches = [regex matchesInString:textString options:0 range:NSMakeRange(0, textString.length)];
-    
-    for (NSTextCheckingResult * result in matches)
-        if (result.numberOfRanges > 0 && index < attachments.count)
-        {
-            Attachment * attach = attachments[index];
-            
-            NSImage * image = [[NSImage alloc] initWithData:attach.data];
 
-            NSTextAttachmentCell *attachmentCell = [[NSTextAttachmentCell alloc] initImageCell:image];
-            NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
-            [attachment setAttachmentCell: attachmentCell ];
-            NSAttributedString *attributedString = [NSAttributedString  attributedStringWithAttachment: attachment];
-            
-            [attrString deleteCharactersInRange:result.range];
-            [attrString insertAttributedString:attributedString atIndex:result.range.location];
-            
-            ++index;
-        }
+    NSTextCheckingResult * result = [regex firstMatchInString:attrString.string options:0 range:textRange];
+    while (result.range.location != NSNotFound && index < attachments.count)
+    {
+        Attachment * attach = attachments[index];
+        
+        NSImage * image = [[NSImage alloc] initWithData:attach.data];
+        
+        NSTextAttachmentCell *attachmentCell = [[NSTextAttachmentCell alloc] initImageCell:image];
+        NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+        [attachment setAttachmentCell: attachmentCell ];
+        NSAttributedString *attributedString = [NSAttributedString attributedStringWithAttachment:attachment];
+        
+        [attrString deleteCharactersInRange:result.range];
+        [attrString insertAttributedString:attributedString atIndex:result.range.location];
+
+        textRange.location = result.range.location + attributedString.length;
+        textRange.length = attrString.length - textRange.location;
+        ++index;
+        
+        result = [regex firstMatchInString:attrString.string options:0 range:textRange];
+    }
     return attrString;
 }
 

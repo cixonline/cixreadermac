@@ -10,7 +10,7 @@
 #import "StringExtensions.h"
 #import "ImageExtensions.h"
 
-static const NSString * BetaAPIBase = @"https://betaapi.cixonline.com/v2.0/cix.svc/";
+static const NSString * BetaAPIBase = @"http://betaapi.cixonline.com/v2.0/cix.svc/";
 static const NSString * APIBase = @"https://api.cixonline.com/v2.0/cix.svc/";
 
 static BOOL _useBetaAPI;

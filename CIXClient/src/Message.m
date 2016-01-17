@@ -859,7 +859,7 @@
         int index = 0;
         
         NSError * error = nil;
-        NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"\\{([0-9]+)\\}" options:NSRegularExpressionCaseInsensitive error:&error];
+        NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"(^|[^\\{])\\{([0-9]+)\\}([^\\}]|$)" options:NSRegularExpressionCaseInsensitive error:&error];
         
         NSTextCheckingResult * result = [regex firstMatchInString:textString options:0 range:textRange];
         while (result.range.location != NSNotFound && index < totalAttachments)
@@ -874,6 +874,11 @@
             
             result = [regex firstMatchInString:textString options:0 range:textRange];
         }
+        
+        // Unescape any existing {{ characters
+        [textString replaceString:@"{{" withString:@"{"];
+        [textString replaceString:@"}}" withString:@"}"];
+
         return textString;
     }
     return self.body;
@@ -890,7 +895,7 @@
     int index = 0;
     
     NSError * error = nil;
-    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"\\{([0-9]+)\\}" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"(^|[^\\{])\\{([0-9]+)\\}([^\\}]|$)" options:NSRegularExpressionCaseInsensitive error:&error];
 
     NSTextCheckingResult * result = [regex firstMatchInString:attrString.string options:0 range:textRange];
     while (result.range.location != NSNotFound && index < attachments.count)
@@ -913,6 +918,11 @@
         
         result = [regex firstMatchInString:attrString.string options:0 range:textRange];
     }
+    
+    // Unescape any existing {{ characters
+    [[attrString mutableString] replaceString:@"{{" withString:@"{"];
+    [[attrString mutableString] replaceString:@"}}" withString:@"}"];
+    
     return attrString;
 }
 

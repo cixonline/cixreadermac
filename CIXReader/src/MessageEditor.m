@@ -338,6 +338,9 @@
     
     if (theStringRange.length > 0)
     {
+        [[attrTextString mutableString] replaceString:@"{" withString:@"{{"];
+        [[attrTextString mutableString] replaceString:@"}" withString:@"}}"];
+
         int attachmentIndex = 1;
         NSInteger index = 0;
         do

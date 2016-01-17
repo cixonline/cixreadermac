@@ -1,3 +1,3 @@
-#define VCS_NUM	619
-#define FULL_VCS_NUM	1.6.619
+#define VCS_NUM	620
+#define FULL_VCS_NUM	1.6.620
 #define VCS_BETA	0

@@ -13,5 +13,6 @@
 @property (strong, nonatomic) NSString * Body;
 @property (strong, nonatomic) NSString * Recipient;
 @property (strong, nonatomic) NSString * Subject;
+@property (strong, nonatomic) NSString * ReplyAddress;
 
 @end

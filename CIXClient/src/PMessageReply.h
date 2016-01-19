@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSString * Body;
 @property (assign, nonatomic) int ConID;
+@property (assign, nonatomic) NSString * ReplyAddress;
 
 @end

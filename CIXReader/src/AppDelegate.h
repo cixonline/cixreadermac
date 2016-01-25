@@ -111,6 +111,7 @@
 -(void)setLaunchAddress:(NSString *)linkPath;
 -(Folder *)currentFolder;
 -(Message *)currentMessage;
+-(Message *)messageFromAddress:(NSString *)string;
 -(BOOL)selectViewForFolder:(FolderBase *)folder withAddress:(Address *)address options:(FolderOptions)options;
 -(void)setAddress:(NSString *)address;
 -(void)addBacktrack:(NSString *)address withUnread:(BOOL)unread;

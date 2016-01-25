@@ -7,6 +7,7 @@
 //
 
 #import "CIX.h"
+#import "AppDelegate.h"
 #import "StyleController.h"
 #import "StringExtensions.h"
 #import "DateExtensions.h"
@@ -157,7 +158,28 @@ static NSDictionary * _mapEmoticonToName = nil;
     // Make cix: style links clickable
     linkPattern = @"(cix\\:[a-z0-9._\\-:/]*[a-z0-9]+)";
     regex = [NSRegularExpression regularExpressionWithPattern:linkPattern options:NSRegularExpressionCaseInsensitive error:&error];
-    [regex replaceMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@"<a href=\"$1\">$1</a>"];
+    
+    NSRange textRange = NSMakeRange(0, modifiedString.length);
+    NSTextCheckingResult * result = [regex firstMatchInString:modifiedString options:0 range:textRange];
+    while (result != nil && result.range.location != NSNotFound)
+    {
+        NSString * match = [modifiedString substringWithRange:result.range];
+        Message * message = [(AppDelegate *)[NSApp delegate] messageFromAddress:match];
+        NSString * popupText = @"";
+
+        if (message != nil)
+            popupText = [NSString stringWithFormat:@"<span class=\"tooltip_text\">%@</span>", [[message body] truncateByWordWithLimit:200]];
+        
+        NSString * fmt = [NSString stringWithFormat:@"<a onmouseover=\"tooltipShow(event,this)\" onmouseout=\"tooltipHide(event,this)\" href=\"%@\">%@%@</a>", match, match, popupText];
+
+        [modifiedString deleteCharactersInRange:result.range];
+        [modifiedString insertString:fmt atIndex:result.range.location];
+
+        textRange.location = result.range.location + fmt.length;
+        textRange.length = modifiedString.length - textRange.location;
+        
+        result = [regex firstMatchInString:modifiedString options:0 range:textRange];
+    }
     
     // Make cixfile: links into URL links.
     linkPattern = @"cixfile\\:([a-z0-9._\\-]+)/([a-z0-9._\\-]+):([a-z0-9\\/&#95;:@=.+?,#_%&~-]+)";
@@ -172,14 +194,14 @@ static NSDictionary * _mapEmoticonToName = nil;
     // Make http links to image files into img links so we can have inline images
     if (prefs.downloadInlineImages)
     {
-        NSString * linkPattern = @"(<a href=\"(http|https):.*?.(?:jpe?g|gif|png)\">)(.*?)(</a>)";
+        NSString * linkPattern = @"(<a href=\"(http|https):.*?.(?:jpe?g|gif|png).*?\">)(.*?)(</a>)";
         NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:linkPattern options:NSRegularExpressionCaseInsensitive error:&error];
         [regex replaceMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@"$1<img width=30% border=\"0\" src=\"$3\" />$4"];
         
         // Look for src="https://www.dropbox.com" and append the raw marker to it.
-        linkPattern = @"(src=\")(https:\\/\\/www\\.dropbox\\.com.*)(\")";
+        linkPattern = @"(src=\")(https:\\/\\/www\\.dropbox\\.com.*?)(\\?dl=0)*(\")";
         regex = [NSRegularExpression regularExpressionWithPattern:linkPattern options:NSRegularExpressionCaseInsensitive error:&error];
-        [regex replaceMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@"$1$2?raw=1$3"];
+        [regex replaceMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@"$1$2?raw=1$4"];
     }
     
     // Replace emoticons with their graphical equivalent.
@@ -222,6 +244,9 @@ static NSDictionary * _mapEmoticonToName = nil;
     NSUInteger index;
     
     [self loadStyle];
+
+    NSString * libpath = [[[NSBundle mainBundle] sharedSupportPath] stringByAppendingPathComponent:@"Styles/Library"];
+    libpath = [@"file://localhost" stringByAppendingString:libpath];
     
     NSMutableString * htmlText = [[NSMutableString alloc] initWithString:@"<!DOCTYPE html><html><head><meta charset=\"UTF-8\" />"];
     if (_cssStylesheet != nil)
@@ -230,12 +255,14 @@ static NSDictionary * _mapEmoticonToName = nil;
         [htmlText appendString:_cssStylesheet];
         [htmlText appendString:@"\"/>"];
     }
+    [htmlText appendFormat:@"<link rel=\"stylesheet\" type=\"text/css\" href=\"%@/popup.css\"/>", libpath];
     if (_jsScript != nil)
     {
         [htmlText appendString:@"<script type=\"text/javascript\" src=\""];
         [htmlText appendString:_jsScript];
         [htmlText appendString:@"\"/></script>"];
     }
+    [htmlText appendFormat:@"<script type=\"text/javascript\" src=\"%@/popup.js\"/></script>", libpath];
     [htmlText appendString:@"<meta http-equiv=\"Pragma\" content=\"no-cache\">"];
     [htmlText appendString:@"</head><body>"];
     for (index = 0; index < array.count; ++index)

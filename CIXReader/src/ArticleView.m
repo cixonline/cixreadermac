@@ -27,7 +27,7 @@
         [_defaultWebPrefs setStandardFontFamily:@"Arial"];
         [_defaultWebPrefs setDefaultFontSize:12];
         [_defaultWebPrefs setPrivateBrowsingEnabled:NO];
-        [_defaultWebPrefs setJavaScriptEnabled:NO];
+        [_defaultWebPrefs setJavaScriptEnabled:YES];
 
         [self setPolicyDelegate:self];
         [self setUIDelegate:self];

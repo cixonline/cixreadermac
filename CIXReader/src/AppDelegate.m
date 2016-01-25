@@ -275,8 +275,9 @@
     NSString * password = @"";
     NSString * databasePath;
     
-    // First, tell APIRequest to use the beta API
-    [APIRequest setUseBetaAPI:YES/*[prefs useBetaAPI]*/];
+    // First, tell APIRequest to use the beta API if we're enrolled
+    // in the beta.
+    [APIRequest setUseBetaAPI:[prefs useBeta]];
     
     if (!IsEmpty(username))
     {
@@ -511,22 +512,59 @@
     {
         Address * address = [[Address alloc] initWithString:addressString];
         if (address.scheme != nil)
+            [self setAddressWithAddress:[self normaliseAddress:address]];
+    }
+}
+
+/* Normalise the address by expanding truncated versions such as cix:1234 or cix:/topic:1234
+ * to their full address version to make subsequent parsing easier.
+ */
+-(Address *)normaliseAddress:(Address *)address
+{
+    if (address.scheme != nil)
+    {
+        if (IsEmpty(address.query))
         {
-            // Special case the cix:/topic convention here because it requires us to
-            // know the forum from the selection which is only possible when we have
-            // the UI from which to determine the selection.
-            if ([address.query hasPrefix:@"/"])
+            NSString * oldData = address.data;
+            address = [[Address alloc] initWithString:foldersTree.selection.address];
+            address.data = oldData;
+        }
+
+        // Special case the cix:/topic convention here because it requires us to
+        // know the forum from the selection which is only possible when we have
+        // the UI from which to determine the selection.
+        else if ([address.query hasPrefix:@"/"])
+        {
+            FolderBase * folder = foldersTree.selection;
+            if ([folder isKindOfClass:TopicFolder.class] && !IsTopLevelFolder(((TopicFolder *)folder).folder))
             {
-                FolderBase * folder = foldersTree.selection;
-                if ([folder isKindOfClass:TopicFolder.class] && !IsTopLevelFolder(((TopicFolder *)folder).folder))
-                {
-                    Folder * forum = ((TopicFolder *)folder).folder.parentFolder;
-                    address.query = [NSString stringWithFormat:@"%@%@", forum.name, address.query];
-                }
+                Folder * forum = ((TopicFolder *)folder).folder.parentFolder;
+                address.query = [NSString stringWithFormat:@"%@%@", forum.name, address.query];
             }
-            [self setAddressWithAddress:address];
         }
     }
+    return address;
+}
+
+/* Return the message that corresponds to a given CIX address if possible, or nil if
+ * the input does not reference a valid message.
+ */
+-(Message *)messageFromAddress:(NSString *)string
+{
+    Address * address = [[Address alloc] initWithString:string];
+    if (address != nil && address.scheme != nil && [address.data intValue] > 0)
+    {
+        address = [self normaliseAddress:address];
+    
+        NSArray * splitAddress = [address.query componentsSeparatedByString:@"/"];
+        if (splitAddress != nil && splitAddress.count == 2)
+        {
+            Folder * forum = [CIX.folderCollection folderByName:splitAddress[0]];
+            Folder * topic = [forum childByName:splitAddress[1]];
+            return [[topic messages] messageByID:[address.data intValue]];
+        }
+    }
+    return nil;
 }
 
 /* Navigate to the specified address using the internal scheme.
@@ -535,14 +573,6 @@
 {
     if (address != nil)
     {
-        // If no forum/topic is specified, default to the current one
-        if (IsEmpty(address.query))
-        {
-            NSString * oldData = address.data;
-            address = [[Address alloc] initWithString:foldersTree.selection.address];
-            address.data = oldData;
-        }
-        
         // Handle cixuser: by showing the user's profile
         if ([address.scheme isEqualToString:@"cixuser"])
         {
@@ -1470,7 +1500,7 @@
     if ([_backtrackArray nextItemAtQueue:&address])
     {
         _isBacktracking = YES;
-        [self setAddressWithAddress:address];
+        [self setAddressWithAddress:[self normaliseAddress:address]];
         _isBacktracking = NO;
     }
 }
@@ -1484,7 +1514,7 @@
     if ([_backtrackArray previousItemAtQueue:&address])
     {
         _isBacktracking = YES;
-        [self setAddressWithAddress:address];
+        [self setAddressWithAddress:[self normaliseAddress:address]];
         _isBacktracking = NO;
     }
 }

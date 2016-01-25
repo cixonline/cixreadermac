@@ -13,15 +13,6 @@ body {
 	color: #5e5e5e;
 }
 
-a {
-	color: #cc3333;
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
 h1 {
 	font-size: 100%;
 	font-weight: normal;
@@ -89,3 +80,6 @@ img {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
+
+
+

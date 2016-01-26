@@ -155,6 +155,11 @@ static NSDictionary * _mapEmoticonToName = nil;
     [regex replaceMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@"<a href=\"$1\">$1</a>"];
     [modifiedString replaceString:@"href=\"www" withString:@"href=\"http://www"];
     
+    // Catch mailto links
+    linkPattern = @"(mailto:\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b)";
+    regex = [NSRegularExpression regularExpressionWithPattern:linkPattern options:NSRegularExpressionCaseInsensitive error:&error];
+    [regex replaceMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@"<a href=\"$1\">$1</a>"];
+    
     // Make cix: style links clickable
     linkPattern = @"(cix\\:[a-z0-9._\\-:/]*[a-z0-9]+)";
     regex = [NSRegularExpression regularExpressionWithPattern:linkPattern options:NSRegularExpressionCaseInsensitive error:&error];

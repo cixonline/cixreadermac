@@ -299,9 +299,9 @@
     [messageWindow performClose:self];
 }
 
-/* Insert a file at the cursor position.
+/* Insert an image at the cursor position.
  */
--(IBAction)handleInsertFile:(id)sender
+-(IBAction)handleInsertImage:(id)sender
 {
     NSOpenPanel * openDlg = [NSOpenPanel openPanel];
     
@@ -485,7 +485,7 @@
         [item setToolTip:NSLocalizedString(@"Insert an image into this message", nil)];
         [item compositeButtonImage:@"tbImage"];
         [item setTarget:self];
-        [item setAction:@selector(handleInsertFile:)];
+        [item setAction:@selector(handleInsertImage:)];
     }
     return item;
 }

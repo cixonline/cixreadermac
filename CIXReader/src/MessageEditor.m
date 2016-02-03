@@ -314,7 +314,15 @@
         NSArray * files = [openDlg URLs];
         for (NSURL * file in files)
         {
+            // Downscale large images to fit better.
+            const int maxImageWidth = 300;
             NSImage * pic = [[NSImage alloc] initWithContentsOfURL:file];
+            if (pic.size.width > maxImageWidth)
+            {
+                float prop = (100 / pic.size.width) * maxImageWidth;
+                int newHeight = (prop / 100) * pic.size.height;
+                pic = [pic resize:NSMakeSize(maxImageWidth, newHeight)];
+            }
             NSTextAttachmentCell * attachmentCell = [[NSTextAttachmentCell alloc] initImageCell:pic];
             NSTextAttachment * attachment = [[NSTextAttachment alloc] init];
             [attachment setAttachmentCell: attachmentCell];

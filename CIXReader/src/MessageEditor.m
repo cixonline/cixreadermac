@@ -506,7 +506,8 @@
     return @[ @"SendMessage",
               @"SaveAsDraft",
               NSToolbarSpaceItemIdentifier,
-              @"QuoteOriginal"
+              @"QuoteOriginal",
+              @"InsertImage"
             ];
 }
 

@@ -14,6 +14,7 @@
 #import "DateExtensions.h"
 #import "CRToolbarItem.h"
 #import "WindowCollection.h"
+#import <Quartz/Quartz.h>
 
 // Private interfaces
 @interface MessageEditor (Private)
@@ -303,33 +304,35 @@
  */
 -(IBAction)handleInsertImage:(id)sender
 {
-    NSOpenPanel * openDlg = [NSOpenPanel openPanel];
+    IKPictureTaker * picker = [IKPictureTaker pictureTaker];
+    [picker setValue:@(YES) forKey:IKPictureTakerShowAddressBookPictureKey];
     
-    [openDlg setCanChooseFiles:YES];
-    [openDlg setAllowedFileTypes:@[ @"jpg", @"gif", @"png" ]];
-    [openDlg setAllowsMultipleSelection:YES];
-    
-    if ([openDlg runModal] == NSOKButton)
+    [picker beginPictureTakerSheetForWindow:[self window]
+                               withDelegate:self
+                             didEndSelector:@selector(pictureTakerDidEnd:code:contextInfo:)
+                                contextInfo:nil];
+}
+
+/* Use selects an image from the iamge picker.
+ */
+-(void)pictureTakerDidEnd:(IKPictureTaker*)pictureTaker code:(int) returnCode contextInfo:(void*) ctxInf
+{
+    if (returnCode == NSOKButton)
     {
-        NSArray * files = [openDlg URLs];
-        for (NSURL * file in files)
+        const int maxImageWidth = 300;
+        NSImage * pic = pictureTaker.outputImage;
+        if (pic.size.width > maxImageWidth)
         {
-            // Downscale large images to fit better.
-            const int maxImageWidth = 300;
-            NSImage * pic = [[NSImage alloc] initWithContentsOfURL:file];
-            if (pic.size.width > maxImageWidth)
-            {
-                float prop = (100 / pic.size.width) * maxImageWidth;
-                int newHeight = (prop / 100) * pic.size.height;
-                pic = [pic resize:NSMakeSize(maxImageWidth, newHeight)];
-            }
-            NSTextAttachmentCell * attachmentCell = [[NSTextAttachmentCell alloc] initImageCell:pic];
-            NSTextAttachment * attachment = [[NSTextAttachment alloc] init];
-            [attachment setAttachmentCell: attachmentCell];
-            NSAttributedString * attributedString = [NSAttributedString attributedStringWithAttachment: attachment];
-            
-            [[textView textStorage] insertAttributedString:attributedString atIndex:textView.selectedRange.location];
+            float prop = (100 / pic.size.width) * maxImageWidth;
+            int newHeight = (prop / 100) * pic.size.height;
+            pic = [pic resize:NSMakeSize(maxImageWidth, newHeight)];
         }
+        NSTextAttachmentCell * attachmentCell = [[NSTextAttachmentCell alloc] initImageCell:pic];
+        NSTextAttachment * attachment = [[NSTextAttachment alloc] init];
+        [attachment setAttachmentCell: attachmentCell];
+        NSAttributedString * attributedString = [NSAttributedString attributedStringWithAttachment: attachment];
+        
+        [[textView textStorage] insertAttributedString:attributedString atIndex:textView.selectedRange.location];
     }
 }
 

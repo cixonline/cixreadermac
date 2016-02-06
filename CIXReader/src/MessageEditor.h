@@ -7,11 +7,12 @@
 //
 
 #import "Signatures.h"
+#import "CRTextView.h"
 #import "CIX.h"
 
 @interface MessageEditor : NSWindowController<NSToolbarDelegate, NSWindowDelegate> {
     IBOutlet NSWindow * messageWindow;
-    IBOutlet NSTextView * textView;
+    IBOutlet CRTextView * textView;
     IBOutlet NSPopUpButton * signaturesList;
     
     Folder * _folder;

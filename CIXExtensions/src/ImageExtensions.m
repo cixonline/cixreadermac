@@ -21,6 +21,20 @@
 	return [myBitmapImageRep representationUsingType: NSJPEGFileType properties:propertyDict];
 }
 
+/* Constrain the image to the maximum width.
+ */
+-(ImageClass *)constrain:(int)maxWidth
+{
+    ImageClass * newImage = self;
+    if (self.size.width > maxWidth)
+    {
+        float prop = (100 / self.size.width) * maxWidth;
+        int newHeight = (prop / 100) * self.size.height;
+        newImage = [self resize:NSMakeSize(maxWidth, newHeight)];
+    }
+    return newImage;
+}
+
 /* Return a copy of the image resized to the requested dimensions.
  */
 -(ImageClass *)resize:(CGSize)newSize

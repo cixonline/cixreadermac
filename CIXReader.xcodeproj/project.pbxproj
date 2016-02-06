@@ -174,6 +174,7 @@
 		AABCDF2B19D42E6800C7E4A0 /* mail.tiff in Resources */ = {isa = PBXBuildFile; fileRef = AABCDF2919D42E6800C7E4A0 /* mail.tiff */; };
 		AABDCF1019E318420005A37F /* GeneralForumEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABDCF0E19E318420005A37F /* GeneralForumEditor.xib */; };
 		AABDCF1319E31AD00005A37F /* GeneralForumEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = AABDCF1219E31AD00005A37F /* GeneralForumEditor.m */; };
+		AAC12FF21C6629F500E40CC0 /* CRTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC12FF11C6629F500E40CC0 /* CRTextView.m */; };
 		AAC3909D19B0CF71004BEC5B /* MailFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC3909C19B0CF71004BEC5B /* MailFolder.m */; };
 		AAC390A019B0D2E9004BEC5B /* inbox.tiff in Resources */ = {isa = PBXBuildFile; fileRef = AAC3909E19B0D2E9004BEC5B /* inbox.tiff */; };
 		AAC390A119B0D2E9004BEC5B /* sent.tiff in Resources */ = {isa = PBXBuildFile; fileRef = AAC3909F19B0D2E9004BEC5B /* sent.tiff */; };
@@ -574,6 +575,8 @@
 		AABDCF1119E31AD00005A37F /* GeneralForumEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeneralForumEditor.h; path = src/GeneralForumEditor.h; sourceTree = "<group>"; };
 		AABDCF1219E31AD00005A37F /* GeneralForumEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeneralForumEditor.m; path = src/GeneralForumEditor.m; sourceTree = "<group>"; };
 		AABDCF1419E31F5A0005A37F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = CIXReader/Interfaces/fr.lproj/GeneralForumEditor.strings; sourceTree = "<group>"; };
+		AAC12FF01C6629F500E40CC0 /* CRTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRTextView.h; path = src/CRTextView.h; sourceTree = "<group>"; };
+		AAC12FF11C6629F500E40CC0 /* CRTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRTextView.m; path = src/CRTextView.m; sourceTree = "<group>"; };
 		AAC3909B19B0CF71004BEC5B /* MailFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailFolder.h; path = CIXReader/src/MailFolder.h; sourceTree = "<group>"; };
 		AAC3909C19B0CF71004BEC5B /* MailFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailFolder.m; path = CIXReader/src/MailFolder.m; sourceTree = "<group>"; };
 		AAC3909E19B0D2E9004BEC5B /* inbox.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = inbox.tiff; path = CIXReader/Resources/inbox.tiff; sourceTree = "<group>"; };
@@ -1015,6 +1018,8 @@
 				AAEE16E41A07E6280043BC4E /* CRTableView.m */,
 				AAB66C1619ACAEFD006D3D3D /* CRTextCountCell.h */,
 				AAB66C1719ACAEFD006D3D3D /* CRTextCountCell.m */,
+				AAC12FF01C6629F500E40CC0 /* CRTextView.h */,
+				AAC12FF11C6629F500E40CC0 /* CRTextView.m */,
 				AAB295F1199E36A100E16E9D /* CRToolbarButton.h */,
 				AAB295F2199E36A100E16E9D /* CRToolbarButton.m */,
 				AAB295F3199E36A100E16E9D /* CRToolbarItem.h */,
@@ -1571,6 +1576,7 @@
 				AACCCF9519A77F9300F188A7 /* FolderBase.m in Sources */,
 				AA8ED2CA19ACFCFC00457715 /* AccountController.m in Sources */,
 				AAD4DD8E19E58984002F3217 /* Address.m in Sources */,
+				AAC12FF21C6629F500E40CC0 /* CRTextView.m in Sources */,
 				AA4940111A6D688E0070FC47 /* CRWordInputValidator.m in Sources */,
 				AA9C60DD1A6C463000B68524 /* ParticipantForumEditor.m in Sources */,
 				AAA5B3F219A507DB004ED4B6 /* FoldersTree.m in Sources */,

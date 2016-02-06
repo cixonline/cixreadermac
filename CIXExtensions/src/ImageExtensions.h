@@ -8,6 +8,7 @@
 
 @interface ImageClass (ImageExtensions)
     -(NSData *)JFIFData:(float)compressionValue;
+    -(ImageClass *)constrain:(int)maxWidth;
     -(ImageClass *)resize:(CGSize)newSize;
     -(ImageClass *)maskedCircularImageWithDiameter:(CGFloat)diameter;
 @end

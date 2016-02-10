@@ -15,7 +15,7 @@
 -(void)enableControls:(NSNotification *)aNotification;
 @end
 
-static NSString * recoverPasswordLink = @"http://forums.cixonline.com/recoverpassword.aspx";
+static NSString * recoverPasswordLink = @"https://forums.cixonline.com/recoverpassword.aspx";
 static NSString * signUpToCIXLink = @"https://forums.cix.co.uk/signUp.aspx?p=cixreader";
 
 @implementation LoginController

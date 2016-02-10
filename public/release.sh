@@ -7,7 +7,7 @@ VCS_NUM=$(($VCS_NUM + 600))
 
 # values set in project-all.xcconfig
 VIENNA_UPLOADS_DIR="${BUILT_PRODUCTS_DIR}/Uploads"
-DOWNLOAD_BASE_URL="http://cixreader.cixhosting.co.uk/cixreader/osx"
+DOWNLOAD_BASE_URL="https://cixreader.cixhosting.co.uk/cixreader/osx"
 
 if [ ${VCS_BETA} -eq 0 ]; then
     DOWNLOAD_SUB_DIR="release";

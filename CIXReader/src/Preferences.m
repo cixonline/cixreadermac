@@ -536,7 +536,7 @@ static Preferences * _standardPreferences = nil;
  */
 -(void)setSparkleURL
 {
-    NSString * updateURL = [NSString stringWithFormat:@"http://cixreader.cixhosting.co.uk/cixreader/osx/%@/appcast.xml", (_useBeta ? @"beta" : @"release")];
+    NSString * updateURL = [NSString stringWithFormat:@"https://cixreader.cixhosting.co.uk/cixreader/osx/%@/appcast.xml", (_useBeta ? @"beta" : @"release")];
     [[SUUpdater sharedUpdater] setFeedURL:[NSURL URLWithString:updateURL]];
 }
 

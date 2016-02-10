@@ -1340,7 +1340,7 @@
     Preferences * prefs = [Preferences standardPreferences];
     NSString * betaOrRelease = [prefs useBeta] ? @"beta" : @"release";
     
-    NSString * url = [NSString stringWithFormat:@"http://cixreader.cixhosting.co.uk/cixreader/osx/%@/changes.html", betaOrRelease];
+    NSString * url = [NSString stringWithFormat:@"https://cixreader.cixhosting.co.uk/cixreader/osx/%@/changes.html", betaOrRelease];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
 }
 

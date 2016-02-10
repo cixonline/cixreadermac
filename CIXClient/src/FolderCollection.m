@@ -372,13 +372,13 @@
 -(BOOL)refreshWithFastSync
 {
     // Retrieve last sync date and time. If this is the first ever sync
-    // then default to the last 2 days worth.
+    // then default to a full sync.
     NSDate * sinceDate = CIX.lastSyncDate;
     if (sinceDate == nil || [sinceDate isEqualToDate:[NSDate dateWithTimeIntervalSince1970:0]])
         return NO;
     
-    // If it has been more than 5 days since the last fast sync, do a full sync instead.
-    if ([sinceDate compare:[NSDate.date dateByAddingTimeInterval:-(60*60*24*5)]] == NSOrderedAscending)
+    // If it has been more than 30 days since the last fast sync, do a full sync instead.
+    if ([sinceDate compare:[NSDate.date dateByAddingTimeInterval:-(60*60*24*30)]] == NSOrderedAscending)
         return NO;
     
     NSURLRequest * request = [APIRequest get:@"user/sync" withQuery:[NSString stringWithFormat:@"since=%@&maxresults=5000", [CIX.dateFormatter stringFromDate:sinceDate]]];

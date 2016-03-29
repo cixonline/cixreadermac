@@ -140,6 +140,20 @@
         _foldersByName[newFolder.name] = newFolder;
 }
 
+/** Mark every folder as read
+ 
+ For every folder that contains read messages, they are marked as read
+ except for read-locked messages
+ */
+-(void)markAllRead
+{
+    for (Folder * folder in _folders.allValues)
+    {
+        if (folder.unread)
+            [folder markAllRead];
+    }
+}
+
 /** Add this folder to the FolderCollection
  
  The folder is added as a child folder to its given parent and then

@@ -8,6 +8,7 @@
 
 #import "GeneralPreferences.h"
 #import "Preferences.h"
+#import "CIX.h"
 #import "PopUpButtonExtensions.h"
 #import "LogFile.h"
 
@@ -118,5 +119,22 @@ static NSDictionary * cacheListOptions = nil;
 {
     NSInteger value = [cleanUpCacheList selectedTag];
     [[Preferences standardPreferences] setCacheCleanUpFrequency:value];
+}
+
+/* Mark all messages in the db as read
+ * This is a Preferences button because it is pretty risky as there's no undo. If we eventually
+ * add undo support, as in Vienna, we can move this to a menu.
+ */
+-(IBAction)handleMarkAllRead:(id)sender
+{
+    NSInteger returnCode = NSRunAlertPanel(NSLocalizedString(@"Mark All Read", nil),
+                                           NSLocalizedString(@"All messages in all forums will be marked read with the exception of read locked messages. Are you sure?", nil),
+                                           NSLocalizedString(@"No", nil),
+                                           NSLocalizedString(@"Yes", nil),
+                                           nil);
+    if (returnCode == NSAlertAlternateReturn)
+    {
+        [CIX.folderCollection markAllRead];
+    }
 }
 @end

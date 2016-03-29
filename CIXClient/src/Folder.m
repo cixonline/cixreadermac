@@ -837,8 +837,6 @@
     @synchronized(CIX.DBLock) {
         [CIX.DB beginTransaction];
         
-        // We need to copy the child array because removing each child
-        // also modifies the collection.
         NSArray * children = [NSArray arrayWithArray:self.children];
         for (Folder * child in children)
         {

@@ -32,4 +32,5 @@
 -(NSInteger)totalUnreadPriority;
 -(void)refreshInterestingThreads;
 -(void)applyRule:(Rule *)rule;
+-(void)markAllRead;
 @end

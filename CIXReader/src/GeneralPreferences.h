@@ -12,6 +12,7 @@
     IBOutlet NSButton * openLogFile;
     IBOutlet NSButton * startOffline;
     IBOutlet NSButton * startAtHomePage;
+    IBOutlet NSButton * markAllRead;
     IBOutlet NSMatrix * appBadgeMatrix;
     IBOutlet NSPopUpButton * cleanUpCacheList;
     
@@ -27,4 +28,5 @@
 -(IBAction)changeStartAtHomePage:(id)sender;
 -(IBAction)changeAppBadgeMode:(id)sender;
 -(IBAction)cleanUpCacheChanged:(id)sender;
+-(IBAction)handleMarkAllRead:(id)sender;
 @end

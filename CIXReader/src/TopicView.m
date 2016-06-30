@@ -676,17 +676,28 @@ static NSImage * threadOpenImage = nil;
 -(void)filterViewByString:(NSString *)searchString
 {
     Message * selectedMessage = [self selectedMessage];
+    bool hasFilter = !IsEmpty(searchString);
+    bool tempCollapseConv = _collapseConv;
+    
+    _collapseConv = false;
     [self assignArrayOfMessages];
-    if (![searchString isBlank])
+    _collapseConv = tempCollapseConv;
+    
+    if (hasFilter)
     {
         NSPredicate * bPredicate =[NSPredicate predicateWithFormat:@"(SELF.author contains[cd] %@) OR (SELF.body contains[cd] %@)", searchString, searchString];
         [_messages filterUsingPredicate:bPredicate];
     }
     
     _currentStyleController.highlightString = searchString;
-    _isFiltering = !IsEmpty(searchString);
+    _isFiltering = hasFilter;
     
     [threadList reloadData];
+    
+    // If the selected message isn't in the result set, default to selecting the first one
+    if ([_messages indexOfObject:selectedMessage] == NSNotFound && _messages.count > 0)
+        selectedMessage = _messages[0];
+    
     [self restoreSelection:selectedMessage];
 }
 

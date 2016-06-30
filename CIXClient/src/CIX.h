@@ -81,5 +81,6 @@
 
 @interface CIX (CIXSecurity)
 +(void)setPassword:(NSString *)newPassword;
++(void)deletePassword;
 +(NSString *)password;
 @end

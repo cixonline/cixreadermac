@@ -207,6 +207,7 @@
 {
     Preferences * prefs = [Preferences standardPreferences];
     [prefs setLastUser:@""];
+    [CIX deletePassword];
     
     NSString * daemonPath = [[NSBundle mainBundle] pathForResource:NSApplicationRelaunchDaemon ofType:nil];
     NSString * processIDString = [NSString stringWithFormat:@"%d", [[NSProcessInfo processInfo] processIdentifier]];

@@ -47,6 +47,25 @@ static NSString * _password;
     SecKeychainAddGenericPassword(NULL, serviceNameLength, cServiceName, accountNameLength, cUsername, passwordLength, cPassword, NULL);
 }
 
+/** Remove the current CIX password
+
+ This method removes the password stored in the keychain.
+ */
++(void)deletePassword
+{
+    const char * cServiceName = [@"CIXReader:CIX" cStringUsingEncoding:NSWindowsCP1252StringEncoding];
+    const char * cUsername = [[self username] cStringUsingEncoding:NSWindowsCP1252StringEncoding];
+    SecKeychainItemRef itemRef;
+    OSStatus status;
+    
+    UInt32 serviceNameLength = (UInt32)strlen(cServiceName);
+    UInt32 accountNameLength = (UInt32)strlen(cUsername);
+    
+    status = SecKeychainFindGenericPassword(NULL, serviceNameLength, cServiceName, accountNameLength, cUsername, NULL, NULL, &itemRef);
+    if (status == noErr)
+        SecKeychainItemDelete(itemRef);
+}
+
 /** Return the current CIX password
  
  This property returns the current CIX password obtained from the Mac OSX keychain

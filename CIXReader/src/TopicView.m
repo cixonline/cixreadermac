@@ -565,7 +565,7 @@ static NSImage * threadOpenImage = nil;
         case ActionIDGotoOriginal: {
             Message * message = [self selectedMessage];
             if (message != nil)
-                [[NSApp delegate] setAddress:[self addressFromMessage:message withID:message.commentID]];
+                [(AppDelegate *)[NSApp delegate] setAddress:[self addressFromMessage:message withID:message.commentID]];
             break;
         }
             
@@ -580,7 +580,7 @@ static NSImage * threadOpenImage = nil;
                 Message * message = _messages[index];
                 if (message.level == 0)
                 {
-                    [[NSApp delegate] setAddress:[self addressFromMessage:message withID:message.remoteID]];
+                    [(AppDelegate *)[NSApp delegate] setAddress:[self addressFromMessage:message withID:message.remoteID]];
                     break;
                 }
                 index += direction;

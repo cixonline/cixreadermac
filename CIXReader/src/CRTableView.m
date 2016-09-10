@@ -20,7 +20,7 @@
         if ([self delegate] && [[self delegate] respondsToSelector:@selector(tableView:handleKeyDown:withFlags:)])
         {
             unichar keyChar = [[theEvent characters] characterAtIndex:0];
-            if ([(id)_delegate tableView:self handleKeyDown:keyChar withFlags:[theEvent modifierFlags]])
+            if ([(id)[self delegate] tableView:self handleKeyDown:keyChar withFlags:[theEvent modifierFlags]])
                 return;
         }
     }

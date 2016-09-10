@@ -51,7 +51,7 @@ static NSColor * inactiveColor;
         [folderView setTarget:self];
         [folderView setEnableTooltips:YES];
         [folderView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList];
-        [folderView setMenu:[[NSApp delegate] folderMenu]];
+        [folderView setMenu:[(AppDelegate *)[NSApp delegate] folderMenu]];
         
         // Register for dragging
         [folderView registerForDraggedTypes:@[ CR_PBoardType_FolderList, CR_PBoardType_MessageList ]];

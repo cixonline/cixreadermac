@@ -94,11 +94,10 @@
     [signatureText setString:@""];
     [signatureTitle setStringValue:@""];
     [saveSignatureButton setEnabled:NO];
-    [NSApp beginSheet:signatureEditor
-       modalForWindow:[signaturesList window]
-        modalDelegate:self
-       didEndSelector:@selector(signatureSheetEnd:returnCode:contextInfo:)
-          contextInfo:nil];
+    [[signaturesList window] beginSheet:signatureEditor
+                      completionHandler:^(NSModalResponse returnCode) {
+                          [self signatureSheetEnd:[signaturesList window] returnCode:returnCode contextInfo:nil];
+    }];
 }
 
 /* Called when the user either clicks the Edit button or double-clicks an existing
@@ -116,11 +115,10 @@
         [signatureText setString:text];
         [signatureTitle setStringValue:title];
         [saveSignatureButton setEnabled:YES];
-        [NSApp beginSheet:signatureEditor
-           modalForWindow:[signaturesList window]
-            modalDelegate:self
-           didEndSelector:@selector(signatureSheetEnd:returnCode:contextInfo:)
-              contextInfo:nil];
+        [[signaturesList window] beginSheet:signatureEditor
+                          completionHandler:^(NSModalResponse returnCode) {
+                              [self signatureSheetEnd:[signaturesList window] returnCode:returnCode contextInfo:nil];
+                          }];
     }
 }
 
@@ -145,14 +143,14 @@
  */
 -(IBAction)saveSignature:(id)sender
 {
-    [NSApp endSheet:signatureEditor returnCode:NSOKButton];
+    [[signaturesList window] endSheet:signatureEditor returnCode:NSModalResponseOK];
 }
 
 /* Just close the signature editor window.
  */
 -(IBAction)cancelSignature:(id)sender
 {
-    [NSApp endSheet:signatureEditor returnCode:NSCancelButton];
+    [[signaturesList window] endSheet:signatureEditor returnCode:NSModalResponseCancel];
 }
 
 /* Called when the Edit Signature sheet is dismissed. The returnCode is NSOKButton if the Save
@@ -160,7 +158,7 @@
  */
 -(void)signatureSheetEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
 {
-    if (returnCode == NSOKButton)
+    if (returnCode == NSModalResponseOK)
     {
         NSString * title = [signatureTitle stringValue];
         NSString * text = [NSString stringWithString:[signatureText string]];

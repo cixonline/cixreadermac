@@ -51,7 +51,12 @@
 -(BOOL)canScroll
 {
     NSScroller * scroll = self.mainFrame.frameView.documentView.enclosingScrollView.verticalScroller;
-    return scroll.knobProportion > 0.0 && scroll.knobProportion < 1.0 && scroll.floatValue < 1.0;
+    int knobProportion = scroll.knobProportion;
+    float floatValue = scroll.floatValue;
+    if (scroll.usableParts == NSNoScrollerParts)
+        return floatValue < 1.0 && floatValue != 0.0;
+
+    return knobProportion > 0.0 && knobProportion < 1.0 && floatValue < 1.0;
 }
 
 /* Set the overlay view which is displayed on top of the

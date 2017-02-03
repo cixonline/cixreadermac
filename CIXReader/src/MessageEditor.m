@@ -228,17 +228,22 @@
     [self.window orderFront:self];
     if ([messageWindow isDocumentEdited])
     {
-        NSInteger returnCode = NSRunAlertPanel(NSLocalizedString(@"Message not saved", nil),
-                                     NSLocalizedString(@"This message has not been saved. Are you sure you want to discard it?", nil),
-                                     NSLocalizedString(@"Save", nil),
-                                     NSLocalizedString(@"Cancel", nil),
-                                     NSLocalizedString(@"Don't Save", nil));
-        if (returnCode == NSAlertDefaultReturn)
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:NSLocalizedString(@"Save", nil)];
+        [alert addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
+        [alert addButtonWithTitle:NSLocalizedString(@"Don't Save", nil)];
+        [alert setMessageText:NSLocalizedString(@"Message not saved", nil)];
+        [alert setInformativeText:NSLocalizedString(@"This message has not been saved. Are you sure you want to discard it?", nil)];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        
+        NSInteger returnCode = [alert runModal];
+        
+        if (returnCode == NSAlertFirstButtonReturn)
         {
             [self save:self];
             [messageWindow setDocumentEdited:NO];
         }
-        if (returnCode == NSAlertOtherReturn)
+        if (returnCode == NSAlertThirdButtonReturn)
             [messageWindow setDocumentEdited:NO];
     }
     if (![messageWindow isDocumentEdited])
@@ -315,7 +320,7 @@
 
 /* Use selects an image from the iamge picker.
  */
--(void)pictureTakerDidEnd:(IKPictureTaker*)pictureTaker code:(int) returnCode contextInfo:(void*) ctxInf
+-(void)pictureTakerDidEnd:(IKPictureTaker*)pictureTaker code:(int)returnCode contextInfo:(void*) ctxInf
 {
     if (returnCode == NSOKButton)
     {

@@ -256,17 +256,22 @@
     [self.window orderFront:self];
     if ([messageWindow isDocumentEdited])
     {
-        NSInteger returnCode = NSRunAlertPanel(NSLocalizedString(@"Message not sent", nil),
-                                     NSLocalizedString(@"This message has not been sent. Are you sure you want to discard it?", nil),
-                                     NSLocalizedString(@"Send", nil),
-                                     NSLocalizedString(@"Cancel", nil),
-                                     NSLocalizedString(@"Don't Send", nil));
-        if (returnCode == NSAlertDefaultReturn)
+        NSAlert * alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:NSLocalizedString(@"Send", nil)];
+        [alert addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
+        [alert addButtonWithTitle:NSLocalizedString(@"Don't Send", nil)];
+        [alert setMessageText:NSLocalizedString(@"Message not sent", nil)];
+        [alert setInformativeText:NSLocalizedString(@"This message has not been sent. Are you sure you want to discard it?", nil)];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        
+        NSModalResponse returnCode = [alert runModal];
+        
+        if (returnCode == NSAlertFirstButtonReturn)
         {
             [self sendMessage:self];
             [messageWindow setDocumentEdited:NO];
         }
-        if (returnCode == NSAlertOtherReturn)
+        if (returnCode == NSAlertThirdButtonReturn)
             [messageWindow setDocumentEdited:NO];
     }
     if (![messageWindow isDocumentEdited])

@@ -30,11 +30,11 @@ VCS_NUM=$(($VCS_NUM + 600))
 case "${VCS_BRANCH}" in
     *beta*)
         isbeta=1
-        FULL_VCS_NUM="1.63.${VCS_NUM} Beta"
+        FULL_VCS_NUM="1.64.${VCS_NUM} Beta"
     ;;
     *)
         isbeta=0
-        FULL_VCS_NUM="1.63.${VCS_NUM}"
+        FULL_VCS_NUM="1.64.${VCS_NUM}"
     ;;
 esac
 

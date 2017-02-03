@@ -15,7 +15,7 @@ else
     DOWNLOAD_SUB_DIR="beta";
 fi
 
-VERSION="1.63.${VCS_NUM}"
+VERSION="1.64.${VCS_NUM}"
 
 DMG_FILENAME="cr_osx${VERSION}.dmg"
 dSYM_FILENAME="cr_osx${VERSION}-dSYM"

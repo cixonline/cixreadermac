@@ -522,13 +522,16 @@ static NSImage * threadOpenImage = nil;
             
         case ActionIDBlock: {
             Message * message = [self selectedMessage];
-            NSInteger returnCode = NSRunAlertPanel(NSLocalizedString(@"Block User", nil),
-                                                   @"All existing messages and any new messages from %@ will automatically be marked as read. Are you sure?",
-                                                   NSLocalizedString(@"Yes", nil),
-                                                   NSLocalizedString(@"No", nil),
-                                                   nil,
-                                                   message.author);
-            if (returnCode == NSAlertDefaultReturn)
+            NSAlert * alert = [[NSAlert alloc] init];
+            
+            [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
+            [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
+            [alert setMessageText:NSLocalizedString(@"Block User", nil)];
+            [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"All existing messages and any new messages from %@ will automatically be marked as read. Are you sure?", nil), message.author]];
+            [alert setAlertStyle:NSWarningAlertStyle];
+
+            NSModalResponse returnCode = [alert runModal];
+            if (returnCode == NSAlertFirstButtonReturn)
             {
                 [[CIX ruleCollection] block:message.author];
                 [self refreshMessage:message];
@@ -959,13 +962,14 @@ static NSImage * threadOpenImage = nil;
  */
 -(void)withdrawMessage:(Message *)message
 {
-    NSInteger returnCode = NSRunAlertPanel(NSLocalizedString(@"Withdraw", nil),
-                                           @"Do you want to withdraw message %d?",
-                                           NSLocalizedString(@"Yes", nil),
-                                           NSLocalizedString(@"No", nil),
-                                           nil,
-                                           message.remoteID);
-    if (returnCode == NSAlertDefaultReturn)
+    NSAlert * alert = [[NSAlert alloc] init];
+    
+    [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
+    [alert setMessageText:NSLocalizedString(@"Withdraw", nil)];
+    [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"Do you want to withdraw message %d?", nil), message.remoteID]];
+    
+    if ([alert runModal] == NSAlertFirstButtonReturn)
         [message withdraw];
 }
 
@@ -1089,12 +1093,13 @@ static NSImage * threadOpenImage = nil;
             
             NSInteger messageNumber = _goToInputController.value;
             if (![self goToMessage:_goToInputController.value]) {
-                NSRunAlertPanel(NSLocalizedString(@"No Such Message", nil),
-                                                   NSLocalizedString(@"Message %@ not found in this topic", nil),
-                                                   NSLocalizedString(@"OK", nil),
-                                                   nil,
-                                                   nil,
-                                                   @(messageNumber));                
+                NSAlert * alert = [[NSAlert alloc] init];
+                
+                [alert addButtonWithTitle:NSLocalizedString(@"OK", nil)];
+                [alert setMessageText:NSLocalizedString(@"No Such Message", nil)];
+                [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"Message %@ not found in this topic", nil), @(messageNumber)]];
+
+                [alert runModal];
             }
         }
     }];

@@ -87,8 +87,8 @@
     NSString * theTime;
         
     NSCalendar * usersCalendar = [[NSLocale currentLocale] objectForKey:NSLocaleCalendar];
-    NSInteger differenceInDays = [usersCalendar ordinalityOfUnit:NSDayCalendarUnit inUnit:NSEraCalendarUnit forDate:[NSDate date]] -
-                            [usersCalendar ordinalityOfUnit:NSDayCalendarUnit inUnit:NSEraCalendarUnit forDate:self];
+    NSInteger differenceInDays = [usersCalendar ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitEra forDate:[NSDate date]] -
+                            [usersCalendar ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitEra forDate:self];
     
     if (differenceInDays == 0)
         theDate = NSLocalizedString(@"Today", nil);
@@ -99,7 +99,7 @@
     else
         theDate = [NSDateFormatter localizedStringFromDate:self dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
     
-    NSDateComponents * selfComponents = [usersCalendar components:NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit fromDate:self];
+    NSDateComponents * selfComponents = [usersCalendar components:NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute fromDate:self];
     if (selfComponents.hour == 12 && selfComponents.minute == 0)
         theTime = NSLocalizedString(@"Noon", nil);
     else if (selfComponents.hour == 0 && selfComponents.minute == 0)

@@ -127,12 +127,16 @@ static NSDictionary * cacheListOptions = nil;
  */
 -(IBAction)handleMarkAllRead:(id)sender
 {
-    NSInteger returnCode = NSRunAlertPanel(NSLocalizedString(@"Mark All Read", nil),
-                                           NSLocalizedString(@"All messages in all forums will be marked read with the exception of read locked messages. Are you sure?", nil),
-                                           NSLocalizedString(@"No", nil),
-                                           NSLocalizedString(@"Yes", nil),
-                                           nil);
-    if (returnCode == NSAlertAlternateReturn)
+    NSAlert * alert = [[NSAlert alloc] init];
+    [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
+    [alert setMessageText:NSLocalizedString(@"Mark All Read", nil)];
+    [alert setInformativeText:NSLocalizedString(@"All messages in all forums will be marked read with the exception of read locked messages. Are you sure?", nil)];
+    [alert setAlertStyle:NSAlertStyleWarning];
+    
+    NSModalResponse returnCode = [alert runModal];
+
+    if (returnCode == NSAlertSecondButtonReturn)
     {
         [CIX.folderCollection markAllRead];
     }

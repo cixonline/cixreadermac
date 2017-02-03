@@ -90,15 +90,16 @@ static NSImage * rootFolderImage;
  */
 -(void)delete
 {
-    NSInteger returnCode = NSRunAlertPanel(NSLocalizedString(@"Delete", nil),
-                                           NSLocalizedString(IsTopLevelFolder(self.folder) ?
-                                               @"Do you want to delete the %@ forum?" :
-                                               @"Do you want to delete the %@ topic?", nil),
-                                           NSLocalizedString(@"Yes", nil),
-                                           NSLocalizedString(@"No", nil),
-                                           nil,
-                                           self.name);
-    if (returnCode == NSAlertDefaultReturn)
+    NSAlert * alert = [[NSAlert alloc] init];
+    
+    [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
+    [alert setMessageText:NSLocalizedString(@"Delete", nil)];
+    [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(IsTopLevelFolder(self.folder) ?
+                                                                           @"Do you want to delete the %@ forum?" :
+                                                                           @"Do you want to delete the %@ topic?", nil), self.name]];
+    
+    if ([alert runModal] == NSAlertFirstButtonReturn)
         [self.folder delete:YES];
 }
 
@@ -106,15 +107,16 @@ static NSImage * rootFolderImage;
  */
 -(void)resign
 {
-    NSInteger returnCode = NSRunAlertPanel(NSLocalizedString(@"Resign", nil),
-                                           NSLocalizedString(IsTopLevelFolder(self.folder) ?
-                                                @"Do you want to resign from the %@ forum?" :
-                                                @"Do you want to resign from the %@ topic?", nil),
-                                           NSLocalizedString(@"Yes", nil),
-                                           NSLocalizedString(@"No", nil),
-                                           nil,
-                                           self.name);
-    if (returnCode == NSAlertDefaultReturn)
+    NSAlert * alert = [[NSAlert alloc] init];
+    
+    [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
+    [alert setMessageText:NSLocalizedString(@"Resign", nil)];
+    [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(IsTopLevelFolder(self.folder) ?
+                                                                           @"Do you want to resign from the %@ forum?" :
+                                                                           @"Do you want to resign from the %@ topic?", nil), self.name]];
+    
+    if ([alert runModal] == NSAlertFirstButtonReturn)
         [self.folder resign];
 }
 
@@ -122,15 +124,16 @@ static NSImage * rootFolderImage;
  */
 -(void)markAllRead
 {
-    NSInteger returnCode = NSRunAlertPanel(NSLocalizedString(@"Mark All Read", nil),
-                                           NSLocalizedString(IsTopLevelFolder(self.folder) ?
-                                                             @"Do you want to mark as read all messages in the %@ forum?" :
-                                                             @"Do you want to mark as read all messages in the %@ topic?", nil),
-                                           NSLocalizedString(@"Yes", nil),
-                                           NSLocalizedString(@"No", nil),
-                                           nil,
-                                           self.name);
-    if (returnCode == NSAlertDefaultReturn)
+    NSAlert * alert = [[NSAlert alloc] init];
+    
+    [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
+    [alert setMessageText:NSLocalizedString(@"Mark All Read", nil)];
+    [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(IsTopLevelFolder(self.folder) ?
+                                                                           @"Do you want to mark as read all messages in the %@ forum?" :
+                                                                           @"Do you want to mark as read all messages in the %@ topic?", nil), self.name]];
+    
+    if ([alert runModal] == NSAlertFirstButtonReturn)
         [self.folder markAllRead];
 }
 

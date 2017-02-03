@@ -165,12 +165,11 @@
     [saveRuleButton setEnabled:YES];
     
     [ruleEditorWindow makeFirstResponder:ruleTitle];
-
-    [NSApp beginSheet:ruleEditorWindow
-       modalForWindow:[rulesList window]
-        modalDelegate:self
-       didEndSelector:@selector(rulesSheetEnd:returnCode:contextInfo:)
-          contextInfo:nil];
+    
+    [[rulesList window] beginSheet:ruleEditorWindow
+                 completionHandler:^(NSModalResponse returnCode) {
+                     [self rulesSheetEnd:[rulesList window] returnCode:returnCode contextInfo:nil];
+                 }];
 }
 
 /* Invoke logic to edit the existing rule.
@@ -190,25 +189,24 @@
     
     [saveRuleButton setEnabled:NO];
     
-    [NSApp beginSheet:ruleEditorWindow
-       modalForWindow:[rulesList window]
-        modalDelegate:self
-       didEndSelector:@selector(rulesSheetEnd:returnCode:contextInfo:)
-          contextInfo:nil];
+    [[rulesList window] beginSheet:ruleEditorWindow
+                 completionHandler:^(NSModalResponse returnCode) {
+                    [self rulesSheetEnd:[rulesList window] returnCode:returnCode contextInfo:nil];
+    }];
 }
 
 /* Called when the user clicks Save
  */
 -(IBAction)saveRule:(id)sender
 {
-    [NSApp endSheet:ruleEditorWindow returnCode:NSOKButton];
+    [[rulesList window] endSheet:ruleEditorWindow returnCode:NSModalResponseOK];
 }
 
 /* Just close the rule editor window.
  */
 -(IBAction)cancelRule:(id)sender
 {
-    [NSApp endSheet:ruleEditorWindow returnCode:NSCancelButton];
+    [[rulesList window] endSheet:ruleEditorWindow returnCode:NSModalResponseCancel];
 }
 
 /* Called when the Edit Rule sheet is dismissed. The returnCode is NSOKButton if the Save
@@ -216,7 +214,7 @@
  */
 -(void)rulesSheetEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
 {
-    if (returnCode == NSOKButton)
+    if (returnCode == NSModalResponseOK)
     {
         NSString * title = [ruleTitle stringValue];
         NSPredicate * predicate = [ruleEditor objectValue];
@@ -282,14 +280,16 @@
  */
 -(void)handleResetButton:(id)sender
 {
-    NSInteger returnCode = NSRunAlertPanel(
-           NSLocalizedString(@"Reset All Rules", nil),
-           NSLocalizedString(@"This will reset all rules back to the CIXReader defaults and discard all custom modifications. Are you sure?", nil),
-           NSLocalizedString(@"Yes", nil),
-           NSLocalizedString(@"No", nil),
-           nil);
+    NSAlert * alert = [[NSAlert alloc] init];
+    [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
+    [alert setMessageText:NSLocalizedString(@"Reset All Rules", nil)];
+    [alert setInformativeText:NSLocalizedString(@"This will reset all rules back to the CIXReader defaults and discard all custom modifications. Are you sure?", nil)];
+    [alert setAlertStyle:NSAlertStyleWarning];
 
-    if (returnCode == NSAlertDefaultReturn)
+    NSModalResponse returnCode = [alert runModal];
+    
+    if (returnCode == NSAlertFirstButtonReturn)
     {
         [CIX.ruleCollection reset];
         _arrayOfRules = [CIX.ruleCollection allRules];

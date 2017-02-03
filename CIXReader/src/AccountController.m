@@ -197,7 +197,7 @@
  */
 -(void)pictureTakerDidEnd:(IKPictureTaker*) pictureTaker code:(int) returnCode contextInfo:(void*) ctxInf
 {
-    if (returnCode == NSOKButton)
+    if (returnCode == NSModalResponseOK)
     {
         mugshotImage.image = [pictureTaker.outputImage resize:NSMakeSize(100, 100)];
         _isImageModified = YES;

@@ -316,7 +316,12 @@
     
     if (![CIX init:databasePath])
     {
-        NSRunAlertPanel(@"Error", @"Cannot open database", @"Quit", nil, nil);
+        NSAlert * alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:NSLocalizedString(@"Quit", nil)];
+        [alert setMessageText:NSLocalizedString(@"Error", nil)];
+        [alert setInformativeText:NSLocalizedString(@"Cannot open database", nil)];
+        [alert setAlertStyle:NSAlertStyleWarning];
+
         return NO;
     }
     
@@ -411,19 +416,17 @@
             [prefs setDisplayStyle:styleName];
             if ([[prefs displayStyle] isEqualToString:styleName])
             {
-                NSRunAlertPanel(NSLocalizedString(@"CIXReader has installed a new style", nil),
-                                NSLocalizedString(@"The style \"%@\" has been installed to your Styles folder.", nil),
-                                NSLocalizedString(@"OK", nil),
-                                nil,
-                                nil,
-                                styleName);
+                NSAlert * alert = [[NSAlert alloc] init];
+                [alert addButtonWithTitle:NSLocalizedString(@"OK", nil)];
+                [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"The style \"%@\" has been installed to your Styles folder.", nil), styleName]];
+                [alert setAlertStyle:NSAlertStyleWarning];
+                [alert runModal];
             }
         }
         return YES;
     }
     return NO;
 }
-
 
 /* Copies the folder at srcFile to the specified path. The path is created if it doesn't already exist and
  * an error is reported if we fail to create the path. The return value is the result of copying the source
@@ -441,12 +444,12 @@
     {
         if (![fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:NULL error:NULL])
         {
-            NSRunAlertPanel(NSLocalizedString(@"Cannot create folder", nil),
-                            NSLocalizedString(@"The \"%@\" folder cannot be created.", nil),
-                            NSLocalizedString(@"OK", nil),
-                            nil,
-                            nil,
-                            path);
+            NSAlert * alert = [[NSAlert alloc] init];
+            [alert addButtonWithTitle:NSLocalizedString(@"OK", nil)];
+            [alert setMessageText:NSLocalizedString(@"Cannot create folder", nil)];
+            [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"The \"%@\" folder cannot be created.", nil), path]];
+            [alert setAlertStyle:NSAlertStyleWarning];
+            [alert runModal];
             return NO;
         }
     }

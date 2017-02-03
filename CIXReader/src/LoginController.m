@@ -129,7 +129,14 @@ void runOKAlertPanel(NSString * titleString, NSString * bodyText, ...)
     va_start(arguments, bodyText);
     fullBodyText = [[NSString alloc] initWithFormat:bodyText arguments:arguments];
     // Security: arguments may contain formatting characters, so don't use fullBodyText as format string.
-    NSRunAlertPanel(titleString, @"%@", NSLocalizedString(@"OK", nil), nil, nil, fullBodyText);
+    
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert addButtonWithTitle:NSLocalizedString(@"OK", nil)];
+    [alert setMessageText:titleString];
+    [alert setInformativeText:fullBodyText];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    [alert runModal];
+    
     va_end(arguments);
 }
 

@@ -150,49 +150,40 @@
     [addTextField setFormatter:formatter];
     [addTextField setStringValue:@""];
     
-    [NSApp beginSheet:addPanel
-       modalForWindow:[tableView window]
-        modalDelegate:self
-       didEndSelector:@selector(addPanelEndSheet:returnCode:contextInfo:)
-          contextInfo:nil];
+    [[tableView window] beginSheet:addPanel completionHandler:^(NSModalResponse returnCode) {
+        if (returnCode == NSModalResponseOK)
+        {
+            NSString * name = [addTextField stringValue];
+            
+            if (![_toAdd containsObject:name] && ![_list containsObject:name])
+                [_toAdd addObject:name];
+            
+            [self loadList];
+            [tableView reloadData];
+            [self updateRemoveButton];
+            
+            // Select the newly added user for convenience.
+            NSInteger row = [_users indexOfObject:name];
+            [tableView selectRowIndexes: [NSIndexSet indexSetWithIndex:(NSUInteger)row] byExtendingSelection:NO];
+            [tableView scrollRowToVisible:row];
+        }
+        [addPanel orderOut:self];
+        [[tableView window] makeKeyAndOrderFront:self];
+    }];
 }
 
 /* Just close the add panel.
  */
 -(IBAction)handleAddPanelCancelButton:(id)sender
 {
-    [NSApp endSheet:addPanel returnCode:NSCancelButton];
+    [[tableView window] endSheet:addPanel returnCode:NSModalResponseCancel];
 }
 
 /* Called when the user clicks Add
  */
 -(IBAction)handleAddPanelAddButton:(id)sender
 {
-    [NSApp endSheet:addPanel returnCode:NSOKButton];
-}
-
-/* Called when the Add panel is dismissed either with Cancel or Add.
- */
--(void)addPanelEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
-{
-    if (returnCode == NSOKButton)
-    {
-        NSString * name = [addTextField stringValue];
-        
-        if (![_toAdd containsObject:name] && ![_list containsObject:name])
-            [_toAdd addObject:name];
-        
-        [self loadList];
-        [tableView reloadData];
-        [self updateRemoveButton];
-        
-        // Select the newly added user for convenience.
-        NSInteger row = [_users indexOfObject:name];
-        [tableView selectRowIndexes: [NSIndexSet indexSetWithIndex:(NSUInteger)row] byExtendingSelection:NO];
-        [tableView scrollRowToVisible:row];
-    }
-    [addPanel orderOut:self];
-    [[tableView window] makeKeyAndOrderFront:self];
+    [[tableView window] endSheet:addPanel returnCode:NSModalResponseOK];
 }
 
 /* This function is called when the contents of the title field is changed.

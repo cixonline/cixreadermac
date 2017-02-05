@@ -1416,7 +1416,7 @@
     [item setTag:NSSearchFieldRecentsTitleMenuItemTag];
     [cellMenu insertItem:item atIndex:2];
     
-    item = [[NSMenuItem alloc] initWithTitle:@"Recents" action:NULL keyEquivalent:@""];
+    item = [[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"Recents", nil) action:NULL keyEquivalent:@""];
     [item setTag:NSSearchFieldRecentsMenuItemTag];
     [cellMenu insertItem:item atIndex:3];
     
@@ -2099,9 +2099,9 @@
     }
     else if ([itemIdentifier isEqualToString:@"SearchBar"])
     {
-        [item setLabel:@"Search"];
+        [item setLabel:NSLocalizedString(@"Search", nil)];
         [item setPaletteLabel:item.label];
-        [item setToolTip:@"Search Messages"];
+        [item setToolTip:NSLocalizedString(@"Search Messages", nil)];
         [item setTarget:self];
         [item setAction:@selector(searchUsingSearchPanel:)];
         

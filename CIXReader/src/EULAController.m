@@ -46,7 +46,7 @@
 {
     NSSavePanel *savePanel = [NSSavePanel savePanel];
     [savePanel setPrompt:NSLocalizedString(@"Save", @"Save")];
-    [savePanel setNameFieldStringValue:@"CIXReader EULA"];
+    [savePanel setNameFieldStringValue:NSLocalizedString(@"CIXReader EULA", nil)];
     [savePanel setAllowedFileTypes:@[ @"rtf" ]];
     
     if (NSFileHandlingPanelOKButton == [savePanel runModal])

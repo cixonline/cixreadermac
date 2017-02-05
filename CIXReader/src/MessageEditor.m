@@ -322,7 +322,7 @@
  */
 -(void)pictureTakerDidEnd:(IKPictureTaker*)pictureTaker code:(int)returnCode contextInfo:(void*) ctxInf
 {
-    if (returnCode == NSOKButton)
+    if (returnCode == NSModalResponseOK)
     {
         NSImage * pic = [pictureTaker.outputImage constrain:300];
         NSTextAttachmentCell * attachmentCell = [[NSTextAttachmentCell alloc] initImageCell:pic];

@@ -8,7 +8,7 @@
 
 #import "Preferences.h"
 #import "Signatures.h"
-#import "Autorevision.h"
+#import "autorevision.h"
 #import "Sparkle/Sparkle.h"
 
 // The default preferences object

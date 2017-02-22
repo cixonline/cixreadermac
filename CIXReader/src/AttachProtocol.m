@@ -9,7 +9,7 @@
 #import "AttachProtocol.h"
 #import "Attachment.h"
 #import "ImageExtensions.h"
-#import "Cix.h"
+#import "CIX.h"
 
 @implementation AttachProtocol
 

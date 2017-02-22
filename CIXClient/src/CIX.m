@@ -558,25 +558,18 @@ static const int FirstRunInterval = 2.0;
                                            if (error == nil)
                                            {
                                                Response * resp = [[Response alloc] initWithObject:self];
-                                               if (error != nil)
-                                               {
-                                                   [CIX reportServerErrors:__PRETTY_FUNCTION__ error:error];
-                                                   resp.errorCode = CCResponse_ServerError;
-                                               }
+
+                                               JSONModelError * jsonError = nil;
+                                                   
+                                               J_Whos * whos = [[J_Whos alloc] initWithData:data error:&jsonError];
+                                               if (jsonError != nil)
+                                                   resp.errorCode = CCResponse_NoSuchForum;
                                                else
                                                {
-                                                   JSONModelError * jsonError = nil;
-                                                   
-                                                   J_Whos * whos = [[J_Whos alloc] initWithData:data error:&jsonError];
-                                                   if (jsonError != nil)
-                                                       resp.errorCode = CCResponse_NoSuchForum;
-                                                   else
-                                                   {
-                                                       NSMutableArray * onlineUsers = [NSMutableArray array];
-                                                       for (J_Who * user in whos.Users)
-                                                           [onlineUsers addObject:user.Name];
-                                                       resp.object = onlineUsers;
-                                                   }
+                                                   NSMutableArray * onlineUsers = [NSMutableArray array];
+                                                   for (J_Who * user in whos.Users)
+                                                       [onlineUsers addObject:user.Name];
+                                                   resp.object = onlineUsers;
                                                }
                                                
                                                // Notify interested parties that the list of online users

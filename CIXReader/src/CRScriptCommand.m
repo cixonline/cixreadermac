@@ -23,7 +23,7 @@
 
 	[scanner scanUpToString:@":" intoString:&urlPrefix];
 	[scanner scanString:@":" intoString:nil];
-	if (urlPrefix && [urlPrefix isEqualToString:@"cix"])
+	if ([urlPrefix isEqualToString:@"cix"])
 	{
 		NSString * linkPath = nil;
 

@@ -7,7 +7,7 @@
 //
 
 #import "TopicFolder.h"
-#import "Cix.h"
+#import "CIX.h"
 
 static NSImage * roTopicFolderImage;
 static NSImage * topicFolderImage;

@@ -222,14 +222,11 @@ static NSMutableDictionary * _cache = nil;
                                                if (data != nil)
                                                {
                                                    NSString * responseString = [APIRequest responseTextFromData:data];
-                                                   if (responseString != nil)
+                                                   if (responseString != nil && [responseString isEqualToString:@"Success"])
                                                    {
-                                                       if ([responseString isEqualToString:@"Success"])
-                                                       {
-                                                           [log writeLine:@"Mugshot successfully uploaded"];
-                                                           self.pending = NO;
-                                                           [self save];
-                                                       }
+                                                       [log writeLine:@"Mugshot successfully uploaded"];
+                                                       self.pending = NO;
+                                                       [self save];
                                                    }
                                                }
                                            }

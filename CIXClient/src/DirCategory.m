@@ -6,7 +6,7 @@
 //  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
 //
 
-#import "Cix.h"
+#import "CIX.h"
 #import "DirCategory.h"
 
 @implementation DirCategory

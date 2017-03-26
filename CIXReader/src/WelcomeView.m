@@ -136,7 +136,7 @@
             [oneItem replaceString:@"$Subject$" withString:[thread.body.firstNonBlankLine truncateByWordWithLimit:80]];
             [oneItem replaceString:@"$Link$" withString:[NSString stringWithFormat:@"%@/%@", thread.forum, thread.topic]];
             [oneItem replaceString:@"$RootID$" withString:[NSString stringWithFormat:@"%d", thread.remoteID]];
-            [oneItem replaceString:@"$Date$" withString:[thread.date friendlyDescription]];
+            [oneItem replaceString:@"$Date$" withString:[[thread.date GMTBSTtoUTC] friendlyDescription]];
             [body appendString:oneItem];
         }
         

@@ -7,7 +7,6 @@
 //
 
 #import "CIX.h"
-#import "DirCategory.h"
 
 @implementation DirCategory
 

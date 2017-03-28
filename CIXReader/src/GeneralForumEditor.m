@@ -9,7 +9,6 @@
 #import "CIX.h"
 #import "GeneralForumEditor.h"
 #import "StringExtensions.h"
-#import "PopUpButtonExtensions.h"
 
 @implementation GeneralForumEditor
 

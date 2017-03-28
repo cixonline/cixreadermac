@@ -15,7 +15,6 @@
 #import "MessageResultSet.h"
 #import "DateExtensions.h"
 #import "PredicateExtensions.h"
-#import "StarSet.h"
 #import "CIXThread.h"
 
 @implementation FolderCollection

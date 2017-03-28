@@ -8,7 +8,6 @@
 
 #import "UpdatePreferences.h"
 #import "Preferences.h"
-#import "LogFile.h"
 
 // Private functions
 @interface UpdatePreferences (Private)

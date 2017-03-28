@@ -7,8 +7,6 @@
 //
 
 #import "CIX.h"
-#import "Conversation.h"
-#import "MailMessage.h"
 #import "PMessageReply.h"
 #import "PMessageAdd.h"
 #import "DateExtensions.h"

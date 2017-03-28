@@ -11,7 +11,6 @@
 #import "WindowCollection.h"
 #import "DateExtensions.h"
 #import "MapKit/MKMapItem.h"
-#import "CIX.h"
 
 @implementation ProfileController
 

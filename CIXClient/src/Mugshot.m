@@ -10,7 +10,6 @@
 #import "FMDatabase.h"
 #import "Mugshot_Private.h"
 #import "ImageExtensions.h"
-#import "StringExtensions.h"
 
 static ImageClass * defaultUserImage = nil;
 static NSMutableDictionary * _cache = nil;

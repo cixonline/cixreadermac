@@ -7,7 +7,6 @@
 //
 
 #import "CIX.h"
-#import "DirForum_Private.h"
 #import "ForumMods.h"
 #import "ForumSet.h"
 #import "Parts.h"

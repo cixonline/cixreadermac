@@ -26,7 +26,7 @@ typedef enum {
 // Accessors
 +(BOOL)useBetaAPI;
 +(void)setUseBetaAPI:(BOOL)flag;
-+(NSString *)apiBase;
++(const NSString *)apiBase;
 +(NSURLRequest *)get:(NSString *)apiFunction;
 +(NSURLRequest *)get:(NSString *)apiFunction withQuery:(NSString *)queryString;
 +(NSURLRequest *)getWithCredentials:(NSString *)apiFunction username:(NSString *)username password:(NSString *)password;

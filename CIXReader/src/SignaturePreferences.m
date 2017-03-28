@@ -10,7 +10,6 @@
 #import "StringExtensions.h"
 #import "Signatures.h"
 #import "Preferences.h"
-#import "Constants.h"
 
 @implementation SignaturePreferences
 

@@ -14,7 +14,6 @@
 /* Private Mugshot class accessors
  */
 @interface Mugshot (Private)
-    +(void)create;
     -(void)sync;
     +(ImageClass *)defaultMugshot;
 @end

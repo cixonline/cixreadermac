@@ -13,7 +13,6 @@
 #import "StringExtensions.h"
 #import "CRLevelCell.h"
 #import "CRTextCountCell.h"
-#import "DirCategory.h"
 #import "JoinForumController.h"
 
 @implementation DirectoryView

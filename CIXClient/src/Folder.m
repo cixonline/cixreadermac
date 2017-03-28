@@ -8,7 +8,6 @@
 
 #import "CIX.h"
 #import "FMDatabase.h"
-#import "Folder_Private.h"
 #import "Message_Private.h"
 #import "MessageResultSet.h"
 #import "Range.h"

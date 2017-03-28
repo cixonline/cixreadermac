@@ -7,7 +7,6 @@
 //
 
 #import "ViewingPreferences.h"
-#import "StyleController.h"
 #import "Preferences.h"
 
 // List of available font sizes. I picked the ones that matched

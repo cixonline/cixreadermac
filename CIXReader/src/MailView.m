@@ -14,7 +14,6 @@
 #import "AppDelegate.h"
 #import "MailEditor.h"
 #import "Preferences.h"
-#import "CIX.h"
 
 static NSImage * unreadImage = nil;
 static NSImage * replyImage = nil;

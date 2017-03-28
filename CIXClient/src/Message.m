@@ -7,7 +7,6 @@
 //
 
 #import "CIX.h"
-#import "Message.h"
 #import "PostMessage.h"
 #import "StarAdd.h"
 #import "StringExtensions.h"

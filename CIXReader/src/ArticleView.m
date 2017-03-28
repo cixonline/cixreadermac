@@ -194,8 +194,8 @@
     [regex replaceMatchesInString:marki options:0 range:NSMakeRange(0, [marki length]) withTemplate:@"$1&gt;&nbsp;$2"];
 
     NSData * data = [marki dataUsingEncoding: NSUTF8StringEncoding];
-    NSNumber * n = [NSNumber numberWithUnsignedInteger: NSUTF8StringEncoding];
-    NSDictionary * options = [NSDictionary dictionaryWithObject:n forKey: NSCharacterEncodingDocumentOption];
+    NSNumber * n = @(NSUTF8StringEncoding);
+    NSDictionary * options = @{NSCharacterEncodingDocumentOption: n};
     NSAttributedString * as = [[NSAttributedString alloc] initWithHTML:data options:options documentAttributes:nil];
     return [as string];
 }

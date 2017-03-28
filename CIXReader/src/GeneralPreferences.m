@@ -10,7 +10,6 @@
 #import "Preferences.h"
 #import "CIX.h"
 #import "PopUpButtonExtensions.h"
-#import "LogFile.h"
 
 // Private functions
 @interface GeneralPreferences (Private)

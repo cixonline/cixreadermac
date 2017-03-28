@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "CIX.h"
 #import "Preferences.h"
 #import "JoinForumController.h"
 #import "EULAController.h"
@@ -170,7 +169,7 @@
 /* Called when the application is about to shut down. Check whether
  * we can really terminate here.
  */
--(NSApplicationTerminateReply)applicationShouldTerminate:(NSNotification *)aNotification
+-(NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)app
 {
     NSArray * windows = [[WindowCollection defaultCollection] collection];
     if (windows != nil)

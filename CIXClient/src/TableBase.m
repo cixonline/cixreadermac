@@ -7,7 +7,6 @@
 //
 
 #import "CIX.h"
-#import "TableBase.h"
 #import "FMDatabase.h"
 #import "FMDatabaseAdditions.h"
 #import "StringExtensions.h"

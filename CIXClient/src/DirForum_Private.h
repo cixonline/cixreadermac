@@ -15,7 +15,6 @@
  */
 @interface DirForum (Private)
     -(void)sync;
-    -(void)save;
 @end
 
 #endif

@@ -13,7 +13,6 @@
 #import "CategoryFolder.h"
 #import "ModeratorItem.h"
 #import "AppDelegate.h"
-#import "MultiViewController.h"
 #import "JoinForumController.h"
 #import "ParticipantsListController.h"
 

@@ -18,7 +18,6 @@
 @interface MailEditor (Private)
     -(void)handleMessageFontChange:(NSNotification *)notification;
     -(void)handleSignaturesChange:(NSNotification *)notification;
-    -(void)setMessageFont;
     -(void)updateTitle;
     -(void)insertSignature:(NSString *)signatureTitle;
     -(void)reloadSignaturesList;

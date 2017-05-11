@@ -222,6 +222,7 @@ static NSString * SQLNullValueString = @"NULL";
         case NSUnionSetExpressionType:
         case NSIntersectSetExpressionType:
         case NSMinusSetExpressionType:
+        case NSConditionalExpressionType:
             // impl
             break;
         /* these can't be converted */

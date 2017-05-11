@@ -103,7 +103,7 @@
     NSDate * latestDate = notification.object;
     if (latestDate != nil)
     {
-        NSString * text = [NSString stringWithFormat:NSLocalizedString(@"Latest message in forum was posted on %@", nil), [latestDate friendlyDescription]];
+        NSString * text = [NSString stringWithFormat:NSLocalizedString(@"Latest message in forum was posted on %@", nil), [[latestDate GMTBSTtoUTC]  friendlyDescription]];
         [forumLatestDate setStringValue:text];
         [forumLatestDate setHidden:NO];
     }

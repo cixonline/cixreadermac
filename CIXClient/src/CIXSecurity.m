@@ -6,6 +6,8 @@
 //  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
 //
 
+#import "CIX.h"
+
 static NSString * _password;
 
 @implementation CIX (CIXSecurity)

@@ -134,7 +134,7 @@ static Preferences * _standardPreferences = nil;
  */
 -(void)setBool:(BOOL)value forKey:(NSString *)defaultName
 {
-	[_userPrefs setObject:[NSNumber numberWithBool:value] forKey:defaultName];
+    [_userPrefs setObject:@(value) forKey:defaultName];
 }
 
 /* Returns the boolean value of the given default object.

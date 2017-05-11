@@ -66,6 +66,16 @@ void dummy() {} // Needed to ensure the static library compiles
     return newString;
 }
 
+/* Fix escape symbols to be acceptable for a SQLite LIKE expression.
+ */
+-(NSString *)safeQuotes
+{
+    NSMutableString * newString = [NSMutableString stringWithString:self];
+    [newString replaceString:@"'" withString:@"''"];
+    [newString replaceString:@"%" withString:@"%%"];
+    return newString;
+}
+
 /** Unescape Unicode sequences in a string
  
  This method converts any Unicode sequences in the string to their literal

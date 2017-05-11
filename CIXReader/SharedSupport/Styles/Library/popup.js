@@ -7,8 +7,8 @@ tooltipShow = function(event,item) {
     e.style.top = (event.clientY + 20 + yOffset) + 'px';
     e.style.left = l + 'px';
     e.style.display = 'block';
-}
+};
 tooltipHide = function(event,item) {
     var e = item.getElementsByClassName('tooltip_text')[0];
     e.style.display = 'none';
-}
+};

@@ -7,6 +7,7 @@
 //
 
 #import "SearchFolder.h"
+#import "StringExtensions.h"
 
 static NSImage * searchFolderImage;
 
@@ -33,7 +34,7 @@ static NSImage * searchFolderImage;
  */
 -(NSString *)criteria
 {
-    return [NSString stringWithFormat:@"Body like '%%%@%%'", self.searchString];
+    return [NSString stringWithFormat:@"Body like '%%%@%%'", [self.searchString safeQuotes]];
 }
 
 /* Return the folder display name.

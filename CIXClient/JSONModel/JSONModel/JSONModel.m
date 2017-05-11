@@ -25,7 +25,6 @@
 
 #import "JSONModel.h"
 #import "JSONModelClassProperty.h"
-#import "JSONModelArray.h"
 
 #pragma mark - associated objects names
 static const char * kMapperObjectKey;

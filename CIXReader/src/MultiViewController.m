@@ -86,9 +86,6 @@
     [[_mainWindow standardWindowButton:NSWindowToolbarButton] setFrame:NSZeroRect];
     [_mainWindow setHasShadow:YES];
     
-    // Create an empty view
-    _blankView = [[NSView alloc] initWithFrame:[[_mainWindow contentView] frame]];
-    
     // Array of pane objects
     _viewsPanes = [[NSMutableDictionary alloc] init];
     

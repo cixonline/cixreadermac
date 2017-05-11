@@ -117,24 +117,21 @@ static NSString * SQLNullValueString = @"NULL";
     NSString *retStr = nil;
     NSString *comparator = nil;
    
-    if (!retStr)
-        comparator = [self SQLInfixOperatorForOperatorType:[predicate predicateOperatorType]];
+    comparator = [self SQLInfixOperatorForOperatorType:[predicate predicateOperatorType]];
 
     NSAssert(comparator, @"Predicate %@ could not be converted, the predicate operator could not be converted.", predicate);
    
-    if (!retStr) {
-        if ([comparator isEqual:@"BETWEEN"]) {
-            retStr = [NSString stringWithFormat:@"(%@ %@ %@ AND %@)",
-                      [self SQLExpressionForNSExpression:[predicate leftExpression]],
-                        comparator,
-                        [self SQLExpressionForNSExpression:[[predicate rightExpression] collection][0]],
-                        [self SQLExpressionForNSExpression:[[predicate rightExpression] collection][1]]];
-        } else {
-            retStr = [NSString stringWithFormat:@"(%@ %@ %@)",
-                      [self SQLExpressionForNSExpression:[predicate leftExpression]],
-                      comparator,
-                      [self SQLExpressionForNSExpression:[predicate rightExpression]]];
-        }
+    if ([comparator isEqual:@"BETWEEN"]) {
+        retStr = [NSString stringWithFormat:@"(%@ %@ %@ AND %@)",
+                  [self SQLExpressionForNSExpression:[predicate leftExpression]],
+                    comparator,
+                    [self SQLExpressionForNSExpression:[[predicate rightExpression] collection][0]],
+                    [self SQLExpressionForNSExpression:[[predicate rightExpression] collection][1]]];
+    } else {
+        retStr = [NSString stringWithFormat:@"(%@ %@ %@)",
+                  [self SQLExpressionForNSExpression:[predicate leftExpression]],
+                  comparator,
+                  [self SQLExpressionForNSExpression:[predicate rightExpression]]];
     }
 
     return retStr;
@@ -231,7 +228,6 @@ static NSString * SQLNullValueString = @"NULL";
         case NSEvaluatedObjectExpressionType:
         case NSBlockExpressionType:
         case NSAnyKeyExpressionType:
-        case NSConditionalExpressionType:
             break;
     }
     return retStr;

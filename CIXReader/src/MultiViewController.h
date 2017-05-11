@@ -12,7 +12,6 @@
 
 @interface MultiViewController : NSWindowController <NSToolbarDelegate> {
     IBOutlet NSWindow * _mainWindow;
-    NSView * _blankView;
     NSViewController * _previousView;
     NSDictionary * _viewsDictionary;
     NSMutableArray * _viewsIdentifiers;

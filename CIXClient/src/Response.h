@@ -15,7 +15,6 @@
 #define CCResponse_NoSuchForum                  51
 
 #define CCResponse_JoinFailure_NoSuchForum      100
-#define CCResponse_JoinFailure_Closed           101
 #define CCResponse_JoinFailure_Limited          102
 
 #define CCResponse_ResignFailure_NoSuchForum    110

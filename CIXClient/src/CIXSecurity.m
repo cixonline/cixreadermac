@@ -6,10 +6,6 @@
 //  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
 //
 
-#import <CIX.h>
-#import <Security/SecKeychain.h>
-#import <Security/SecKeychainItem.h>
-
 static NSString * _password;
 
 @implementation CIX (CIXSecurity)

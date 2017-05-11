@@ -9,10 +9,6 @@
 #import "ModeratorItem.h"
 
 @implementation ModeratorItem
-
-@synthesize image;
-@synthesize name;
-
 @end
 
 @implementation ModeratorCollectionViewItem

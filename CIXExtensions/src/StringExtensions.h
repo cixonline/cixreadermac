@@ -30,6 +30,7 @@
     -(NSUInteger)indexOfCharactersInString:(NSString *)charString afterIndex:(NSUInteger)startIndex;
     -(NSDate *)fromJSONDate;
     -(NSString *)fromJSONString;
+    -(NSString *)safeQuotes;
 @end
 
 @interface NSAttributedString (AttributedStringExtensions)

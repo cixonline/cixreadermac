@@ -44,7 +44,7 @@
     if ([self isValid])
     {
         NSRect destRect = CGRectMake(0, 0, newSize.width, newSize.height);
-        NSRect sourceRect = NSZeroRect;
+        NSRect sourceRect;
 
         if (self.size.width > self.size.height)
         {

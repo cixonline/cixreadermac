@@ -100,7 +100,10 @@ static NSString * signUpToCIXLink = @"https://forums.cix.co.uk/signUp.aspx?p=cix
     {
         Preferences * prefs = [Preferences standardPreferences];
         [prefs setLastUser:_username];
-        
+
+        if (![CIX.password isEqualToString:_password])
+            [CIX setPassword:_password];
+
         [NSApp stopModalWithCode:YES];
         return;
     }

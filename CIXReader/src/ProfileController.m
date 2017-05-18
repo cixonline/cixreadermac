@@ -93,9 +93,9 @@
 {
     [username setStringValue:SafeString(profile.username)];
     [emailAddress setStringValue:SafeString(profile.eMailAddress)];
-    [lastOn setStringValue:SafeString([profile.lastOn friendlyDescription])];
-    [firstOn setStringValue:SafeString([profile.firstOn friendlyDescription])];
-    [lastPost setStringValue:SafeString([profile.lastPost friendlyDescription])];
+    [lastOn setStringValue:SafeString([[profile.lastOn GMTBSTtoUTC] friendlyDescription])];
+    [firstOn setStringValue:SafeString([[profile.firstOn GMTBSTtoUTC] friendlyDescription])];
+    [lastPost setStringValue:SafeString([[profile.lastPost GMTBSTtoUTC] friendlyDescription])];
     [about setString:SafeString(profile.about)];
     [location setStringValue:SafeString(profile.location)];
     [fullname setStringValue:SafeString(profile.fullname)];

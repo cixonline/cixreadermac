@@ -885,7 +885,7 @@ static NSImage * threadOpenImage = nil;
 -(void)handleMessageDeleted:(NSNotification *)notification
 {
     Message * message = notification.object;
-    if (message.topicID == _currentFolder.ID)
+    if ([_messages containsObject:message])
         [self removeMessage:message];
 }
 

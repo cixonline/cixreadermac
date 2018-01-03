@@ -160,7 +160,6 @@
 		AABB797219DDB91F006079C6 /* CRRoundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABB797119DDB91F006079C6 /* CRRoundImageView.m */; };
 		AABC420D199232430076B272 /* EULA.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABC420F199232430076B272 /* EULA.xib */; };
 		AABC4213199233880076B272 /* EULAController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC4212199233880076B272 /* EULAController.m */; };
-		AABC421519923D220076B272 /* licence.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AABC421419923D220076B272 /* licence.rtf */; };
 		AABCA6D119E6DC87007A3BA5 /* JoinForum.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABCA6CF19E6DC87007A3BA5 /* JoinForum.xib */; };
 		AABCA6D719E6DEC2007A3BA5 /* JoinForumController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABCA6D619E6DEC2007A3BA5 /* JoinForumController.m */; };
 		AABCCD3619EC12CB0097E58C /* TopicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABCCD3419EC12CB0097E58C /* TopicView.xib */; };
@@ -553,7 +552,6 @@
 		AABC4210199232680076B272 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EULA.xib; sourceTree = "<group>"; };
 		AABC4211199233880076B272 /* EULAController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EULAController.h; path = src/EULAController.h; sourceTree = "<group>"; };
 		AABC4212199233880076B272 /* EULAController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EULAController.m; path = src/EULAController.m; sourceTree = "<group>"; };
-		AABC421419923D220076B272 /* licence.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = licence.rtf; path = CIXReader/Resources/licence.rtf; sourceTree = "<group>"; };
 		AABCA6D019E6DC87007A3BA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = CIXReader/Interfaces/Base.lproj/JoinForum.xib; sourceTree = "<group>"; };
 		AABCA6D519E6DEC2007A3BA5 /* JoinForumController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinForumController.h; path = src/JoinForumController.h; sourceTree = "<group>"; };
 		AABCA6D619E6DEC2007A3BA5 /* JoinForumController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinForumController.m; path = src/JoinForumController.m; sourceTree = "<group>"; };
@@ -1108,7 +1106,6 @@
 			children = (
 				AA45C6981B2AD0400050B7CB /* error.tiff */,
 				AAC3909E19B0D2E9004BEC5B /* inbox.tiff */,
-				AABC421419923D220076B272 /* licence.rtf */,
 				AABCDF2819D42E6800C7E4A0 /* location.tiff */,
 				AA15FB0619D57E550019EE0F /* lock.tiff */,
 				AABCDF2919D42E6800C7E4A0 /* mail.tiff */,
@@ -1413,7 +1410,6 @@
 				AAF4210B1A6EE68D00F9A10B /* ParticipantsList.xib in Resources */,
 				AAE9E51F19CF4CFC0069D28B /* updatePreferences.tiff in Resources */,
 				AAB6D9EA19ABA5BE006E3CFA /* ShoppingCategory.tiff in Resources */,
-				AABC421519923D220076B272 /* licence.rtf in Resources */,
 				AADB762F1A1E3E8F0036F3F4 /* tbOffline.pdf in Resources */,
 				AADA9F4219D309560044F47C /* frown.tiff in Resources */,
 				AA19C79F1A13A87C007A2B8E /* smartFolder.tiff in Resources */,

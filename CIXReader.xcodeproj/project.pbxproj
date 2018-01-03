@@ -7,17 +7,6 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		AAE9F3631A0CE0AC0020DCBA /* OCLint */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = AAE9F3641A0CE0AC0020DCBA /* Build configuration list for PBXAggregateTarget "OCLint" */;
-			buildPhases = (
-				AAE9F3671A0CE0BD0020DCBA /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = OCLint;
-			productName = OCLint;
-		};
 		AAF0EC841A0FEE3A00E3D8A0 /* Autorevision */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = AAF0EC8A1A0FEE3A00E3D8A0 /* Build configuration list for PBXAggregateTarget "Autorevision" */;
@@ -1249,9 +1238,6 @@
 							};
 						};
 					};
-					AAE9F3631A0CE0AC0020DCBA = {
-						CreatedOnToolsVersion = 6.1;
-					};
 					AAF0EC841A0FEE3A00E3D8A0 = {
 						CreatedOnToolsVersion = 6.1;
 					};
@@ -1297,7 +1283,6 @@
 			projectRoot = "";
 			targets = (
 				AA8B997C198902A200214D87 /* CIXReader */,
-				AAE9F3631A0CE0AC0020DCBA /* OCLint */,
 				AAF0EC841A0FEE3A00E3D8A0 /* Autorevision */,
 				AAF0EC8E1A10054F00E3D8A0 /* Release */,
 				AAF0EC9D1A10142700E3D8A0 /* Changes */,
@@ -1492,20 +1477,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = CIXReader/scripts/helpindex.sh;
-		};
-		AAE9F3671A0CE0BD0020DCBA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "source ~/.bash_profile\n\nhash oclint &> /dev/null\nif [ $? -eq 1 ]; then\necho >&2 \"oclint not found, analyzing stopped\"\nexit 1\nfi\n\ncd ${TARGET_TEMP_DIR}\n\nif [ ! -f compile_commands.json ]; then\necho \"[*] compile_commands.json not found, possibly clean was performed\"\necho \"[*] starting xcodebuild to rebuild the project..\"\n# clean previous output\nif [ -f xcodebuild.log ]; then\nrm xcodebuild.log\nfi\n\ncd ${SRCROOT}\n\nxcodebuild clean\n\n#build xcodebuild.log\nxcodebuild | tee ${TARGET_TEMP_DIR}/xcodebuild.log\n#xcodebuild <options>| tee ${TARGET_TEMP_DIR}/xcodebuild.log\n\necho \"[*] transforming xcodebuild.log into compile_commands.json...\"\ncd ${TARGET_TEMP_DIR}\n#transform it into compile_commands.json\noclint-xcodebuild\n\necho \"[*] copy compile_commands.json to the project root...\"\ncp ${TARGET_TEMP_DIR}/compile_commands.json ${SRCROOT}/compile_commands.json\n\nfi\n\necho \"[*] starting analyzing\"\ncd ${TARGET_TEMP_DIR}\noclint-json-compilation-database -enable-clang-static-analyzer -e JSON* -e FMDatabase* -e Reachability* -e MMParser* -e MMScanner* -e MMSpanParser* -e MMHTMLParser* -e MMGenerator -v -- | sed 's/\\(.*\\.\\m\\{1,2\\}:[0-9]*:[0-9]*:\\)/\\1 warning:/'";
-			showEnvVarsInLog = 0;
 		};
 		AAF0EC8B1A0FEE4500E3D8A0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2089,22 +2060,6 @@
 			};
 			name = Release;
 		};
-		AAE9F3651A0CE0AC0020DCBA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		AAE9F3661A0CE0AC0020DCBA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		AAF0EC851A0FEE3A00E3D8A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2172,15 +2127,6 @@
 			buildConfigurations = (
 				AA8B999B198902A300214D87 /* Debug */,
 				AA8B999C198902A300214D87 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AAE9F3641A0CE0AC0020DCBA /* Build configuration list for PBXAggregateTarget "OCLint" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AAE9F3651A0CE0AC0020DCBA /* Debug */,
-				AAE9F3661A0CE0AC0020DCBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

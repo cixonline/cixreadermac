@@ -56,7 +56,7 @@ cat > "${VIENNA_CHANGELOG}" << EOF
         <link>${DOWNLOAD_BASE_URL}/appcast.xml</link>
 		<description>Most recent changes with links to updates.</description>
 		<language>en-us</language>
-		<copyright>Copyright 2014-2017, CIXOnline Ltd</copyright>
+		<copyright>Copyright 2014-2018, CIXOnline Ltd</copyright>
 		<item>
 			<title>Version ${VERSION}</title>
 			<pubDate>${pubDate}</pubDate>

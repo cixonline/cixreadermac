@@ -282,7 +282,7 @@
     
     for (Message * message in conversations)
     {
-        if (message.commentID == 0)
+        if (message.level == 0)
             [roots addObject:message];
     }
     return roots;

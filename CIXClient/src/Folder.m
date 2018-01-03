@@ -862,8 +862,9 @@
  */
 -(int)internalMarkAllRead
 {
+    NSArray * messages = [NSArray arrayWithArray:self.messages.allMessages];
     int countMarkedRead = 0;
-    for (Message * message in self.messages)
+    for (Message * message in messages)
     {
         if (message.unread && !message.readLocked)
         {

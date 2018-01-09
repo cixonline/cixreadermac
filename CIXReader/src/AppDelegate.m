@@ -80,13 +80,6 @@
     LogFile * logFile = LogFile.logFile;
     [logFile writeLine:@"%@ %@ started", [self applicationTitle], [self applicationVersion]];
     
-    // Don't progress if the EULA is rejected
-    if (![self displayEULA])
-    {
-        [NSApp terminate:self];
-        return;
-    }
-    
     if (![self initialiseDatabase])
     {
         [NSApp terminate:self];
@@ -236,31 +229,6 @@
     [logFile setEnabled:[prefs enableLogFile]];
     [logFile setArchive:[prefs archiveLogFile]];
     [logFile setCumulative:[prefs cumulativeLogFile]];
-}
-
-/* Do the first time run initialisation and display the end user
- * license agreement.
- */
--(BOOL)displayEULA
-{
-    Preferences * prefs = [Preferences standardPreferences];
-    if ([prefs firstRun])
-    {
-        EULAController * eulaController = [[EULAController alloc] init];
-        NSWindow * eulaWindow = [eulaController window];
-        
-        [eulaWindow center];
-        
-        BOOL accepted = [NSApp runModalForWindow: eulaWindow];
-        [NSApp endSheet: eulaWindow];
-        [eulaWindow orderOut: self];
-        
-        if (!accepted)
-            return NO;
-        
-        [prefs setFirstRun:NO];
-    }
-    return YES;
 }
 
 /* Do the database initialisation.
@@ -1240,7 +1208,7 @@
  */
 -(IBAction)showHelpSupport:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.cix.co.uk/support"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://www.cix.uk/support"]];
 }
 
 /* Do the check for updates.

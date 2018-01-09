@@ -7,5 +7,7 @@
 //
 
 @interface NSURLSession (SynchronousTask)
-    +(NSData *)sendSynchronousDataTaskWithRequest:(NSURLRequest *)request returningResponse:(NSURLResponse **)response error:(NSError **)error;
+    +(NSData *)sendSynchronousDataTaskWithRequest:(NSURLRequest *)request
+                                returningResponse:(__strong NSURLResponse **)response
+                                            error:(__strong NSError **)error;
 @end

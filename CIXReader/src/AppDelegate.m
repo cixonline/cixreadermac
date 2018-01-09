@@ -176,7 +176,7 @@
     {
         for (NSWindowController<NSWindowDelegate> * ctrl in windows)
         {
-            if (![ctrl windowShouldClose:self])
+            if (![ctrl windowShouldClose:mainWindow])
                 return NSTerminateCancel;
             [ctrl close];
         }

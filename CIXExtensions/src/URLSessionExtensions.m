@@ -10,7 +10,9 @@
 
 @implementation NSURLSession (SynchronousTask)
 
-+(NSData *)sendSynchronousDataTaskWithRequest:(NSURLRequest *)request returningResponse:(NSURLResponse **)response error:(NSError **)error
++(NSData *)sendSynchronousDataTaskWithRequest:(NSURLRequest *)request
+                            returningResponse:(__strong NSURLResponse **)response
+                                        error:(__strong NSError **)error
 {
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     __block NSData *data = nil;

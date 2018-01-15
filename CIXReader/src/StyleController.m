@@ -173,8 +173,12 @@ static NSDictionary * _mapEmoticonToName = nil;
         NSString * popupText = @"";
 
         if (message != nil)
-            popupText = [NSString stringWithFormat:@"<span class=\"tooltip_text\">%@</span>", [[message body] truncateByWordWithLimit:200]];
+            popupText = [NSString stringWithFormat:@"<span class=\"tooltip_text\">%@</span>", [[[message body] quoteAttributes] truncateByWordWithLimit:200]];
         
+        // Remove any cix/cixfile within the popuptext to prevent them being styled
+        popupText = [popupText stringByReplacingOccurrencesOfString:@"cixfile:" withString:@""];
+        popupText = [popupText stringByReplacingOccurrencesOfString:@"cix:" withString:@""];
+
         NSString * fmt = [NSString stringWithFormat:@"<a onmouseover=\"tooltipShow(event,this)\" onmouseout=\"tooltipHide(event,this)\" href=\"%@\">%@%@</a>", match, match, popupText];
 
         [modifiedString deleteCharactersInRange:result.range];

@@ -87,6 +87,10 @@
         DOMDocument *domDoc = [[homePage mainFrame] DOMDocument];
         DOMHTMLElement *container = (DOMHTMLElement *)[domDoc getElementById:@"onlineUsers"];
         
+        // Skip if no container
+        if (container == nil)
+            return;
+        
         // Make the div visible.
         DOMCSSStyleDeclaration *style = [container style];
         style.display = @"block";
@@ -122,6 +126,10 @@
         DOMDocument * domDoc = [[homePage mainFrame] DOMDocument];
         DOMHTMLElement * container = (DOMHTMLElement *)[domDoc getElementById:@"interestingThreads"];
         
+        // Skip if no container
+        if (container == nil)
+            return;
+
         // Make the div visible.
         DOMCSSStyleDeclaration *style = [container style];
         style.display = @"block";
@@ -132,8 +140,9 @@
         for (CIXThread * thread in threads)
         {
             NSMutableString * oneItem = [NSMutableString stringWithString:elementHTML];
+            NSString * rawString = [[NSAttributedString stringFromHTMLString:thread.body.firstNonBlankLine] string];
             [oneItem replaceString:@"$Author$" withString:thread.author];
-            [oneItem replaceString:@"$Subject$" withString:[thread.body.firstNonBlankLine truncateByWordWithLimit:80]];
+            [oneItem replaceString:@"$Subject$" withString:[rawString truncateByWordWithLimit:80]];
             [oneItem replaceString:@"$Link$" withString:[NSString stringWithFormat:@"%@/%@", thread.forum, thread.topic]];
             [oneItem replaceString:@"$RootID$" withString:[NSString stringWithFormat:@"%d", thread.remoteID]];
             [oneItem replaceString:@"$Date$" withString:[[thread.date GMTBSTtoUTC] friendlyDescription]];

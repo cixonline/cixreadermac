@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "Preferences.h"
 #import "JoinForumController.h"
-#import "EULAController.h"
 #import "LoginController.h"
 #import "ProfileController.h"
 #import "Extensions.h"
@@ -1208,7 +1207,7 @@
  */
 -(IBAction)showHelpSupport:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://www.cix.uk/support"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://www.cix.uk/contact/help"]];
 }
 
 /* Do the check for updates.

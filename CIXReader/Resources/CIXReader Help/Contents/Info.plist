@@ -25,7 +25,7 @@
 	<key>HPDBookKBProduct</key>
 	<string>cixreader1</string>
 	<key>HPDBookKBURL</key>
-    <string>https://www.cix.uk/contact/help</string>
+	<string>https://www.cix.uk/contact/help</string>
 	<key>HPDBookTitle</key>
 	<string>CIXReader Help</string>
 	<key>HPDBookType</key>

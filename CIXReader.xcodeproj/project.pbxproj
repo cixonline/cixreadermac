@@ -147,8 +147,6 @@
 		AABA9B481A0BC51B004012A4 /* tbSend.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AABA9B471A0BC51B004012A4 /* tbSend.pdf */; };
 		AABA9B4A1A0BC6C1004012A4 /* tbSaveAsDraft.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AABA9B491A0BC6C1004012A4 /* tbSaveAsDraft.pdf */; };
 		AABB797219DDB91F006079C6 /* CRRoundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABB797119DDB91F006079C6 /* CRRoundImageView.m */; };
-		AABC420D199232430076B272 /* EULA.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABC420F199232430076B272 /* EULA.xib */; };
-		AABC4213199233880076B272 /* EULAController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABC4212199233880076B272 /* EULAController.m */; };
 		AABCA6D119E6DC87007A3BA5 /* JoinForum.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABCA6CF19E6DC87007A3BA5 /* JoinForum.xib */; };
 		AABCA6D719E6DEC2007A3BA5 /* JoinForumController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABCA6D619E6DEC2007A3BA5 /* JoinForumController.m */; };
 		AABCCD3619EC12CB0097E58C /* TopicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABCCD3419EC12CB0097E58C /* TopicView.xib */; };
@@ -538,9 +536,6 @@
 		AABA9B491A0BC6C1004012A4 /* tbSaveAsDraft.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = tbSaveAsDraft.pdf; path = CIXReader/Resources/tbSaveAsDraft.pdf; sourceTree = "<group>"; };
 		AABB797019DDB91F006079C6 /* CRRoundImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRRoundImageView.h; path = src/CRRoundImageView.h; sourceTree = "<group>"; };
 		AABB797119DDB91F006079C6 /* CRRoundImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRRoundImageView.m; path = src/CRRoundImageView.m; sourceTree = "<group>"; };
-		AABC4210199232680076B272 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EULA.xib; sourceTree = "<group>"; };
-		AABC4211199233880076B272 /* EULAController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EULAController.h; path = src/EULAController.h; sourceTree = "<group>"; };
-		AABC4212199233880076B272 /* EULAController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EULAController.m; path = src/EULAController.m; sourceTree = "<group>"; };
 		AABCA6D019E6DC87007A3BA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = CIXReader/Interfaces/Base.lproj/JoinForum.xib; sourceTree = "<group>"; };
 		AABCA6D519E6DEC2007A3BA5 /* JoinForumController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinForumController.h; path = src/JoinForumController.h; sourceTree = "<group>"; };
 		AABCA6D619E6DEC2007A3BA5 /* JoinForumController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinForumController.m; path = src/JoinForumController.m; sourceTree = "<group>"; };
@@ -621,7 +616,6 @@
 		AAD7A61C1A097D68003E1A34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = CIXReader/Interfaces/Base.lproj/SignaturePreferences.xib; sourceTree = "<group>"; };
 		AAD7A61E1A097F0C003E1A34 /* signaturePreferences.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = signaturePreferences.tiff; path = CIXReader/Resources/signaturePreferences.tiff; sourceTree = "<group>"; };
 		AAD7A6201A0987FD003E1A34 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = CIXReader/Interfaces/fr.lproj/SignaturePreferences.strings; sourceTree = "<group>"; };
-		AAD8FE2D1992853F00713CED /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/EULA.strings; sourceTree = "<group>"; };
 		AAD8FE2D1992853F00713CEF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Account.strings; sourceTree = "<group>"; };
 		AADA9F4019D309560044F47C /* frown.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = frown.tiff; path = CIXReader/Resources/frown.tiff; sourceTree = "<group>"; };
 		AADA9F4119D309560044F47C /* laugh.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = laugh.tiff; path = CIXReader/Resources/laugh.tiff; sourceTree = "<group>"; };
@@ -1056,8 +1050,6 @@
 			children = (
 				AA8ED2C719ACFCFC00457715 /* AccountController.h */,
 				AA8ED2C819ACFCFC00457715 /* AccountController.m */,
-				AABC4211199233880076B272 /* EULAController.h */,
-				AABC4212199233880076B272 /* EULAController.m */,
 				AAF03C4F19FA903C00F2A4EC /* GoToController.h */,
 				AAF03C5019FA903C00F2A4EC /* GoToController.m */,
 				AABCA6D519E6DEC2007A3BA5 /* JoinForumController.h */,
@@ -1132,7 +1124,6 @@
 			children = (
 				AAADB93219AD328F005A285A /* Account.xib */,
 				AA1F7AAE19EB325F00266D6D /* DirectoryView.xib */,
-				AABC420F199232430076B272 /* EULA.xib */,
 				AA1F7ABA19EB34AC00266D6D /* ForumsView.xib */,
 				AABDCF0E19E318420005A37F /* GeneralForumEditor.xib */,
 				AAE9E50519CF461D0069D28B /* GeneralPreferences.xib */,
@@ -1351,7 +1342,6 @@
 				AAD5F5EC1C49197500A84912 /* tbImage.pdf in Resources */,
 				AADB76291A1E3A130036F3F4 /* tbReply.pdf in Resources */,
 				AADB76311A1E406B0036F3F4 /* tbRead.pdf in Resources */,
-				AABC420D199232430076B272 /* EULA.xib in Resources */,
 				AA35BB301A1CA20B00FFB0F1 /* searchFolder.tiff in Resources */,
 				AAADB93419AD328F005A285A /* Account.xib in Resources */,
 				AAB6D9D119ABA348006E3CFA /* CIXCategory.tiff in Resources */,
@@ -1584,7 +1574,6 @@
 				AAD5258C198FE61D00DF7F39 /* main.m in Sources */,
 				AAF421151A6EFAE700F9A10B /* UserCellView.m in Sources */,
 				AABA7D2619E1624D00C5BF65 /* ModeratorItem.m in Sources */,
-				AABC4213199233880076B272 /* EULAController.m in Sources */,
 				AAB295FA199E37C700E16E9D /* CRPopupButton.m in Sources */,
 				AA0AD29E1A5EB50700B3350C /* ForumGroup.m in Sources */,
 				AA0AD2A41A5FFDEB00B3350C /* MailGroup.m in Sources */,
@@ -1735,16 +1724,6 @@
 				AAD8FE2D1992853F00713CEF /* fr */,
 			);
 			name = Account.xib;
-			path = CIXReader/Interfaces;
-			sourceTree = "<group>";
-		};
-		AABC420F199232430076B272 /* EULA.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AABC4210199232680076B272 /* Base */,
-				AAD8FE2D1992853F00713CED /* fr */,
-			);
-			name = EULA.xib;
 			path = CIXReader/Interfaces;
 			sourceTree = "<group>";
 		};

@@ -144,7 +144,7 @@
 {
     if (_indexingEnabled)
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            _indexList = [NSMutableDictionary dictionary];
+            self->_indexList = [NSMutableDictionary dictionary];
             
             // Make a copy of the array in case it changes beneath us
             NSArray * forumsCopy = [[self forums] copy];
@@ -156,11 +156,11 @@
                     for (NSString * word in filteredWords)
                         if (![word isBlank])
                         {
-                            NSMutableArray * forumList = _indexList[word];
+                            NSMutableArray * forumList = self->_indexList[word];
                             if (forumList == nil)
                             {
                                 forumList = [NSMutableArray array];
-                                _indexList[word] = forumList;
+                                self->_indexList[word] = forumList;
                             }
                             
                             if (![forumList containsObject:forum])
@@ -299,7 +299,7 @@
                                                    resp.object = forum;
                                                    
                                                    if (isNewForum)
-                                                       _forums[@(forum.ID)] = forum;
+                                                       self->_forums[@(forum.ID)] = forum;
 
                                                    [LogFile.logFile writeLine:@"Directory for %@ updated", forum.name];
                                                }
@@ -355,11 +355,11 @@
                                                                newCategory.name = category.Name;
                                                                newCategory.sub = category.Sub;
                                                                
-                                                               NSMutableArray * subcategories = [_categories objectForKey:newCategory.name];
+                                                               NSMutableArray * subcategories = [self->_categories objectForKey:newCategory.name];
                                                                if (subcategories == nil)
                                                                {
                                                                    subcategories = [NSMutableArray array];
-                                                                   _categories[newCategory.name] = subcategories;
+                                                                   self->_categories[newCategory.name] = subcategories;
                                                                }
                                                                [subcategories addObject:newCategory];
                                                                
@@ -408,8 +408,8 @@
         NSURLSessionDataTask * task = [session dataTaskWithRequest:request
                                                  completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
                                        {
-                                           if (_categoriesToRefesh > 0)
-                                               _categoriesToRefesh -= 1;
+                                           if (self->_categoriesToRefesh > 0)
+                                               self->_categoriesToRefesh -= 1;
                                            if (error != nil)
                                                [CIX reportServerErrors:__PRETTY_FUNCTION__ error:error];
                                            else
@@ -438,7 +438,7 @@
                                                            forum.detailsPending = NO;
                                                            [forum save];
 
-                                                           _forums[@(forum.ID)] = forum;
+                                                           self->_forums[@(forum.ID)] = forum;
                                                            ++countOfNewForums;
                                                        }
                                                        [CIX.DB commit];
@@ -457,7 +457,7 @@
                                            }
 
                                            // On the last category, post that the refresh completed
-                                           if (_categoriesToRefesh == 0)
+                                           if (self->_categoriesToRefesh == 0)
                                            {
                                                dispatch_async(dispatch_get_main_queue(),^{
                                                    NSNotificationCenter * nc = [NSNotificationCenter defaultCenter];

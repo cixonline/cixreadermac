@@ -146,7 +146,7 @@
                                                    [self save];
                                                    
                                                    LogFile * log = LogFile.logFile;
-                                                   [log writeLine:@"Profile for %@ retrieved from server", _username];
+                                                   [log writeLine:@"Profile for %@ retrieved from server", self->_username];
                                                }
                                            }
                                            
@@ -186,7 +186,7 @@
                                                    [self save];
                                                    
                                                    LogFile * log = LogFile.logFile;
-                                                   [log writeLine:@"Resume for %@ retrieved from server", _username];
+                                                   [log writeLine:@"Resume for %@ retrieved from server", self->_username];
                                                }
                                            }
                                            

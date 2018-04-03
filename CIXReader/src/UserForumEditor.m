@@ -153,22 +153,22 @@
     [[tableView window] beginSheet:addPanel completionHandler:^(NSModalResponse returnCode) {
         if (returnCode == NSModalResponseOK)
         {
-            NSString * name = [addTextField stringValue];
+            NSString * name = [self->addTextField stringValue];
             
-            if (![_toAdd containsObject:name] && ![_list containsObject:name])
-                [_toAdd addObject:name];
+            if (![self->_toAdd containsObject:name] && ![self->_list containsObject:name])
+                [self->_toAdd addObject:name];
             
             [self loadList];
-            [tableView reloadData];
+            [self->tableView reloadData];
             [self updateRemoveButton];
             
             // Select the newly added user for convenience.
-            NSInteger row = [_users indexOfObject:name];
-            [tableView selectRowIndexes: [NSIndexSet indexSetWithIndex:(NSUInteger)row] byExtendingSelection:NO];
-            [tableView scrollRowToVisible:row];
+            NSInteger row = [self->_users indexOfObject:name];
+            [self->tableView selectRowIndexes: [NSIndexSet indexSetWithIndex:(NSUInteger)row] byExtendingSelection:NO];
+            [self->tableView scrollRowToVisible:row];
         }
-        [addPanel orderOut:self];
-        [[tableView window] makeKeyAndOrderFront:self];
+        [self->addPanel orderOut:self];
+        [[self->tableView window] makeKeyAndOrderFront:self];
     }];
 }
 

@@ -312,7 +312,7 @@
                                                        });
                                                    }
                                                }
-                                               _isModeratorsRefreshing = NO;
+                                               self->_isModeratorsRefreshing = NO;
                                            }];
             [task resume];
         }
@@ -420,7 +420,7 @@
                                                        });
                                                    }
                                                }
-                                               _isParticipantsRefreshing = NO;
+                                               self->_isParticipantsRefreshing = NO;
                                            }];
             [task resume];
         }

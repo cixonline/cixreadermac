@@ -135,7 +135,7 @@
                                                            [outboxSet addObject:inboxItem];
                                                        }
                                                    }
-                                                   _lastCheckDate = [NSDate date];
+                                                   self->_lastCheckDate = [NSDate date];
                                                }
                                                
                                                if (outboxSet.count > 0)

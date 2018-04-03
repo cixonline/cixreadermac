@@ -710,7 +710,7 @@
                                            }
                                            [log writeLine:@"Finished refreshing all forums"];
 
-                                           _isInRefresh = NO;
+                                           self->_isInRefresh = NO;
                                        }];
         [task resume];
     }

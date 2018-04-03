@@ -95,7 +95,7 @@
     [saveSignatureButton setEnabled:NO];
     [[signaturesList window] beginSheet:signatureEditor
                       completionHandler:^(NSModalResponse returnCode) {
-                          [self signatureSheetEnd:[signaturesList window] returnCode:returnCode contextInfo:nil];
+                          [self signatureSheetEnd:[self->signaturesList window] returnCode:returnCode contextInfo:nil];
     }];
 }
 
@@ -116,7 +116,7 @@
         [saveSignatureButton setEnabled:YES];
         [[signaturesList window] beginSheet:signatureEditor
                           completionHandler:^(NSModalResponse returnCode) {
-                              [self signatureSheetEnd:[signaturesList window] returnCode:returnCode contextInfo:nil];
+                              [self signatureSheetEnd:[self->signaturesList window] returnCode:returnCode contextInfo:nil];
                           }];
     }
 }

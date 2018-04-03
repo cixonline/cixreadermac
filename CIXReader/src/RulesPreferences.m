@@ -168,7 +168,7 @@
     
     [[rulesList window] beginSheet:ruleEditorWindow
                  completionHandler:^(NSModalResponse returnCode) {
-                     [self rulesSheetEnd:[rulesList window] returnCode:returnCode contextInfo:nil];
+                     [self rulesSheetEnd:[self->rulesList window] returnCode:returnCode contextInfo:nil];
                  }];
 }
 
@@ -191,7 +191,7 @@
     
     [[rulesList window] beginSheet:ruleEditorWindow
                  completionHandler:^(NSModalResponse returnCode) {
-                    [self rulesSheetEnd:[rulesList window] returnCode:returnCode contextInfo:nil];
+                     [self rulesSheetEnd:[self->rulesList window] returnCode:returnCode contextInfo:nil];
     }];
 }
 

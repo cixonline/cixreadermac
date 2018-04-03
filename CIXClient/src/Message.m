@@ -697,9 +697,9 @@
                                                             * is retrieved via a sync before the response to forums/post. In this case
                                                             * just delete this copy of the message.
                                                             */
-                                                           if ([_folder.messages messageByID:messageID] != nil)
+                                                           if ([self->_folder.messages messageByID:messageID] != nil)
                                                            {
-                                                               [_folder.messages delete:self];
+                                                               [self->_folder.messages delete:self];
                                                                return;
                                                            }
                                                            [self deleteAttachments];

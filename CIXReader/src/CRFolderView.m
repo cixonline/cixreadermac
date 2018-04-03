@@ -31,11 +31,18 @@
 
 /* Let the control know the expected behaviour for local and external drags.
  */
--(NSDragOperation)draggingSourceOperationMaskForLocal:(BOOL)isLocal
+- (NSDragOperation)draggingSession:(NSDraggingSession *)session sourceOperationMaskForDraggingContext:(NSDraggingContext)context
 {
-	if (isLocal)
-		return NSDragOperationMove|NSDragOperationGeneric;
-	return NSDragOperationCopy;
+    switch (context)
+    {
+        case NSDraggingContextOutsideApplication:
+            return NSDragOperationCopy;
+            
+        case NSDraggingContextWithinApplication:
+        default:
+            return NSDragOperationMove|NSDragOperationGeneric;
+            break;
+    }
 }
 
 /* Sets whether or not the outline view uses tooltips.

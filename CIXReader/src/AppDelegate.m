@@ -790,9 +790,9 @@
         [mainWindow beginSheet:_joinForumInputController.window completionHandler:^(NSModalResponse returnCode) {
             if (returnCode == NSModalResponseOK)
             {
-                [_joinForumInputController.window orderOut:self];
+                [self->_joinForumInputController.window orderOut:self];
                 
-                JoinForumController * joinForumController = [[JoinForumController alloc] initWithName:_joinForumInputController.name];
+                JoinForumController * joinForumController = [[JoinForumController alloc] initWithName:self->_joinForumInputController.name];
                 NSWindow * joinForumWindow = [joinForumController window];
                 
                 [joinForumWindow center];

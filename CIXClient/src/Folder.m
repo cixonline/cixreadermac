@@ -493,7 +493,7 @@
                                                [nc postNotificationName:MAFolderRefreshed object:resp];
                                            });
                                            
-                                           _isFolderRefreshing = NO;
+                                           self->_isFolderRefreshing = NO;
                                        }];
         [task resume];
     }

@@ -1089,10 +1089,10 @@ static NSImage * threadOpenImage = nil;
     [[NSApp mainWindow] beginSheet:_goToInputController.window completionHandler:^(NSModalResponse returnCode) {
         if (returnCode == NSModalResponseOK)
         {
-            [_goToInputController.window orderOut:self];
+            [self->_goToInputController.window orderOut:self];
             
-            NSInteger messageNumber = _goToInputController.value;
-            if (![self goToMessage:_goToInputController.value]) {
+            NSInteger messageNumber = self->_goToInputController.value;
+            if (![self goToMessage:self->_goToInputController.value]) {
                 NSAlert * alert = [[NSAlert alloc] init];
                 
                 [alert addButtonWithTitle:NSLocalizedString(@"OK", nil)];
@@ -1439,7 +1439,7 @@ static NSImage * threadOpenImage = nil;
 
 /* Called to initiate a drag from the thread list
  */
--(BOOL)tableView:(NSTableView *)tableView writeRows:(NSArray*)rows toPasteboard:(NSPasteboard*)pboard
+-(BOOL)tableView:(NSTableView *)tableView writeRowsWithIndexes:(NSIndexSet *)indexes toPasteboard:(NSPasteboard*)pboard
 {
     [pboard declareTypes:@[ NSStringPboardType, CR_PBoardType_MessageList ] owner:self];
 
@@ -1450,10 +1450,9 @@ static NSImage * threadOpenImage = nil;
     NSMutableString * newtext = [[NSMutableString alloc] init];
     NSMutableArray * messageList = [NSMutableArray array];
     
-    for (int msgnum = 0; msgnum < rows.count; msgnum++)
+    for (NSUInteger i = indexes.firstIndex; i <= indexes.lastIndex; i = [indexes indexGreaterThanIndex:i])
     {
-        NSInteger rowIndex = [rows[msgnum] intValue];
-        Message * message = _messages[rowIndex];
+        Message * message = _messages[i];
         
         Folder * topic = [CIX.folderCollection folderByID:message.topicID];
         Folder * forum = [topic parentFolder];

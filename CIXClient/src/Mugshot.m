@@ -165,7 +165,7 @@ static NSMutableDictionary * _cache = nil;
                                                [self save];
                                                
                                                LogFile * log = LogFile.logFile;
-                                               [log writeLine:@"Mugshot for %@ updated from server", _username];
+                                               [log writeLine:@"Mugshot for %@ updated from server", self->_username];
                                            }
                                            
                                            // Alert interested parties about this change to the mugshot

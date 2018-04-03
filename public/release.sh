@@ -15,7 +15,7 @@ else
     DOWNLOAD_SUB_DIR="beta";
 fi
 
-VERSION="1.66.${VCS_NUM}"
+VERSION="1.67.${VCS_NUM}"
 
 DMG_FILENAME="cr_osx${VERSION}.dmg"
 dSYM_FILENAME="cr_osx${VERSION}-dSYM"
@@ -56,7 +56,7 @@ cat > "${VIENNA_CHANGELOG}" << EOF
         <link>${DOWNLOAD_BASE_URL}/appcast.xml</link>
 		<description>Most recent changes with links to updates.</description>
 		<language>en-us</language>
-		<copyright>Copyright 2014-2017, CIXOnline Ltd</copyright>
+		<copyright>Copyright 2014-2018, CIX Ltd</copyright>
 		<item>
 			<title>Version ${VERSION}</title>
 			<pubDate>${pubDate}</pubDate>

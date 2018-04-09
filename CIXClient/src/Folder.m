@@ -554,7 +554,7 @@
             {
                 BOOL oldState = message.unread;
                 
-                if (!message.readPending)
+                if (!message.readPending && !message.readLocked)
                     message.unread = msg.Unread;
                 message.starred = msg.Starred;
                 

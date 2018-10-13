@@ -987,7 +987,7 @@
 		AA8149C1196EB01300F8F738 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "CIXOnline Ltd";
 				TargetAttributes = {
 					AA8149C9196EB01300F8F738 = {

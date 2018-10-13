@@ -202,7 +202,7 @@
                                                 if (data != nil)
                                                 {
                                                     NSString * responseString = [APIRequest responseTextFromData:data];
-                                                    if (responseString != nil)
+                                                    if (responseString != nil && [responseString intValue] > 0)
                                                     {
                                                         int messageID = [responseString intValue];
                                                         message.remoteID = messageID;
@@ -211,9 +211,15 @@
                                                         [message save];
                                                         
                                                         [LogFile.logFile writeLine:@"Reply %d posted to server and updated locally", message.remoteID];
+                                                        
+                                                        return;
                                                     }
                                                 }
                                             }
+                                           
+                                           // The reply failed to post so mark it as error so we don't retry
+                                           self.lastError = YES;
+                                           [self save];
                                        }];
         [task resume];
     }

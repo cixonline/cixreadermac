@@ -106,7 +106,6 @@
     
     // Set status bar background color
     _statusBarHeight = statusBar.frame.size.height;
-    statusBar.layer.backgroundColor = [NSColor colorWithCalibratedRed:0.21 green:0.91 blue:0.91 alpha:1.00].CGColor;
     
     // Show/hide the status bar based on the last session state
     Preferences * prefs = [Preferences standardPreferences];
@@ -346,22 +345,6 @@
     // Trigger an authentication to get the account type
     [CIX authenticate:CIX.username withPassword:CIX.password];
     return YES;
-}
-
-/* applicationDidResignActive
- * Do the things we need to do when CIXReader becomes inactive, like greying out.
- */
--(void)applicationDidResignActive:(NSNotification *)aNotification
-{
-    [foldersTree activate:NO];
-}
-
-/* applicationDidBecomeActive
- * Do the things we need to do when CIXReader becomes active, like re-coloring view backgrounds.
- */
--(void)applicationDidBecomeActive:(NSNotification *)notification
-{
-    [foldersTree activate:YES];
 }
 
 /* Called when the user opens a data file associated with CIXReader by clicking in the finder or dragging it onto the dock.
@@ -1325,7 +1308,7 @@
             [self setFocusToSearchField:self];
             break;
             
-            default:
+        default:
             NSAssert(false, @"Unhandled performFindPanelAction tag value");
             break;
     }
@@ -1351,6 +1334,13 @@
     if ([searchString isBlank])
     {
         [self selectViewForFolder:folder withAddress:nil options:FolderOptionsClearFilter];
+        return;
+    }
+    if ([searchString.trim hasPrefix:@"all:"] || [searchString.trim hasPrefix:@"from:"])
+    {
+        SearchFolder * searchFolder = [foldersTree searchFolder];
+        searchFolder.searchString = searchString;
+        [foldersTree selectSearchFolder];
         return;
     }
     if (!folder.allowsScopedSearch)

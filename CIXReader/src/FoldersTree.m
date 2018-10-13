@@ -16,9 +16,6 @@
 #import "MessageEditor.h"
 #import "StringExtensions.h"
 
-static NSColor * activeColor;
-static NSColor * inactiveColor;
-
 @implementation FoldersTree
 
 /* Do the things that only make sense once the NIB is loaded.
@@ -33,11 +30,6 @@ static NSColor * inactiveColor;
         [self setFolderListFont];
         
         _fireSelectionChangedEvent = YES;
-        
-        // Set background colour
-        activeColor = [NSColor colorWithCalibratedRed:0.84 green:0.87 blue:0.90 alpha:1.00];
-        inactiveColor = [NSColor colorWithCalibratedRed:0.91 green:0.91 blue:0.91 alpha:1.00];
-        [self activate:YES];
         
         // Other settings
         [folderView sizeLastColumnToFit];
@@ -91,13 +83,6 @@ static NSColor * inactiveColor;
 -(void)update
 {
     [folderView reloadData];
-}
-
-/* Visually indicate when this view is active.
- */
--(void)activate:(BOOL)isActive
-{
-    [folderView setBackgroundColor:isActive ? activeColor : inactiveColor];
 }
 
 /* Handle changes to the directory by updating the category
@@ -791,7 +776,7 @@ static NSColor * inactiveColor;
     CRTextCountCell *result = [outlineView makeViewWithIdentifier:@"MainCell" owner:self];
     result.textField.stringValue = SafeString(node.name);
     result.textField.font = _cellFont;
-    result.textField.textColor = (node.flags & FolderFlagsResigned) ? [NSColor darkGrayColor] : [NSColor blackColor];
+    result.textField.textColor = (node.flags & FolderFlagsResigned) ? [NSColor darkGrayColor] : [NSColor textColor];
     result.imageView.image = node.icon;
 
     // Show unread count only for items that are collapsed or are leaf

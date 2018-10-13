@@ -46,7 +46,6 @@ typedef enum
 // Accessors
 -(void)initialiseFoldersTree;
 -(void)update;
--(void)activate:(BOOL)isActive;
 -(FolderBase *)selection;
 -(void)nextUnread:(FolderOptions)options;
 -(BOOL)selectAddress:(Address *)address;

@@ -400,12 +400,13 @@ static NSString * getPropertyType(objc_property_t property)
     {
         if (attribute[0] == 'T' && attribute[1] != '@')
             return [[NSString alloc] initWithBytes:(attribute + 1) length:strlen(attribute) - 1 encoding:NSUTF8StringEncoding ];
+
         if (attribute[0] == 'T' && attribute[1] == '@' && strlen(attribute) == 2)
             return @"id";
 
         if (attribute[0] == 'T' && attribute[1] == '@')
             return [[NSString alloc] initWithBytes:(attribute + 3) length:strlen(attribute) - 4 encoding:NSUTF8StringEncoding ];
-            }
+    }
     return @"";
 }
 

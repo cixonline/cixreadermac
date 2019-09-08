@@ -389,7 +389,7 @@
     return text;
 }
 
-static const char * getPropertyType(objc_property_t property)
+static NSString * getPropertyType(objc_property_t property)
 {
     const char *attributes = property_getAttributes(property);
 
@@ -399,15 +399,15 @@ static const char * getPropertyType(objc_property_t property)
     while ((attribute = strsep(&state, ",")) != NULL)
     {
         if (attribute[0] == 'T' && attribute[1] != '@')
-            return (const char *)[[NSData dataWithBytes:(attribute + 1) length:strlen(attribute) - 1] bytes];
-        
+            return [[NSString alloc] initWithBytes:(attribute + 1) length:strlen(attribute) - 1 encoding:NSUTF8StringEncoding ];
+
         if (attribute[0] == 'T' && attribute[1] == '@' && strlen(attribute) == 2)
-            return "id";
-            
+            return @"id";
+
         if (attribute[0] == 'T' && attribute[1] == '@')
-            return (const char *)[[NSData dataWithBytes:(attribute + 3) length:strlen(attribute) - 4] bytes];
+            return [[NSString alloc] initWithBytes:(attribute + 3) length:strlen(attribute) - 4 encoding:NSUTF8StringEncoding ];
     }
-    return "";
+    return @"";
 }
 
 +(NSDictionary *)classPropsFor:(Class)klass
@@ -425,9 +425,8 @@ static const char * getPropertyType(objc_property_t property)
         const char *propName = property_getName(property);
         if (propName != NULL)
         {
-            const char *propType = getPropertyType(property);
             NSString *propertyName = [NSString stringWithUTF8String:propName];
-            NSString *propertyType = [NSString stringWithUTF8String:propType];
+            NSString *propertyType = getPropertyType(property);
             results[propertyName] = propertyType;
         }
     }

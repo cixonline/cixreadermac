@@ -3,7 +3,7 @@
 //  CIXReader
 //
 //  Created by Steve Palmer on 04/08/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "Preferences.h"
@@ -54,9 +54,9 @@ static Preferences * _standardPreferences = nil;
         _useBetaAPI = [self boolForKey:MAPref_UseBetaAPI];
         _useFastSync = [self boolForKey:MAPref_UseFastSync];
         _lastAddress = [self stringForKey:MAPref_LastAddress];
-		_folderFont = [NSUnarchiver unarchiveObjectWithData:[_userPrefs objectForKey:MAPref_FolderFont]];
-        _articleFont = [NSUnarchiver unarchiveObjectWithData:[_userPrefs objectForKey:MAPref_ArticleListFont]];
-        _messageFont = [NSUnarchiver unarchiveObjectWithData:[_userPrefs objectForKey:MAPref_MessageFont]];
+		_folderFont = [NSKeyedUnarchiver unarchiveObjectWithData:[_userPrefs objectForKey:MAPref_FolderFont]];
+        _articleFont = [NSKeyedUnarchiver unarchiveObjectWithData:[_userPrefs objectForKey:MAPref_ArticleListFont]];
+        _messageFont = [NSKeyedUnarchiver unarchiveObjectWithData:[_userPrefs objectForKey:MAPref_MessageFont]];
         _showAllTopics = [self boolForKey:MAPref_ShowAllTopics];
         _displayStyle = [_userPrefs valueForKey:MAPref_ActiveStyleName];
 		_textSizeMultiplier = [[_userPrefs valueForKey:MAPref_ActiveTextSizeMultiplier] floatValue];
@@ -79,9 +79,9 @@ static Preferences * _standardPreferences = nil;
 	// Set the preference defaults
 	NSMutableDictionary * defaultValues = [[NSMutableDictionary alloc] init];
 
-	NSData * defaultFolderFont = [NSArchiver archivedDataWithRootObject:[NSFont fontWithName:@"LucidaGrande" size:11.0]];
-    NSData * defaultArticleListFont = [NSArchiver archivedDataWithRootObject:[NSFont fontWithName:@"LucidaGrande" size:11.0]];
-    NSData * defaultPlainTextFont = [NSArchiver archivedDataWithRootObject:[NSFont fontWithName:@"Courier New" size:12.0]];
+	NSData * defaultFolderFont = [NSKeyedArchiver archivedDataWithRootObject:[NSFont fontWithName:@"LucidaGrande" size:11.0]];
+    NSData * defaultArticleListFont = [NSKeyedArchiver archivedDataWithRootObject:[NSFont fontWithName:@"LucidaGrande" size:11.0]];
+    NSData * defaultPlainTextFont = [NSKeyedArchiver archivedDataWithRootObject:[NSFont fontWithName:@"Courier New" size:12.0]];
 	
 	NSNumber * boolYes = @(YES);
 	NSNumber * boolNo = @(NO);
@@ -559,7 +559,7 @@ static Preferences * _standardPreferences = nil;
 -(void)setMessageFont:(NSString *)newFontName
 {
     _messageFont = [NSFont fontWithName:newFontName size:[self messageFontSize]];
-    [self setObject:[NSArchiver archivedDataWithRootObject:_messageFont] forKey:MAPref_MessageFont];
+    [self setObject:[NSKeyedArchiver archivedDataWithRootObject:_messageFont] forKey:MAPref_MessageFont];
     [[NSNotificationCenter defaultCenter] postNotificationName:MA_Notify_MessageFontChange object:_messageFont];
 }
 
@@ -568,7 +568,7 @@ static Preferences * _standardPreferences = nil;
 -(void)setMessageFontSize:(int)newFontSize
 {
     _messageFont = [NSFont fontWithName:[self messageFont] size:newFontSize];
-    [self setObject:[NSArchiver archivedDataWithRootObject:_messageFont] forKey:MAPref_MessageFont];
+    [self setObject:[NSKeyedArchiver archivedDataWithRootObject:_messageFont] forKey:MAPref_MessageFont];
     [[NSNotificationCenter defaultCenter] postNotificationName:MA_Notify_MessageFontChange object:_messageFont];
 }
 
@@ -594,7 +594,7 @@ static Preferences * _standardPreferences = nil;
 -(void)setFolderListFont:(NSString *)newFontName
 {
 	_folderFont = [NSFont fontWithName:newFontName size:[self folderListFontSize]];
-	[self setObject:[NSArchiver archivedDataWithRootObject:_folderFont] forKey:MAPref_FolderFont];
+	[self setObject:[NSKeyedArchiver archivedDataWithRootObject:_folderFont] forKey:MAPref_FolderFont];
 	[[NSNotificationCenter defaultCenter] postNotificationName:MA_Notify_FolderFontChange object:_folderFont];
 }
 
@@ -604,7 +604,7 @@ static Preferences * _standardPreferences = nil;
 -(void)setFolderListFontSize:(int)newFontSize
 {
 	_folderFont = [NSFont fontWithName:[self folderListFont] size:newFontSize];
-	[self setObject:[NSArchiver archivedDataWithRootObject:_folderFont] forKey:MAPref_FolderFont];
+	[self setObject:[NSKeyedArchiver archivedDataWithRootObject:_folderFont] forKey:MAPref_FolderFont];
 	[[NSNotificationCenter defaultCenter] postNotificationName:MA_Notify_FolderFontChange object:_folderFont];
 }
 
@@ -630,7 +630,7 @@ static Preferences * _standardPreferences = nil;
 -(void)setArticleListFont:(NSString *)newFontName
 {
     _articleFont = [NSFont fontWithName:newFontName size:[self articleListFontSize]];
-    [self setObject:[NSArchiver archivedDataWithRootObject:_articleFont] forKey:MAPref_ArticleListFont];
+    [self setObject:[NSKeyedArchiver archivedDataWithRootObject:_articleFont] forKey:MAPref_ArticleListFont];
     [[NSNotificationCenter defaultCenter] postNotificationName:MA_Notify_ArticleListFontChange object:_articleFont];
 }
 
@@ -640,7 +640,7 @@ static Preferences * _standardPreferences = nil;
 -(void)setArticleListFontSize:(int)newFontSize
 {
     _articleFont = [NSFont fontWithName:[self articleListFont] size:newFontSize];
-    [self setObject:[NSArchiver archivedDataWithRootObject:_articleFont] forKey:MAPref_ArticleListFont];
+    [self setObject:[NSKeyedArchiver archivedDataWithRootObject:_articleFont] forKey:MAPref_ArticleListFont];
     [[NSNotificationCenter defaultCenter] postNotificationName:MA_Notify_ArticleListFontChange object:_articleFont];
 }
 

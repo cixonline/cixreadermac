@@ -3,7 +3,7 @@
 //  CIXReader
 //
 //  Created by Steve Palmer on 15/08/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "CRToolbarItem.h"
@@ -72,25 +72,25 @@
 	NSImage * buttonImage = [[NSImage alloc] initWithContentsOfFile:[resourcePath stringByAppendingPathComponent:@"blankButton.tiff"]];
 	NSSize buttonSize = [buttonImage size];
 	[buttonImage lockFocus];
-	[userImage drawInRect:CenterRect(buttonSize, userImageSize) fromRect:userImageRect operation:NSCompositeSourceOver fraction:1.0];
+    [userImage drawInRect:CenterRect(buttonSize, userImageSize) fromRect:userImageRect operation:NSCompositingOperationSourceOver fraction:1.0];
 	[buttonImage unlockFocus];
 
 	NSImage * pressedImage = [[NSImage alloc] initWithContentsOfFile:[resourcePath stringByAppendingPathComponent:@"blankButtonPressedBurned.tiff"]];
 	buttonSize = [pressedImage size];
 	[pressedImage lockFocus];
-	[userImage drawInRect:CenterRect(buttonSize, userImageSize) fromRect:userImageRect operation:NSCompositeSourceOver fraction:1.0];
+    [userImage drawInRect:CenterRect(buttonSize, userImageSize) fromRect:userImageRect operation:NSCompositingOperationSourceOver fraction:1.0];
 	[pressedImage unlockFocus];
 	
 	NSImage * smallNormalImage = [[NSImage alloc] initWithContentsOfFile:[resourcePath stringByAppendingPathComponent:@"blankSmallButton.tiff"]];
 	buttonSize = [smallNormalImage size];
 	[smallNormalImage lockFocus];
-	[userImage drawInRect:CenterRect(buttonSize, smallUserImageSize) fromRect:smallUserImageRect operation:NSCompositeSourceOver fraction:1.0];
+    [userImage drawInRect:CenterRect(buttonSize, smallUserImageSize) fromRect:smallUserImageRect operation:NSCompositingOperationSourceOver fraction:1.0];
 	[smallNormalImage unlockFocus];
 
 	NSImage * smallPressedImage = [[NSImage alloc] initWithContentsOfFile:[resourcePath stringByAppendingPathComponent:@"blankSmallButtonPressed.tiff"]];
 	buttonSize = [smallPressedImage size];
 	[smallPressedImage lockFocus];
-	[userImage drawInRect:CenterRect(buttonSize, smallUserImageSize) fromRect:smallUserImageRect operation:NSCompositeSourceOver fraction:1.0];
+    [userImage drawInRect:CenterRect(buttonSize, smallUserImageSize) fromRect:smallUserImageRect operation:NSCompositingOperationSourceOver fraction:1.0];
 	[smallPressedImage unlockFocus];
 	
 	[self setButtonImages:buttonImage

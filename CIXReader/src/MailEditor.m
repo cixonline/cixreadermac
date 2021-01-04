@@ -3,7 +3,7 @@
 //  CIXReader
 //
 //  Created by Steve Palmer on 11/09/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "MailEditor.h"
@@ -261,7 +261,7 @@
         [alert addButtonWithTitle:NSLocalizedString(@"Don't Send", nil)];
         [alert setMessageText:NSLocalizedString(@"Message not sent", nil)];
         [alert setInformativeText:NSLocalizedString(@"This message has not been sent. Are you sure you want to discard it?", nil)];
-        [alert setAlertStyle:NSWarningAlertStyle];
+        [alert setAlertStyle:NSAlertStyleWarning];
         
         NSModalResponse returnCode = [alert runModal];
         

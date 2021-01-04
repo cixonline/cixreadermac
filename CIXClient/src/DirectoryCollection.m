@@ -3,7 +3,7 @@
 //  CIXClient
 //
 //  Created by Steve Palmer on 28/08/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "CIX.h"
@@ -398,7 +398,7 @@
     for (NSString * categoryName in self.categories)
     {
         NSString * safeCategoryName = [categoryName stringByReplacingOccurrencesOfString:@"&" withString:@"+and+"];
-        safeCategoryName = [safeCategoryName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        safeCategoryName = [safeCategoryName stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
         
         NSString * url = [NSString stringWithFormat:@"directory/%@/forums", safeCategoryName];
         NSURLRequest * request = [APIRequest get:url];

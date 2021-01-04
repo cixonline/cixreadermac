@@ -80,7 +80,7 @@
             NSRect iconRect = NSMakeRect(0.0, 0.0, iconSize.width, iconSize.height);
             [circularImage lockFocus];
             [[NSColor colorWithCalibratedWhite:0.0 alpha:0.33] set];
-            NSRectFillUsingOperation(iconRect, NSCompositeSourceAtop);
+            NSRectFillUsingOperation(iconRect, NSCompositingOperationSourceAtop);
             
             NSString * editText = NSLocalizedString(@"Edit", nil);
             NSDictionary * textAttr = @{
@@ -91,7 +91,7 @@
             [editText drawAtPoint:NSMakePoint((iconSize.width - textSize.width) / 2, 4) withAttributes:textAttr];
             [circularImage unlockFocus];
         }
-        [circularImage drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
+        [circularImage drawInRect:rect fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1.0];
     }
 }
 

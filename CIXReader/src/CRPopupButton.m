@@ -3,7 +3,7 @@
 //  CIXReader
 //
 //  Created by Steve Palmer on 15/08/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "CRPopupButton.h"
@@ -54,7 +54,7 @@
 							modifierFlags:[theEvent modifierFlags]
 								timestamp:[theEvent timestamp]
 							 windowNumber:[theEvent windowNumber]
-								  context:[theEvent context]
+								  context:nil
 							  eventNumber:[theEvent eventNumber]
 							   clickCount:[theEvent clickCount]
 								 pressure:[theEvent pressure]];

@@ -3,7 +3,7 @@
 //  CIXReader
 //
 //  Created by Steve Palmer on 15/08/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "CRToolbarButton.h"
@@ -104,7 +104,7 @@
 {
 	NSSize s;
 
-	if (size == NSRegularControlSize)
+    if (size == NSControlSizeRegular)
 	{
 		// When switching to regular size, if we have small versions then we
 		// can assume that we're switching from those small versions. So we

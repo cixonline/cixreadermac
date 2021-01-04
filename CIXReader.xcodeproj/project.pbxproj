@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -165,7 +165,7 @@
 		AAC390A019B0D2E9004BEC5B /* inbox.tiff in Resources */ = {isa = PBXBuildFile; fileRef = AAC3909E19B0D2E9004BEC5B /* inbox.tiff */; };
 		AAC390A119B0D2E9004BEC5B /* sent.tiff in Resources */ = {isa = PBXBuildFile; fileRef = AAC3909F19B0D2E9004BEC5B /* sent.tiff */; };
 		AAC390A419B0D46E004BEC5B /* MailView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC390A319B0D46E004BEC5B /* MailView.m */; };
-		AAC3B83E1B3B109100196631 /* CIXMarkup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC3B82E1B3B0BEF00196631 /* CIXMarkup.framework */; };
+		AAC3B83E1B3B109100196631 /* CIXMarkup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC3B82E1B3B0BEF00196631 /* CIXMarkup.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		AACB63E919E5D4B300ED71FA /* ForumEditor.plist in Resources */ = {isa = PBXBuildFile; fileRef = AACB63E819E5D4B300ED71FA /* ForumEditor.plist */; };
 		AACB63EF19E5D95100ED71FA /* generalForumEditorImage.tiff in Resources */ = {isa = PBXBuildFile; fileRef = AACB63EE19E5D95100ED71FA /* generalForumEditorImage.tiff */; };
 		AACB878719B5D26E00F52B2A /* MailCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AACB878619B5D26E00F52B2A /* MailCellView.m */; };
@@ -1213,7 +1213,7 @@
 		AA8B9975198902A200214D87 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "CIXOnline Ltd";
 				TargetAttributes = {
 					AA8B997C198902A200214D87 = {
@@ -1241,14 +1241,13 @@
 				};
 			};
 			buildConfigurationList = AA8B9978198902A200214D87 /* Build configuration list for PBXProject "CIXReader" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 				fr,
-				English,
 			);
 			mainGroup = AA8B9974198902A200214D87;
 			productRefGroup = AA8B997E198902A200214D87 /* Products */;
@@ -1897,6 +1896,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1922,7 +1922,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -1953,6 +1953,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1972,7 +1973,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SYMROOT = build;
@@ -1990,6 +1991,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VZ883BDUYG;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2002,8 +2004,11 @@
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				INFOPLIST_PREFIX_HEADER = "$(OBJROOT)/autorevision.h";
 				INFOPLIST_PREPROCESS = YES;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
@@ -2013,7 +2018,11 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SYMROOT = build;
-				USER_HEADER_SEARCH_PATHS = "CIXExtensions/** CIXClient/** CIXMarkup/**";
+				USER_HEADER_SEARCH_PATHS = (
+					"CIXExtensions/**",
+					"CIXClient/**",
+					"CIXMarkup/**",
+				);
 			};
 			name = Debug;
 		};
@@ -2028,6 +2037,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = VZ883BDUYG;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2040,8 +2050,11 @@
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				INFOPLIST_PREFIX_HEADER = "$(OBJROOT)/autorevision.h";
 				INFOPLIST_PREPROCESS = YES;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
@@ -2051,7 +2064,11 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SYMROOT = build;
-				USER_HEADER_SEARCH_PATHS = "CIXExtensions/** CIXClient/** CIXMarkup/**";
+				USER_HEADER_SEARCH_PATHS = (
+					"CIXExtensions/**",
+					"CIXClient/**",
+					"CIXMarkup/**",
+				);
 			};
 			name = Release;
 		};
@@ -2075,7 +2092,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application: ICUK Computing Services Ltd (VZ883BDUYG)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -2084,7 +2101,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application: ICUK Computing Services Ltd (VZ883BDUYG)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

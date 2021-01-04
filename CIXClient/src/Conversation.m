@@ -3,7 +3,7 @@
 //  CIXClient
 //
 //  Created by Steve Palmer on 01/09/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "CIX.h"
@@ -123,7 +123,7 @@
         return;
     
     MailCollection * messages = [self messages];
-    int conversationID = self.remoteID;
+    __block int conversationID = self.remoteID;
     
     for (MailMessage * message in messages)
         if ([message isDraft])
@@ -138,42 +138,54 @@
                 newMessage.Subject = self.subject;
 
                 NSURLRequest * request = [APIRequest post:@"personalmessage/add" withData:newMessage];
-                NSURLResponse * response;
-                NSError * error;
-                
-                NSData * data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-                if (error != nil)
-                    [CIX reportServerErrors:__PRETTY_FUNCTION__ error:error];
-                else
+                if (request != nil)
                 {
-                    if (data != nil)
-                    {
-                        NSString * responseString = [APIRequest responseTextFromData:data];
-                        if (responseString != nil)
-                        {
-                            NSArray * splitStrings = [responseString componentsSeparatedByString:@","];
-                            if ([splitStrings count] == 2)
-                            {
-                                conversationID = [splitStrings[0] intValue];
-                                int messageID = [splitStrings[1] intValue];
-                                
-                                self.remoteID = conversationID;
-                                self.date = [[NSDate date] UTCtoGMTBST];
-                                [self save];
-                                
-                                message.remoteID = messageID;
-                                [message save];
-                                
-                                [LogFile.logFile writeLine:@"New message %d in conversation %d posted to server and updated locally", message.remoteID, message.conversationID];
-                                
-                                return;
-                            }
-                        }
-                    }
-                    
-                    // The message failed to post so mark it as error so we don't retry
-                    self.lastError = YES;
-                    [self save];
+                    NSURLSession * session = [NSURLSession sharedSession];
+                    NSURLSessionDataTask * task = [session dataTaskWithRequest:request
+                                                             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                                                   {
+                                                        Response * resp = [[Response alloc] initWithObject:self];
+                
+                                                        if (error != nil)
+                                                        {
+                                                            [CIX reportServerErrors:__PRETTY_FUNCTION__ error:error];
+                                                            resp.errorCode = CCResponse_ServerError;
+                                                        }
+                                                        else
+                                                        {
+                                                            if (data == nil)
+                                                                resp.errorCode = CCResponse_PostFailure;
+                                                            else
+                                                            {
+                                                                NSString * responseString = [APIRequest responseTextFromData:data];
+                                                                if (responseString != nil)
+                                                                {
+                                                                    NSArray * splitStrings = [responseString componentsSeparatedByString:@","];
+                                                                    if ([splitStrings count] == 2)
+                                                                    {
+                                                                        conversationID = [splitStrings[0] intValue];
+                                                                        int messageID = [splitStrings[1] intValue];
+                                                                        
+                                                                        self.remoteID = conversationID;
+                                                                        self.date = [[NSDate date] UTCtoGMTBST];
+                                                                        [self save];
+                                                                        
+                                                                        message.remoteID = messageID;
+                                                                        [message save];
+                                                                        
+                                                                        [LogFile.logFile writeLine:@"New message %d in conversation %d posted to server and updated locally", message.remoteID, message.conversationID];
+                                                                        
+                                                                        return;
+                                                                    }
+                                                                }
+                                                            }
+                                                            
+                                                            // The message failed to post so mark it as error so we don't retry
+                                                            self.lastError = YES;
+                                                            [self save];
+                                                        }
+                                                    }];
+                    [task resume];
                 }
             }
         }

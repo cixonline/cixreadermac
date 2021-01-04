@@ -3,7 +3,7 @@
 //  CIXReader
 //
 //  Created by Steve Palmer on 13/10/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "CIX.h"
@@ -528,7 +528,7 @@ static NSImage * threadOpenImage = nil;
             [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
             [alert setMessageText:NSLocalizedString(@"Block User", nil)];
             [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"All existing messages and any new messages from %@ will automatically be marked as read. Are you sure?", nil), message.author]];
-            [alert setAlertStyle:NSWarningAlertStyle];
+            [alert setAlertStyle:NSAlertStyleWarning];
 
             NSModalResponse returnCode = [alert runModal];
             if (returnCode == NSAlertFirstButtonReturn)

@@ -3,7 +3,7 @@
 //  CIXReader
 //
 //  Created by Steve Palmer on 20/08/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "CRFolderView.h"
@@ -57,14 +57,14 @@
  */
 -(void)buildTooltips
 {
-	NSRange range;
+	/*NSRange range;
 	NSUInteger  index;
 
 	[self removeAllToolTips];
 
 	// If not using tooltips or the data source doesn't implement tooltipForItem,
 	// then exit now.
-	if (!_useTooltips || ![_dataSource respondsToSelector:@selector(outlineView:tooltipForItem:)])
+	if (!_useTooltips || ![dataSource respondsToSelector:@selector(outlineView:tooltipForItem:)])
 		return;
 
 	range = [self rowsInRect:[self visibleRect]];
@@ -74,20 +74,21 @@
 		id item;
 
 		item = [self itemAtRow:index];
-		tooltip = [_dataSource outlineView:self tooltipForItem:item];
+		tooltip = [dataSource outlineView:self tooltipForItem:item];
 		if (tooltip)
 			[self addToolTipRect:[self rectOfRow:index] owner:self userData:NULL];
-	}
+	}*/
 }
 
 /* Callback function from the view to request the actual tooltip string.
  */
 -(NSString *)view:(NSView *)view stringForToolTip:(NSToolTipTag)tag point:(NSPoint)point userData:(void *)data
 {
-	NSInteger row;
+    return @"";
+/*	NSInteger row;
 
 	row = [self rowAtPoint:point];
-	return [_dataSource outlineView:self tooltipForItem:[self itemAtRow:row]];
+	return [dataSource outlineView:self tooltipForItem:[self itemAtRow:row]];*/
 }
 
 /* Called when the view scrolls. All the tooltip rectangles need to be recomputed.

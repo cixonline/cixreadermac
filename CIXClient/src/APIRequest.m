@@ -3,7 +3,7 @@
 //  CIXClient
 //
 //  Created by Steve Palmer on 17/09/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "CIX.h"
@@ -220,7 +220,7 @@ static const NSString * _apiBase;
 {
     NSMutableString * urlString = [NSMutableString stringWithFormat:@"%@%@.json", [self apiBase], apiFunction];
     if (queryString != nil)
-        [urlString appendFormat:@"?%@", [queryString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        [urlString appendFormat:@"?%@", [queryString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
     return [NSURL URLWithString:urlString];
 }
 @end

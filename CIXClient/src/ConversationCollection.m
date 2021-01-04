@@ -3,7 +3,7 @@
 //  CIXClient
 //
 //  Created by Steve Palmer on 01/09/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "CIX.h"
@@ -151,7 +151,7 @@
  */
 -(void)refreshMessages:(NSArray *)inbox
 {
-    int unreadCount = 0;
+    __block int unreadCount = 0;
     
     for (J_ConversationInbox * conv in inbox)
     {
@@ -162,43 +162,57 @@
         
         if (messageRequest != nil)
         {
-            NSURLResponse * response;
-            NSData * data = [NSURLConnection sendSynchronousRequest:messageRequest returningResponse:&response error:nil];
-            if (data != nil)
-            {
-                JSONModelError * jsonError = nil;
-                J_PMessageSet * messages = [[J_PMessageSet alloc] initWithData:data error:&jsonError];
-                int newMessages = 0;
-                
-                NSDate * maxDate = conversation.date;
-                
-                for (J_PMessage * msg in messages.PMessages)
-                    if ([[conversation messages] messageByID:msg.MessageID] == nil)
-                    {
-                        MailMessage * message = [MailMessage new];
-                        message.remoteID = msg.MessageID;
-                        message.recipient = msg.Sender;
-                        message.date = [msg.Date fromJSONDate];
-                        message.body = msg.Body;
-                        message.conversationID = conversation.ID;
-                        
-                        maxDate = [maxDate laterDate:message.date];
-                        
-                        [[conversation messages] add:message];
-                        ++newMessages;
-                    }
-                
-                if (newMessages > 0)
+            NSURLSession * session = [NSURLSession sharedSession];
+            NSURLSessionDataTask * task = [session dataTaskWithRequest:messageRequest
+                                                      completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                                            {
+                if (error == nil)
                 {
-                    conversation.unread = conv.Unread;
-                    conversation.deletePending = NO;
-                    conversation.readPending = NO;
-                    conversation.date = maxDate;
-                    [conversation save];
-                    
-                    unreadCount += newMessages;
+                    Response * resp = [[Response alloc] initWithObject:self];
+                    if (error != nil)
+                    {
+                        [CIX reportServerErrors:__PRETTY_FUNCTION__ error:error];
+                        resp.errorCode = CCResponse_ServerError;
+                    }
+                    else
+                    {
+                        JSONModelError * jsonError = nil;
+                        J_PMessageSet * messages = [[J_PMessageSet alloc] initWithData:data error:&jsonError];
+                        int newMessages = 0;
+                        
+                        NSDate * maxDate = conversation.date;
+                        
+                        for (J_PMessage * msg in messages.PMessages)
+                            if ([[conversation messages] messageByID:msg.MessageID] == nil)
+                            {
+                                MailMessage * message = [MailMessage new];
+                                message.remoteID = msg.MessageID;
+                                message.recipient = msg.Sender;
+                                message.date = [msg.Date fromJSONDate];
+                                message.body = msg.Body;
+                                message.conversationID = conversation.ID;
+                                
+                                maxDate = [maxDate laterDate:message.date];
+                                
+                                [[conversation messages] add:message];
+                                ++newMessages;
+                            }
+                        
+                        if (newMessages > 0)
+                        {
+                            conversation.unread = conv.Unread;
+                            conversation.deletePending = NO;
+                            conversation.readPending = NO;
+                            conversation.date = maxDate;
+                            [conversation save];
+                            
+                            unreadCount += newMessages;
+                        }
+                    }
                 }
-            }
+            }];
+
+            [task resume];
         }
     }
     

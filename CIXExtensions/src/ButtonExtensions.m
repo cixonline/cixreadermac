@@ -3,7 +3,7 @@
 //  CIXExtensions
 //
 //  Created by Steve Palmer on 10/09/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "ButtonExtensions.h"
@@ -13,7 +13,7 @@
 -(void)setTitle:(NSString *)title withColor:(NSColor *)color
 {
     NSMutableParagraphStyle * style = [[NSMutableParagraphStyle alloc] init];
-    [style setAlignment:NSCenterTextAlignment];
+    [style setAlignment:NSTextAlignmentCenter];
     NSDictionary * attrsDictionary = @{
                                        NSForegroundColorAttributeName  : color,
                                        NSParagraphStyleAttributeName   : @""

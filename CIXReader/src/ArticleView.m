@@ -3,7 +3,7 @@
 //  CIXReader
 //
 //  Created by Steve Palmer on 25/08/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "CIX.h"
@@ -145,7 +145,7 @@
             return;
         
         //Don't go back or forward in article view.
-        if (([theEvent modifierFlags] & NSCommandKeyMask) && ((keyChar == NSLeftArrowFunctionKey) || (keyChar == NSRightArrowFunctionKey)))
+        if (([theEvent modifierFlags] & NSEventModifierFlagCommand) && ((keyChar == NSLeftArrowFunctionKey) || (keyChar == NSRightArrowFunctionKey)))
             return;
     }
     [super keyDown:theEvent];

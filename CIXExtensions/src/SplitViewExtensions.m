@@ -3,7 +3,7 @@
 //  CIXExtensions
 //
 //  Created by Steve on 6/15/05.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "SplitViewExtensions.h"

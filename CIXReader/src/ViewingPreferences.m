@@ -3,7 +3,7 @@
 //  CIXReader
 //
 //  Created by Steve Palmer on 21/09/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "ViewingPreferences.h"
@@ -105,7 +105,6 @@ int availableMinimumFontSizes[] = { 9, 10, 11, 12, 14, 18, 24 };
     NSFontManager * manager = [NSFontManager sharedFontManager];
     [manager setSelectedFont:[NSFont fontWithName:[prefs articleListFont] size:[prefs articleListFontSize]] isMultiple:NO];
     [manager setAction:@selector(changeArticleFont:)];
-    [manager setDelegate:self];
     [manager orderFrontFontPanel:self];
 }
 
@@ -118,7 +117,6 @@ int availableMinimumFontSizes[] = { 9, 10, 11, 12, 14, 18, 24 };
     [manager setSelectedFont:[NSFont fontWithName:[prefs folderListFont] size:[prefs folderListFontSize]] isMultiple:NO];
     [manager setAction:@selector(changeFolderFont:)];
     [[folderFontSample window] makeFirstResponder:self];
-    [manager setDelegate:self];
     [manager orderFrontFontPanel:self];
 }
 
@@ -131,7 +129,6 @@ int availableMinimumFontSizes[] = { 9, 10, 11, 12, 14, 18, 24 };
     [manager setSelectedFont:[NSFont fontWithName:[prefs messageFont] size:[prefs messageFontSize]] isMultiple:NO];
     [manager setAction:@selector(changeMessageFont:)];
     [[folderFontSample window] makeFirstResponder:self];
-    [manager setDelegate:self];
     [manager orderFrontFontPanel:self];
 }
 

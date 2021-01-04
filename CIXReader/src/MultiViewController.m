@@ -3,7 +3,7 @@
 //  CIXReader
 //
 //  Created by Steve Palmer on 02/08/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "MultiViewController.h"
@@ -24,7 +24,7 @@
 -(id)initWithConfig:(NSString *)configFilename andData:(id)objectData
 {
     NSRect windowRect = NSMakeRect(100, 100, 240, 240);
-    NSUInteger windowStyle = (NSTitledWindowMask | NSClosableWindowMask | NSUnifiedTitleAndToolbarWindowMask);
+    NSUInteger windowStyle = (NSWindowStyleMaskTitled | NSWindowStyleMaskClosable | NSWindowStyleMaskUnifiedTitleAndToolbar);
     
     NSWindow * mainWindow = [[NSWindow alloc] initWithContentRect:windowRect styleMask:windowStyle backing:NSBackingStoreBuffered defer:NO];
     if ((self = [super initWithWindow:mainWindow]) != nil)

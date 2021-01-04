@@ -3,7 +3,7 @@
 //  CIXExtensions
 //
 //  Created by Steve Palmer on 10/09/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "ImageExtensions.h"
@@ -64,7 +64,7 @@
         smallImage = [[ImageClass alloc] initWithSize: newSize];
         [smallImage lockFocus];
         [[NSGraphicsContext currentContext] setImageInterpolation:NSImageInterpolationHigh];
-        [sourceImageRep drawInRect:destRect fromRect:sourceRect operation:NSCompositeCopy fraction:1.0 respectFlipped:NO hints:nil];
+        [sourceImageRep drawInRect:destRect fromRect:sourceRect operation:NSCompositingOperationCopy fraction:1.0 respectFlipped:NO hints:nil];
         [smallImage unlockFocus];
     }
     return smallImage;
@@ -98,7 +98,7 @@
         
         [path addClip];
         
-        [self drawInRect:destinationRect fromRect:sourceRect operation:NSCompositeSourceOver fraction:1.0];
+        [self drawInRect:destinationRect fromRect:sourceRect operation:NSCompositingOperationSourceOver fraction:1.0];
         
         [NSGraphicsContext restoreGraphicsState];
         

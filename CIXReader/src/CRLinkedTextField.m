@@ -3,7 +3,7 @@
 //  CIXReader
 //
 //  Created by Steve Palmer on 31/10/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "CRLinkedTextField.h"
@@ -42,7 +42,7 @@
     BOOL mouseInside = YES;
     BOOL beingClicked = YES;
     
-    NSEvent * nextEvent = [[self window] nextEventMatchingMask:(NSLeftMouseUpMask | NSLeftMouseDraggedMask)];
+    NSEvent * nextEvent = [[self window] nextEventMatchingMask:(NSEventMaskLeftMouseUp | NSEventMaskLeftMouseDragged)];
     while (beingClicked && nextEvent != nil)
     {
         NSEventType type = [nextEvent type];
@@ -51,10 +51,10 @@
         location = [self convertPoint:location fromView:nil];
         mouseInside = NSPointInRect(location, [self bounds]);
         
-        if (type == NSLeftMouseUp)
+        if (type == NSEventTypeLeftMouseUp)
             beingClicked = NO;
 
-        nextEvent = [[self window] nextEventMatchingMask:(NSLeftMouseUpMask | NSLeftMouseDraggedMask)];
+        nextEvent = [[self window] nextEventMatchingMask:(NSEventMaskLeftMouseUp | NSEventMaskLeftMouseDragged)];
     }
     
     if (mouseInside)

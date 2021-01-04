@@ -3,7 +3,7 @@
 //  CIXReader
 //
 //  Created by Steve Palmer on 02/11/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "CRImageView.h"
@@ -12,13 +12,13 @@
 
 -(void)mouseDown:(NSEvent *)theEvent
 {
-    if (theEvent.type != NSLeftMouseDown)
+    if (theEvent.type != NSEventTypeLeftMouseDown)
         [super mouseDown:theEvent];
 }
 
 -(void)mouseUp:(NSEvent *)theEvent
 {
-    if (theEvent.type != NSLeftMouseUp)
+    if (theEvent.type != NSEventTypeLeftMouseUp)
         [super mouseUp:theEvent];
     else
     {

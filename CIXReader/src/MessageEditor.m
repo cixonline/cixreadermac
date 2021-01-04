@@ -3,7 +3,7 @@
 //  CIXReader
 //
 //  Created by Steve Palmer on 04/11/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "MessageEditor.h"
@@ -233,7 +233,7 @@
         [alert addButtonWithTitle:NSLocalizedString(@"Don't Save", nil)];
         [alert setMessageText:NSLocalizedString(@"Message not saved", nil)];
         [alert setInformativeText:NSLocalizedString(@"This message has not been saved. Are you sure you want to discard it?", nil)];
-        [alert setAlertStyle:NSWarningAlertStyle];
+        [alert setAlertStyle:NSAlertStyleWarning];
         
         NSInteger returnCode = [alert runModal];
         
@@ -258,7 +258,8 @@
     if (_originalMessage != nil && _originalMessage.commentID > 0)
     {
         Message * parentMessage = _originalMessage.parent;
-        [textView insertText:parentMessage.quotedBody];
+        NSRange insertionPoint = [textView selectedRange];
+        [textView insertText:parentMessage.quotedBody replacementRange:insertionPoint];
     }
 }
 
@@ -406,7 +407,7 @@
 {
     NSMutableString * title = [[NSMutableString alloc] init];
     if (_originalMessage != nil && _originalMessage.commentID > 0)
-        [title appendFormat:NSLocalizedString(@"Reply to %lld", nil), _originalMessage.commentID];
+        [title appendFormat:NSLocalizedString(@"Reply to %d", nil), _originalMessage.commentID];
     else
         [title appendString:NSLocalizedString(@"New Message", nil)];
     if (_originalMessage != nil)

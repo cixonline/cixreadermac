@@ -3,7 +3,7 @@
 //  CIXClient
 //
 //  Created by Steve Palmer on 26/11/2014.
-//  Copyright (c) 2014-2015 CIXOnline Ltd. All rights reserved.
+//  Copyright (c) 2014-2020 ICUK Ltd. All rights reserved.
 //
 
 #import "RuleCollection.h"
@@ -63,7 +63,7 @@
     NSString * userRules = [[CIX homeFolder] stringByAppendingPathComponent:@"MessageRules.plist"];
     
     NSMutableData * data = [[NSMutableData alloc] init];
-    NSKeyedArchiver * archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    NSKeyedArchiver * archiver = [[NSKeyedArchiver alloc] initRequiringSecureCoding:YES];
     [archiver setOutputFormat:NSPropertyListXMLFormat_v1_0];
     [archiver encodeObject:_allRules forKey:@"root"];
     [archiver finishEncoding];
@@ -81,7 +81,8 @@
         NSData * codedData = [[NSData alloc] initWithContentsOfFile:filename];
         if (codedData != nil)
         {
-            NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:codedData];
+            NSError * errorVar;
+            NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingFromData:codedData error:&errorVar];
             _allRules = [unarchiver decodeObjectForKey:@"root"];
             [unarchiver finishDecoding];
         }

@@ -7,7 +7,7 @@
 		<key>CIXClient.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>CIXClientTouch.xcscheme</key>
 		<dict>
@@ -25,22 +25,22 @@
 		<key>AA8149C9196EB01300F8F738</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 		<key>AA8149E0196EB01400F8F738</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 		<key>AA91970319C96DA7002FA1FC</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 		<key>AAE3E6CB19CD7FE400DEEB12</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 	</dict>
 </dict>

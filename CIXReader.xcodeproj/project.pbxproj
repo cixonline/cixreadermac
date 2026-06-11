@@ -222,8 +222,6 @@
 		AAE9E51219CF48BF0069D28B /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAE9E50E19CF48030069D28B /* Preferences.plist */; };
 		AAE9E51519CF49F50069D28B /* ViewingPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE9E51419CF49F50069D28B /* ViewingPreferences.m */; };
 		AAE9E51919CF4B6A0069D28B /* GeneralPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE9E51719CF4B6A0069D28B /* GeneralPreferences.m */; };
-		AAE9E51D19CF4C470069D28B /* UpdatePreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE9E51C19CF4C470069D28B /* UpdatePreferences.m */; };
-		AAE9E51F19CF4CFC0069D28B /* updatePreferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = AAE9E51E19CF4CFC0069D28B /* updatePreferences.tiff */; };
 		AAE9E52219CF4D080069D28B /* generalPrefImage.tiff in Resources */ = {isa = PBXBuildFile; fileRef = AAE9E52019CF4D080069D28B /* generalPrefImage.tiff */; };
 		AAE9E52319CF4D080069D28B /* viewingPrefImage.tiff in Resources */ = {isa = PBXBuildFile; fileRef = AAE9E52119CF4D080069D28B /* viewingPrefImage.tiff */; };
 		AAE9F35B1A0BB28D0020DCBA /* tbNextUnread.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AAE9F35A1A0BB28D0020DCBA /* tbNextUnread.pdf */; };
@@ -244,8 +242,6 @@
 		AAF421121A6EE7F600F9A10B /* ParticipantsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF421111A6EE7F600F9A10B /* ParticipantsListController.m */; };
 		AAF421151A6EFAE700F9A10B /* UserCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF421141A6EFAE700F9A10B /* UserCellView.m */; };
 		AAF5C63E1B7BD37200534B6A /* ChangesShort.html in Resources */ = {isa = PBXBuildFile; fileRef = AAF5C63D1B7BD37200534B6A /* ChangesShort.html */; };
-		AAF661E51A1BB3FD008AED5C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF661E41A1BB3FD008AED5C /* Sparkle.framework */; };
-		AAF661E71A1BB414008AED5C /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AAF661E41A1BB3FD008AED5C /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -376,7 +372,6 @@
 			files = (
 				AA0A90911B3C325D006971D6 /* CIXMarkup.framework in Copy Frameworks */,
 				AACD248D19924C480076B0CF /* CIXClient.framework in Copy Frameworks */,
-				AAF661E71A1BB414008AED5C /* Sparkle.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,9 +636,6 @@
 		AAE9E51419CF49F50069D28B /* ViewingPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewingPreferences.m; path = src/ViewingPreferences.m; sourceTree = "<group>"; };
 		AAE9E51619CF4B6A0069D28B /* GeneralPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeneralPreferences.h; path = src/GeneralPreferences.h; sourceTree = "<group>"; };
 		AAE9E51719CF4B6A0069D28B /* GeneralPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeneralPreferences.m; path = src/GeneralPreferences.m; sourceTree = "<group>"; };
-		AAE9E51B19CF4C470069D28B /* UpdatePreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdatePreferences.h; path = src/UpdatePreferences.h; sourceTree = "<group>"; };
-		AAE9E51C19CF4C470069D28B /* UpdatePreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdatePreferences.m; path = src/UpdatePreferences.m; sourceTree = "<group>"; };
-		AAE9E51E19CF4CFC0069D28B /* updatePreferences.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = updatePreferences.tiff; path = CIXReader/Resources/updatePreferences.tiff; sourceTree = "<group>"; };
 		AAE9E52019CF4D080069D28B /* generalPrefImage.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = generalPrefImage.tiff; path = CIXReader/Resources/generalPrefImage.tiff; sourceTree = "<group>"; };
 		AAE9E52119CF4D080069D28B /* viewingPrefImage.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = viewingPrefImage.tiff; path = CIXReader/Resources/viewingPrefImage.tiff; sourceTree = "<group>"; };
 		AAE9E52719CF65FD0069D28B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = CIXReader/Interfaces/fr.lproj/UpdatePreferences.strings; sourceTree = "<group>"; };
@@ -678,7 +670,6 @@
 		AAF421131A6EFAE700F9A10B /* UserCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserCellView.h; path = src/UserCellView.h; sourceTree = "<group>"; };
 		AAF421141A6EFAE700F9A10B /* UserCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCellView.m; path = src/UserCellView.m; sourceTree = "<group>"; };
 		AAF5C63D1B7BD37200534B6A /* ChangesShort.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = ChangesShort.html; path = public/ChangesShort.html; sourceTree = "<group>"; };
-		AAF661E41A1BB3FD008AED5C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = 3rdparty/Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -691,7 +682,6 @@
 				AA6AA2DB19BA079C0058B0D2 /* libCIXExtensions.a in Frameworks */,
 				AAB7B96A19B4B22F0074006A /* WebKit.framework in Frameworks */,
 				AA5BA2B3198A7139003347A0 /* CIXClient.framework in Frameworks */,
-				AAF661E51A1BB3FD008AED5C /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,7 +786,6 @@
 				AAE9E52119CF4D080069D28B /* viewingPrefImage.tiff */,
 				AAEEBADC1A26458100614CB9 /* rulesPreferences.tiff */,
 				AAD7A61E1A097F0C003E1A34 /* signaturePreferences.tiff */,
-				AAE9E51E19CF4CFC0069D28B /* updatePreferences.tiff */,
 				AAE9E50E19CF48030069D28B /* Preferences.plist */,
 			);
 			name = Preferences;
@@ -929,8 +918,6 @@
 				AA177CE61A2647D600B4B8E1 /* RulesPreferences.m */,
 				AAD7A6151A097C97003E1A34 /* SignaturePreferences.h */,
 				AAD7A6161A097C97003E1A34 /* SignaturePreferences.m */,
-				AAE9E51B19CF4C470069D28B /* UpdatePreferences.h */,
-				AAE9E51C19CF4C470069D28B /* UpdatePreferences.m */,
 				AAE9E51319CF49F50069D28B /* ViewingPreferences.h */,
 				AAE9E51419CF49F50069D28B /* ViewingPreferences.m */,
 			);
@@ -1069,7 +1056,6 @@
 			isa = PBXGroup;
 			children = (
 				AA97E2A61A3F7D5600861209 /* Quartz.framework */,
-				AAF661E41A1BB3FD008AED5C /* Sparkle.framework */,
 				AAB7B96919B4B22F0074006A /* WebKit.framework */,
 			);
 			name = Frameworks;
@@ -1366,7 +1352,6 @@
 				AADB76211A1E35260036F3F4 /* tbUnflag.pdf in Resources */,
 				AAF03C4E19FA8FA800F2A4EC /* GoToController.xib in Resources */,
 				AAF4210B1A6EE68D00F9A10B /* ParticipantsList.xib in Resources */,
-				AAE9E51F19CF4CFC0069D28B /* updatePreferences.tiff in Resources */,
 				AAB6D9EA19ABA5BE006E3CFA /* ShoppingCategory.tiff in Resources */,
 				AADB762F1A1E3E8F0036F3F4 /* tbOffline.pdf in Resources */,
 				AADA9F4219D309560044F47C /* frown.tiff in Resources */,
@@ -1534,7 +1519,6 @@
 				AA5BFC021A09060800420410 /* MessageEditor.m in Sources */,
 				AAF03C4819FA4B9700F2A4EC /* TaggedMessage.m in Sources */,
 				AAA69EC31A18AFFD000413FA /* CRButton.m in Sources */,
-				AAE9E51D19CF4C470069D28B /* UpdatePreferences.m in Sources */,
 				AAEEBADB1A20985A00614CB9 /* CIXReaderApp.m in Sources */,
 				AACCCF8A19A76FC800F188A7 /* TopicFolder.m in Sources */,
 				AAB6D9C319AB5500006E3CFA /* DirectoryView.m in Sources */,
@@ -1896,6 +1880,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = CIXReader/CIXReader.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VZ883BDUYG;
@@ -1957,6 +1942,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = CIXReader/CIXReader.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2003,6 +1989,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIXReader/src/CIXReader-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CIXReader/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = CIXReader;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				INFOPLIST_PREFIX_HEADER = "$(OBJROOT)/autorevision.h";
 				INFOPLIST_PREPROCESS = YES;
@@ -2011,6 +1999,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
@@ -2036,12 +2025,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = VZ883BDUYG;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = VZ883BDUYG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2053,6 +2043,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIXReader/src/CIXReader-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CIXReader/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = CIXReader;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				INFOPLIST_PREFIX_HEADER = "$(OBJROOT)/autorevision.h";
 				INFOPLIST_PREPROCESS = YES;
@@ -2061,6 +2053,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
@@ -2069,6 +2062,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = macosx;
 				SYMROOT = build;
 				USER_HEADER_SEARCH_PATHS = (

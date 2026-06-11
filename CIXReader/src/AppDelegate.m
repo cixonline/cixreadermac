@@ -23,7 +23,6 @@
 #import "WindowCollection.h"
 #import "ImageProtocol.h"
 #import "AttachProtocol.h"
-#import "Sparkle/Sparkle.h"
 
 #define NSApplicationRelaunchDaemon @"relaunch"
 
@@ -240,10 +239,6 @@
     NSString * lastUsername = username;
     NSString * password = @"";
     NSString * databasePath;
-    
-    // First, tell APIRequest to use the beta API if we're enrolled
-    // in the beta.
-    [APIRequest setUseBetaAPI:[prefs useBeta]];
     
     if (!IsEmpty(username))
     {
@@ -1193,13 +1188,6 @@
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://www.cix.uk/contact/help"]];
 }
 
-/* Do the check for updates.
- */
--(IBAction)handleCheckForUpdates:(id)sender
-{
-    [[SUUpdater sharedUpdater] checkForUpdates:self];
-}
-
 /* Gets the progress indicator on the info bar running. Because this can be called
  * nested, we use progressCount to make sure we remove it at the right time.
  */
@@ -1291,9 +1279,7 @@
 -(IBAction)handleViewChangeLog:(id)sender
 {
     Preferences * prefs = [Preferences standardPreferences];
-    NSString * betaOrRelease = [prefs useBeta] ? @"beta" : @"release";
-    
-    NSString * url = [NSString stringWithFormat:@"https://cixreader.cixhosting.co.uk/cixreader/osx/%@/changes.html", betaOrRelease];
+    NSString * url = @"https://cixreader.cixhosting.co.uk/cixreader/osx/release/changes.html";
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
 }
 
@@ -2094,7 +2080,6 @@
 -(NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar
 {
     return @[ NSToolbarFlexibleSpaceItemIdentifier,
-              NSToolbarSeparatorItemIdentifier,
               NSToolbarSpaceItemIdentifier,
               @"NewMail",
               @"NewMessage",

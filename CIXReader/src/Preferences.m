@@ -9,7 +9,6 @@
 #import "Preferences.h"
 #import "Signatures.h"
 #import "autorevision.h"
-#import "Sparkle/Sparkle.h"
 
 // The default preferences object
 static Preferences * _standardPreferences = nil;
@@ -65,9 +64,6 @@ static Preferences * _standardPreferences = nil;
         _cacheCleanUpFrequency = [self integerForKey:MAPref_CacheCleanUpFrequency];
         _lastCacheCleanupDate = [self objectForKey:MAPref_LastCacheCleanupDate];
         _startAtHomePage = [self boolForKey:MAPRef_StartAtHomePage];
-        
-		// Sparkle autoupdate
-        [self setSparkleURL];
 	}
 	return self;
 }
@@ -500,44 +496,6 @@ static Preferences * _standardPreferences = nil;
 -(NSString *)defaultSignature
 {
     return _defaultSignature;
-}
-
-/* Return whether we automatically check for updates.
- */
--(BOOL)checkForUpdates
-{
-    return [[SUUpdater sharedUpdater] automaticallyChecksForUpdates];
-}
-
-/* Set whether or not we automatically check for updates
- */
--(void)setCheckForUpdates:(BOOL)flag
-{
-    [[SUUpdater sharedUpdater] setAutomaticallyChecksForUpdates:flag];
-}
-
-/* Return whether we install beta releases.
- */
--(BOOL)useBeta
-{
-    return _useBeta;
-}
-
-/* Sets whether we install beta releases.
- */
--(void)setUseBeta:(BOOL)flag
-{
-    _useBeta = flag;
-    [self setBool:flag forKey:MAPref_UseBeta];
-    [self setSparkleURL];
-}
-
-/* Set the URL that Sparkle uses for checking for updates
- */
--(void)setSparkleURL
-{
-    NSString * updateURL = [NSString stringWithFormat:@"https://cixreader.cixhosting.co.uk/cixreader/osx/%@/appcast.xml", (_useBeta ? @"beta" : @"release")];
-    [[SUUpdater sharedUpdater] setFeedURL:[NSURL URLWithString:updateURL]];
 }
 
 /* Retrieve the name of the font used by the editors.

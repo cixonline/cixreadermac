@@ -80,7 +80,6 @@
 -(IBAction)handleBiggerText:(id)sender;
 -(IBAction)handleSmallerText:(id)sender;
 -(IBAction)showHelpSupport:(id)sender;
--(IBAction)handleCheckForUpdates:(id)sender;
 -(IBAction)handleMarkRead:(id)sender;
 -(IBAction)handleMarkReadLock:(id)sender;
 -(IBAction)handleMarkStar:(id)sender;

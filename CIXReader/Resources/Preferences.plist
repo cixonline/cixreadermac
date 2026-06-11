@@ -2,15 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>5</key>
-	<dict>
-		<key>Title</key>
-		<string>Update</string>
-		<key>ClassName</key>
-		<string>UpdatePreferences</string>
-		<key>Image</key>
-		<string>updatePreferences.tiff</string>
-	</dict>
 	<key>Title</key>
 	<string>Preferences</string>
 	<key>1</key>

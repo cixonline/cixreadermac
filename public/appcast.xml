@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+	<channel>
+		<title>CIXReader Version 1.67.600</title>
+        <link>https://cixreader.cixhosting.co.uk/cixreader/osx/beta/appcast.xml</link>
+		<description>Most recent changes with links to updates.</description>
+		<language>en-us</language>
+		<copyright>Copyright 2014-2026, CIX Ltd</copyright>
+		<item>
+			<title>Version 1.67.600</title>
+			<pubDate></pubDate>
+			<link>https://cixreader.cixhosting.co.uk/cixreader/osx/beta/cr_osx1.67.600.dmg</link>
+			<sparkle:minimumSystemVersion>.0</sparkle:minimumSystemVersion>
+			<enclosure url="https://cixreader.cixhosting.co.uk/cixreader/osx/beta/cr_osx1.67.600.dmg" sparkle:version="600" sparkle:shortVersionString="1.67.600" length="" type="application/octet-stream"/>
+			<sparkle:releaseNotesLink>https://cixreader.cixhosting.co.uk/cixreader/osx/beta/ChangesShort.html</sparkle:releaseNotesLink>
+		</item>
+	</channel>
+</rss>
+

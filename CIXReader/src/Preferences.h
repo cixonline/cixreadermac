@@ -91,12 +91,6 @@
 -(NSString *)lastUser;
 -(void)setLastUser:(NSString *)newLastUser;
 
--(BOOL)checkForUpdates;
--(void)setCheckForUpdates:(BOOL)flag;
-
--(BOOL)useBeta;
--(void)setUseBeta:(BOOL)flag;
-
 -(BOOL)useBetaAPI;
 -(void)setUseBetaAPI:(BOOL)flag;
 
